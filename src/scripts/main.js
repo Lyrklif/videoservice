@@ -24,7 +24,6 @@ if (detection.isIE10Plus()) {
 
 new Icon();
 new Header();
-new Scrollbar();
 new Burger();
 new Input();
 window.globalModal = new Modal();

@@ -5,81 +5,13 @@
   transition: color 0.3s ease-out;
 }
 
-// @include animateBgcolor;
-@mixin animateBgcolor {
-  transition: background-color 0.3s ease-out;
-}
 
 // @include animateOpacity;
 @mixin animateOpacity {
   transition: opacity 0.3s ease-out;
 }
 
-// @include animateTransform;
-@mixin animateTransform {
-  transition: transform 0.1s ease-out;
-}
 
-// @include animateBorder;
-@mixin animateBorder {
-  transition: border 0.3s ease-out;
-}
-
-// @include animateImageZooming;
-@mixin animateImageZooming {
-  transition: .5s ease-out;
-}
-
-// @include animateDefault;
-@mixin animateDefault {
-  transition: color 0.3s ease-out,
-    background-color 0.3s ease-out,
-    background 0.3s ease-out,
-    box-shadow 0.3s ease-out,
-    opacity 0.3s ease-out,
-    transform 0.1s ease-out,
-    border 0.3s ease-out;
-}
-
-// @include animateButton;
-@mixin animateButton {
-  transition: color 0.3s ease-out,
-    background-color 0.3s ease-out,
-    transform 0.1s ease-out,
-    border-radius 0.3s ease-out,
-    border-color 0.3s ease-out;
-}
-
-// @include animateMaxHeight;
-@mixin animateMaxHeight {
-  transition: max-height .5s;
-}
-
-// @include animateMaxHeight_hide;
-@mixin animateMaxHeight_hide {
-  transition: max-height $transitionHideState;
-}
-
-
-// @include animateMaxWidth_hide;
-@mixin animateMaxWidth_hide {
-  transition: max-width $transitionHideState;
-}
-
-// @include animateMaxWidth_show;
-@mixin animateMaxWidth_show {
-  transition: max-width $transitionShowState;
-}
-
-// @include animateBoxShadow;
-@mixin animateBoxShadow {
-  transition: box-shadow 0.3s ease-out;
-}
-
-// @include animateInput;
-@mixin animateInput {
-  transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
-}
 
 // ****************************
 // Стили заголовков
@@ -118,14 +50,12 @@
   text-decoration: none;
   @include animateColor;
 
-  &:active {
-  }
+  &:active {}
 
   @include media-breakpoint-up(sm) {
 
     &:hover,
-    &:focus {
-    }
+    &:focus {}
   }
 }
 
@@ -133,14 +63,12 @@
 @mixin link-style-primary() {
   color: $main-blue;
 
-  &:active {
-  }
+  &:active {}
 
   @include media-breakpoint-up(sm) {
 
     &:hover,
-    &:focus {
-    }
+    &:focus {}
   }
 }
 
@@ -157,22 +85,6 @@
     }
   }
 }
-
-// кнопка
-// Шаблон кнопки
-// @include btn-template;
-@mixin btn-template() {
-  font-weight: normal;
-  border: 0;
-  background: none;
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-
-
-  @include animateButton();
-}
-
 
 
 

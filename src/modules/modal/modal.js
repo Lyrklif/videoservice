@@ -37,6 +37,8 @@ export default class Modal {
       if (this.modal || this.modal2) {
         this.events();
       }
+
+     
     });
   }
 

@@ -49,7 +49,6 @@ var Preloader =
         this.preloader.classList.remove('preloader_active'); // enableBodyScroll(this.preloader);
 
         this.html.classList.remove('modalOpen');
-        window.globalSpecifyCity.start();
       }
     }]);
 

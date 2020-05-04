@@ -378,13 +378,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-style: normal;
-}
-
 a {
   color: #007bff;
   text-decoration: none;
@@ -393,16 +386,6 @@ a {
 
 a.primary {
   color: #5C6D99;
-}
-
-button {
-  font-weight: normal;
-  border: 0;
-  background: none;
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-  transition: color 0.3s ease-out, background-color 0.3s ease-out, transform 0.1s ease-out, border-radius 0.3s ease-out, border-color 0.3s ease-out;
 }
 
 *,
