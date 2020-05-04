@@ -4,10 +4,25 @@
 @import '../../node_modules/bootstrap/scss/mixins'; // миксины bootstrap
 
 @import '../../node_modules/normalize.css/normalize'; // сброс стилей
-@import 'mixins'; // миксины
-@import 'functions'; // функции
+
+
+@import 'mixins/base'; // base
+@import 'mixins/typography'; // typography
+@import 'mixins/animate'; // animate
+@import 'mixins/link'; // link
+
+
+@import 'keyframes/sweep'; // keyframes
+
+
+@import 'functions/em'; // em
+
+
+
 @import 'fonts'; // шрифты
 @import 'typography'; // стилизация текста
+
+
 @import '../modules/layout/layout'; // шаблон страницы
 @import '../../node_modules/bootstrap/scss/grid'; // сетка bootstrap
 @import '../../node_modules/bootstrap/scss/utilities/display';
@@ -15,8 +30,7 @@
 @import 'general'; // основные стили
 
 @import '../modules/icon/icon'; // svg иконка
-// @import '../modules/preloader/preloader'; // логотип preloader
-// @import '../modules/animations/preloader'; // анимация логотипа preloader
+
 @import '../modules/modal/modal'; // модальное окно
 
 @import '../modules/site/site'; // страница сайта (шапка, контент, подвал)

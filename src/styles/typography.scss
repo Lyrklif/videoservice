@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 a {
   @include link-style();
 
@@ -15,3 +16,7 @@ a {
   // }
 }
 
+
+h2 {
+  @include h2-style;
+}

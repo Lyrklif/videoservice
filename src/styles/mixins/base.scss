@@ -1,0 +1,21 @@
+// base
+
+
+// Фоновое изображение
+// @include backgroundImage('name.png');
+@mixin backgroundImage($imageNameWhisExtension) {
+  background-image: url($image_dir + $imageNameWhisExtension );
+}
+
+
+// убрать стили списков
+// @include resetListStyle;
+@mixin resetListStyle() {
+  li {
+    padding-left: 0;
+
+    &:before {
+      display: none;
+    }
+  }
+}

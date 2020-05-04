@@ -1,0 +1,37 @@
+// link
+
+
+// Ссылка
+// @include link-style;
+@mixin link-style() {
+  color: $link-color;
+
+  &.primary {
+    color: $main-blue;
+  }
+
+  text-decoration: none;
+  @include animateColor;
+
+  &:active {}
+
+  @include media-breakpoint-up(sm) {
+
+    &:hover,
+    &:focus {}
+  }
+}
+
+// @include link-style-primary;
+@mixin link-style-primary() {
+  color: $main-blue;
+
+  &:active {}
+
+  @include media-breakpoint-up(sm) {
+
+    &:hover,
+    &:focus {}
+  }
+}
+
