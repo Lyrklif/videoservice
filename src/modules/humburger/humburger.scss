@@ -13,14 +13,10 @@
   margin: 0;
   overflow: visible;
 
-  // width: 20px;
   width: 35px;
-  // height: 16px;
   height: 30px;
-  // max-width: 20px;
   max-width: 35px;
   height: 100%;
-  // padding: 0;
   padding: .23em;
   margin: 0;
   background: none;
@@ -59,7 +55,6 @@
 .hamburger-inner::after {
   width: 20px;
   height: 2px;
-  background-color: $humburger-color;
   border-radius: 3px;
   position: absolute;
   transition-property: transform;

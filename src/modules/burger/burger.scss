@@ -5,9 +5,9 @@
   position: fixed;
   background-color: $white;
   z-index: 800;
-  transform: translateX(100%); // default
-  right: 0; // новое
-  top: 0; // новое
+  transform: translateX(100%);
+  right: 0;
+  top: 0;
   transition: transform .3s;
   font-weight: 500;
   display: flex;
@@ -16,11 +16,10 @@
   padding-bottom: 37px;
   font-size: 14px;
 
-  overflow-y: auto; // новое
+  overflow-y: auto;
 
   &_active {
     transform: none;
-    // top: 80px;
     box-shadow: 2px 0 10px 0 rgba($black, .25);
   }
 
@@ -37,8 +36,6 @@
   position: absolute;
   top: 18px;
   right: 20px;
-  // width: 16px;
-  // height: 16px;
   width: 24px;
   height: 24px;
   padding: 4px;
@@ -53,10 +50,6 @@
 
   &:hover,
   &:active {
-    // transform: rotate(90deg) scale(1.2);
-    // outline: none !important;
-    // border: 0 !important;
-    // background: none !important;
     -webkit-tap-highlight-color: transparent;
     -webkit-appearance: none;
   }
@@ -69,71 +62,10 @@
 
 // *******************************
 .burger__header {
-  box-shadow: 0px 0.711111px 6.4px rgba(0, 0, 0, 0.1);
   width: 100%;
   display: block;
-  padding: 21px 20px 23px 20px;
 }
 
 .burger__content {
-  font-weight: normal;
   width: 100%;
-  padding-top: 26px;
-  padding-bottom: 30px;
-  line-height: em(16px, 14px);
-
-  // display: flex;
-  // flex-direction: column;
-}
-
-.burger__list {
-  padding-left: 20px;
-  padding-right: 20px;
-
-}
-
-.burger__city {
-  font-size: 12px;
-  padding-left: 1.2em;
-
-  &:before {
-    height: 5px;
-    width: 5px;
-  }
-}
-
-.burger__top {
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 10px;
-
-  .burger__item {
-    margin-bottom: 30px;
-    margin-top: 0;
-  }
-}
-
-.burger__bottom {
-  margin-top: 40px;
-
-  .burger__item {
-    margin-bottom: 0;
-    margin-top: 30px;
-  }
-}
-
-.burger__item {
-  &.active {
-    padding-bottom: 12px;
-  }
-}
-
-.burger__search {
-  max-width: calc(100% - 40px);
-
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 40px;
 }

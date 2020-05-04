@@ -1,0 +1,10 @@
+//- modal-answer
+
+include ../input/input
+include ../icon/icon
+
+//- Модальное окно order-signature
+mixin modal-authorize
+  .modal__tab.order-signature#authorize
+    form.modal__inner.modal__form.question__inner(action="", method="post", data-form="validate")
+      p authorize

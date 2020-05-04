@@ -3,35 +3,7 @@ include ../icon/icon
 mixin burger
   .burger#burger
     .burger__header
-      a.burger__city.city-link(href="#city", data-city="1", data-modal="city", title="Петропавловск-Камчатский") Петропавловск-Камчатский
       a.burger__close(href="./" data-burger, title="Закрыть")
         +icon('icon-close', 'burger__close-icon')
     .burger__content
-      a.call-search-box.burger__search(href="#search", data-modal="search", title="Поиск по ЭЦП и услугам") 
-        +icon('icon-search-small', 'header__search-icon')
-        span Поиск по&nbsp;ЭЦП и&nbsp;услугам
-      +burgerList(class='burger__top')
-        +burgerItem('#', 'Электронная подпись', 'active')
-        +burgerItem('#', 'Тендерное сопровождение')
-        +burgerItem('#', 'Сопровождение госзаказчиков')
-      hr
-      +burgerList(class='burger__bottom')
-        +burgerItem('#', 'Электронные торги')
-        +burgerItem('#', 'Поиск госзакупок')
-        +burgerItem('#', 'Техподдержка')
-        +burgerItem('#', 'Стать партнером')
-        //- +burgerItem('#question', 'Задать вопрос')(data='question')
-
-
-//- Вспомогательные миксины
-mixin burgerList
-  ul.burger__list(class!=attributes.class)
-    block
-
-mixin burgerItem(href, text, active)  
-  if active
-    li.burger__item.menu__item.active
-      span.menu__link= text
-  else
-    li.burger__item.menu__item
-      a.menu__link(href=href, title=text, data-modal!=attributes.data)= text
+      p Burger

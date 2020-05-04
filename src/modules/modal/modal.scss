@@ -1,7 +1,5 @@
 .modal {
-  // width: 100%;
   width: 100vw; // чтобы при показе/скрытии модалка не дёргалась
-  // height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -29,11 +27,6 @@
   left: 0;
   z-index: 1;
   background: rgba(0, 0, 0, .65); // 65%
-
-  @include media-breakpoint-up(sm) {
-    // background: rgba(0, 0, 0, .2); // 20%
-    background: rgba(0, 0, 0, .5); // 20%
-  }
 }
 
 .modal__close-screen,
@@ -102,7 +95,6 @@
   border: 1px solid $border-color;
   margin-left: auto;
   margin-right: auto;
-  // padding: 30px;
 
   @include media-breakpoint-up(sm) {
     border-radius: $border-radius;
@@ -120,144 +112,3 @@
     }
   }
 }
-
-.modal__tab {
-  display: none;
-  // overflow: hidden;
-
-  padding: 30px;
-
-  &_active {
-    display: block;
-  }
-}
-
-.modal__content_licenses {
-  max-width: 100%;
-
-  .modal__tab {
-    max-width: 100%;
-    padding: 0;
-  }
-}
-
-.modal__content_large {
-  width: 1088px;
-
-  .modal__tab {
-    padding: 30px 8px 10px 30px;
-  }
-
-  @include media-breakpoint-up(sm) {
-    .modal__tab {
-      padding: 60px 8px 10px 60px;
-    }
-  }
-}
-
-.modal__content_search {
-  width: 100%;
-  max-width: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
-  border-radius: 0;
-}
-
-.modal__content {
-  @include media-breakpoint-down(xs) {
-    .modal__tab {
-      // padding: 40px 24px;
-      padding: 40px 20px;
-    }
-
-    &.modal__content_licenses {
-      .modal__tab {
-        padding: 0;
-      }
-    }
-  }
-}
-
-
-
-.modal__title {
-  @include h2-style;
-  margin-top: 0;
-  margin-bottom: 24px;
-
-  @include media-breakpoint-down(xs) {
-    margin-bottom: 10px;
-  }
-}
-
-.modal__input {
-  width: 100%;
-  max-width: 100%;
-
-  &>.input__fluid,
-  &>.textarea__fluid {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-.modal__text {
-  max-width: 397px;
-  margin-bottom: 38px;
-
-  @include media-breakpoint-down(xs) {
-    margin-bottom: 28px;
-  }
-}
-
-.modal__text_small {
-  margin-top: 14px;
-  margin-bottom: 40px;
-  font-size: 14px;
-  line-height: em(25px, 14px);
-  color: $main-dark-grey;
-  max-width: 480px;
-
-  @include media-breakpoint-down(xs) {
-    font-size: 12px;
-    margin-bottom: 0;
-  }
-}
-
-.modal__link {
-  color: $main-blue;
-}
-
-.modal__button {
-  margin-top: 10px;
-
-  @include media-breakpoint-down(xs) {
-    margin-top: 16px;
-    font-size: 14px;
-    min-height: 52px;
-    margin-bottom: 10px;
-  }
-}
-
-.modal__form {
-
-  @include media-breakpoint-between(xs, sm) {
-    display: flex;
-    flex-direction: column;
-
-    .modal__text_small {
-      order: 99;
-    }
-  }
-}
-
-
-// .modal__inner {
-
-//   .radio__checkmark,
-//   .checkbox__checkmark {
-//     @include media-breakpoint-only(lg) {
-//       top: .05em;
-//     }
-//   }
-// }

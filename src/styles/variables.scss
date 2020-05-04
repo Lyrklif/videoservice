@@ -6,8 +6,7 @@ $grid-gutter-width: 32px; // ширина отступов между столб
 
 $container-max-widths: (md: 687px + $grid-gutter-width-md,
   lg: 897px + $grid-gutter-width-lg,
-  xl: 1150px + $grid-gutter-width-lg, // чтобы отступы у полей были больше
-  // xl: 1312px + $grid-gutter-width-lg, // старое значение (для подгона к макету значений в %)
+  xl: 1312px + $grid-gutter-width-lg, // старое значение (для подгона к макету значений в %)
 );
 
 $grid-breakpoints: (xs: 0,
@@ -15,8 +14,7 @@ $grid-breakpoints: (xs: 0,
   sm: 576px,
   md: 768px,
   lg: 1024px,
-  // xl: 1440px,
-  xl: 1366.02px,
+  xl: 1440px,
 );
 
 // Шрифты
@@ -38,165 +36,3 @@ $main-blue: #5C6D99;
 
 $white: #ffffff;
 $black: #000000;
-
-// background
-$bg-color: #f7f7f9;
-
-$border-color: #F2F2F2;
-$border-radius: 10px;
-$border-radius-small: 6px;
-
-$small-text-color: $main-dark-grey;
-
-// ссылки
-$link-color: $main-dark-grey;
-$link-color-2: $main-blue;
-$link-color-hover: #E4A71F;
-
-$light-bg-color: #FAFAFA;
-
-// hr
-$hr-color: $main-light-grey;
-
-// box-shadow
-$shabow-1: 0px 1px 9px rgba(0, 0, 0, .1);
-$shabow-only-down: 0px 10px 15px rgba(0, 0, 0, 0.05);
-
-
-// Списки
-$list-ul-bg: $main-yellow;
-
-
-// кнопки
-$btn-height: 56px;
-$btn-height-sm: 52px;
-$btn-width: 161px;
-$btn-padding: 17px 24px;
-$btn-primary-bg: $main-yellow;
-$btn-primary-bg-hover: #FFCB59;
-$btn-primary-box-shadow: 0px 8px 30px rgba(234, 182, 81, 0.5);
-$btn-skelet-color: $main-blue;
-$btn-skelet-border-color: rgba(112, 127, 165, 0.4);
-$btn-skelet-border-color-hover: $main-yellow;
-$btn-slider-arrow-bg-hover: $main-yellow;
-$btn-slider-arrow-bg: $main-dark-grey;
-
-
-// ссылка с иконкой
-$icon-link-color: $main-blue;
-
-// активный пункт
-$active-item-border-color: $main-yellow;
-$active-item-color: $black;
-
-
-// поля ввода (input)
-$input-error: #EB5757;
-$input-placeholder: $main-dark-grey;
-$input-border: $main-light-grey;
-$input-border-hover: #D4D4D4;
-
-// header
-$header-item-active-border-color: $active-item-border-color;
-
-// footer
-$footer-color: $main-dark-grey;
-$footer-bg: #EFEFF0;
-
-
-// humburger
-$humburger-color: $main-yellow;
-
-// map
-$map-bg-color:#C4C4C4;
-
-
-// promo - рекомендация в виде таблицы
-$promo-color: $main-dark-grey;
-$promo-border: $border-color;
-$promo-line: $main-light-grey;
-
-// modal
-$modal-city-char-color: $main-yellow;
-
-// scrollbar
-$scrollbar-bg: $main-light-grey;
-
-// header 
-$header-color: $main-dark-grey;
-$city-round-bg: #C4C4C4;
-
-$header-sublist-font-size: 13px;
-$header-sublist-font-size-lg: 12px;
-
-// card
-$card-border-color: $border-color;
-$card-border-radius: $border-radius;
-$card-title-color: $main-black;
-$card-text-color: $main-dark-grey;
-
-// ТИПОГРАФИКА
-
-// *** P2
-$subtitle-size-xl: 18px;
-$p2-size-xl: 16px;
-$p2-line-height-xl: 22px;
-
-$subtitle-size-lg: 16px;
-$p2-size-lg: 14px;
-$p2-line-height-lg: 22px;
-
-$subtitle-size-md: 18px;
-$p2-size-md: 16px;
-$p2-line-height-md: 22px;
-
-$p-all-size-xs: 14px;
-
-// *** ЗАГОЛОВКИ
-$h2-size-lg: 30px;
-
-
-// *** links-block
-$links-block-item-width: 190px;
-$links-block-item-width-2: 260px;
-$links-block-item-width-3: 300px;
-$links-block-item-color: $main-blue;
-
-
-// *** page-switch
-$page-switch-height: 35px;
-$page-switch-list-height: $page-switch-height+20px;
-
-// *** offer
-$offer-text-max-width: 538px;
-$offer-small-text-color: #828282;
-$offer-price-color: $main-blue;
-$offer-del-line-color: rgba(130, 130, 130, 0.5); // цвет линии, перечёркивающей старую цену
-
-// *** checkbox
-$checkbox-check-color: $main-yellow;
-
-
-// *** faq
-$faq-title-color: $main-blue;
-$faq-arrow-color: $main-blue;
-$faq-border-color: $main-light-grey;
-$faq-title-hover-bg: #F3F4F5;
-
-
-// *** main banner
-$banner-solid-color-bg: #E6E6E6;
-
-
-// *** transition
-$transitionHideState: 0.5s cubic-bezier(0, 1, 0, 1);
-$transitionShowState: 1s ease-in-out;
-
-
-// *** 
-$answer-card-number-color: $main-yellow;
-
-
-//*** 
-$nav-responses-width-lg: 300px;
-$nav-responses-width-xl: 377px;

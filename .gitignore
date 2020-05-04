@@ -8,3 +8,16 @@ Thumbs.db
 bash.exe.stackdump
 .editorconfig
 .yo-rc.json
+
+node_modules
+build
+tmp
+.vscode
+*.log
+Thumbs.db
+.idea
+.grunt
+.DS_Store
+bash.exe.stackdump
+.editorconfig
+.yo-rc.json

@@ -1,7 +1,6 @@
 include ../icon/icon
 include ../humburger/humburger
-include ../specify-city/specify-city
-include ../icon-link/icon-link
+
 
 //- Шапка сайта
 mixin header(isMainPage)
@@ -13,54 +12,4 @@ mixin header(isMainPage)
     mixin logo
       a.header__logo.logo-link(href=linkMainPage, title="Логотип"): +icon("logotype", "logotype")
   header.header.js-header
-    nav.header__nav
-      .header__top-block
-        .container
-          .row
-            .col.header__top
-              +logo
-              .header__contact-wp.header__contact-wp_top
-                a.header__city.city-link(href="#city", data-modal="city", title="Петропавловск-Камчатский") Петропавловск-Камчатский
-                +icon-link-small('icon-phone-handset')(href='tel:+73412331040', title='Телефон: 73412331040', class='header__icon-tel')
-                  |+7&nbsp;(3412)&nbsp;33-10-40
-              a.header__search.call-search-box.js-search-box(href="#search", data-modal="search", title="Поиск по ЭЦП и услугам") 
-                +icon('icon-search-small', 'header__search-icon')
-                span Поиск по&nbsp;ЭЦП и&nbsp;услугам
-              +headerList(class='header__list-top')
-                +headerItem('#', 'Электронная подпись', 'active')
-                +headerItem('#', 'Тендерное сопровождение')
-                +headerItemSublist('#', 'Сопровождение госзаказчиков')
-              +humburger(class='header__button')
-      .container  
-        .row
-          .col.header__bottom
-            a.header__city.city-link(href="#city", data-modal="city", title="Петропавловск-Камчатский") Петропавловск-Камчатский
-            .header__contact-wp
-              +icon-link-small('icon-phone-handset')(href='tel:+73412331040', title='Телефон: 73412331040', class='header__icon-tel')
-                |+7&nbsp;(3412)&nbsp;33-10-40
-            +headerList(class='header__list-bottom')
-              +headerItem('#', 'Электронные торги')
-              +headerItem('#', 'Поиск госзакупок')
-              +headerItem('#', 'Техподдержка')
-              +headerItem('#', 'Стать партнером')
-              //- +headerItem('#question', 'Задать вопрос')(data='question')
-    +specify-city
-
-
-//- вспомогательный миксины
-mixin headerList()
-  ul.header__list(class!=attributes.class)
-    block
-
-mixin headerItem(href, text, active)
-  if active
-    li.header__item.menu__item.active: span.menu__link=text
-  else
-    li.header__item.menu__item: a.menu__link(href=href, title=text, data-modal!=attributes.data)=text
-
-mixin headerItemSublist(href, text, active)
-  li.header__item.header__item-sub.menu__item
-    a.menu__link(href=href, title=text, data-modal!=attributes.data)=text
-    ul.header__sublist
-      li.header__subitem: a.header__subitem-link(href="#", title="Сопровождение по 44-ФЗ") Сопровождение по&nbsp;44-ФЗ
-      li.header__subitem: a.header__subitem-link(href="#", title="Сопровождение по 223-ФЗ") Сопровождение по&nbsp;223-ФЗ
+    p Header

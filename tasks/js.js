@@ -28,11 +28,7 @@ module.exports = params => {
         .pipe(vsource(path.basename(input)))
         .pipe(buffer())
         .pipe(gulpif(!isProd, sourcemaps.init()))
-        .pipe(gulpif(isProd, uglify({
-          output: {
-            ascii_only: true
-          }
-        })))
+        .pipe(gulpif(isProd, uglify()))
         .pipe(gulpif(!isProd, sourcemaps.write('.')))
         .pipe(gulp.dest(output));
     };

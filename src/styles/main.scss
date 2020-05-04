@@ -18,135 +18,19 @@
 // @import '../modules/preloader/preloader'; // логотип preloader
 // @import '../modules/animations/preloader'; // анимация логотипа preloader
 @import '../modules/modal/modal'; // модальное окно
-@import '../modules/modal-question/modal-question'; // первое модальное окно
-@import '../modules/modal-success/modal-success'; // второе модальное окно
-@import '../modules/modal-city/modal-city'; // модальное окно modal-city
-@import '../modules/modal-settings/modal-settings'; // модальное окно modal-settings
-@import '../modules/modal-licenses/modal-licenses'; // модальное окно modal-licenses
-@import '../modules/modal-search/modal-search.scss'; // modal Поиск по сайту
+
 @import '../modules/site/site'; // страница сайта (шапка, контент, подвал)
 @import '../modules/humburger/humburger'; // humburger - кнопка открытия меню в мобильной версии
 @import '../modules/header/header'; // шапка сайта
 @import '../modules/footer/footer'; // подвал сайта
 @import '../modules/burger/burger'; // burger menu в мобильной версии
 
-@import '../modules/scroll/scroll.scss'; // scrollbar
-@import '../modules/specify-city/specify-city'; // окно выбора города при первом посещении сайта
-@import '../modules/btn-loader/btn-loader'; // btn-loader
 
 
-//  ******** Стили ******************
-@import '../../node_modules/slick-carousel/slick/slick.scss'; // Слайдер slick-slider
+
 
 // ********* Основные элементы и стили главной страницы
-@import '../modules/slider-arrows/slider-arrows.scss'; // кнопки слайдера
-@import '../modules/icon-link/icon-link.scss'; // ссылка с иконкой
 @import '../modules/input/input.scss'; // поле ввода (input)
-@import '../modules/main-slider/main-slider.scss'; // main-slider
-@import '../modules/card/card.scss'; // card
-@import '../modules/service/service.scss'; // service
-@import '../modules/content-block/content-block.scss'; // content-block
-@import '../modules/licenses/licenses.scss'; // licenses
-@import '../modules/licenses-slider/licenses-slider.scss'; // licenses-slider
-@import '../modules/promo/promo.scss'; // рекомендация в виде таблицы
-
-
-// ******** Страница 02. ЭЦП с картой центров
-@import '../modules/main-banner/main-banner.scss'; // main-banner
-@import '../modules/info-block/info-block.scss'; // info-block
-@import '../modules/process/process.scss'; // process
-@import '../modules/advantages-order/advantages-order.scss'; // advantages-order
-@import '../modules/answer-question/answer-question.scss'; // answer-question
-@import '../modules/addresses-map/addresses-map.scss'; // addresses-map
-
-
-// ******** Страница 03. ЭЦП для торгов
-@import '../modules/links-block/links-block.scss'; // links-block
-@import '../modules/page-switch/page-switch.scss'; // page-switch
-@import '../modules/offer/offer.scss'; // offer
-@import '../modules/spoiler-card/spoiler-card.scss'; // spoiler-card
-@import '../modules/offer-img/offer-img.scss'; // offer-img
-@import '../modules/offer-big/offer-big.scss'; // offer-big
-
-
-// ******** Страница 10. Детальная страница ЭЦП
-@import '../modules/about-service/about-service.scss'; // about-service
-
-
-// ******** Страница 11. Сопровождение торгов
-@import '../modules/partners-carousel/partners-carousel.scss';
-@import '../modules/consultation-form/consultation-form.scss';
-
-
-// ******** Страница 12. Стать партнёром, измененная структура
-@import '../modules/quote-card/quote-card.scss'; // quote-card
-@import '../modules/contacts/contacts.scss'; // contacts
-@import '../modules/checkbox/checkbox.scss'; // checkbox
-@import '../modules/radio/radio.scss'; // radio
-@import '../modules/modal-state-platforms/modal-state-platforms.scss'; // modal-state-platforms
-
-
-// ******** Страница 13. Об удостоверяющем центре
-@import '../modules/modern-approach/modern-approach.scss';
-@import '../modules/best-service/best-service.scss';
-@import '../modules/licenses-content/licenses-content.scss';
-
-
-// ******** Страница 14. Техподдержка
-@import '../modules/contacts-support/contacts-support.scss'; // contacts-support
-@import '../modules/instructions/instructions';
-@import '../modules/modal-solve-problems/modal-solve-problems'; // modal-solve-problems
-@import '../modules/textarea/textarea'; // textarea
-@import '../modules/faq/faq'; // faq
-
-
-// ******** Страница 15. Учебный центр
-@import '../modules/teacher/teacher.scss';
-
-
-// ******** Страница 16. Детальная страница услуги сопровождения
-@import '../modules/modal-detail-services/modal-detail-services.scss';
-@import '../modules/organization-benefits/organization-benefits.scss';
-@import '../modules/customers-carousel/customers-carousel.scss';
-
-
-// ******** Страница 17. Тендерное сопровождение
-@import '../modules/calculation-services/calculation-services.scss';
-@import '../modules/one-time-services/one-time-services.scss';
-
-
-// ******** Страница 18. Cопровождение госзаказчиков по 44-ФЗ
-@import '../modules/cost-calc/cost-calc.scss';
-
-
-// ******** Страница 07. Сравнить банковские гарантии (прямой текст)
-@import '../modules/epc-bidding-subpage/epc-bidding-subpage.scss';
-
-
-// ******** Страница 05. Поиск госзакупок
-@import '../modules/subscribe-newsletter/subscribe-newsletter.scss'; // подписаться на рассылку
-@import '../modules/region/region.scss'; // выбор региона
-@import '../modules/search-steps/search-steps.scss'; // Параметры поиска госзакупок
-@import '../modules/search-result/search-result.scss'; // результат поиска
-@import '../modules/search-results/search-results.scss'; // результаты поиска
-@import '../modules/arrow-up/arrow-up.scss'; // Кнопка наверх
-
-// ******** Страница 22. Контакты
-@import '../modules/contact-card/contact-card.scss'; // карточка с контактами
-
-// ******** Страница 20.1 Вопрос-ответ: Список вопросов
-@import '../modules/faq-item/faq-item.scss'; // элемент с вопросов и ответом на него
-@import '../modules/faq-list/faq-list.scss'; // список с ответами на вопросы
-
-// ******** Страница 24. Проверка партнера
-@import '../modules/verification-form/verification-form.scss'; // форма проверки
-@import '../modules/partner-verification/partner-verification.scss'; // Проверка партнера
-@import '../modules/loader-block/loader-block.scss'; // блок загрузки
-
-// ******** Страница 30. Что такое электронные торги и тендеры?
-@import '../modules/answer-card/answer-card.scss'; // карточки с ответами
-@import '../modules/nav-responses/nav-responses.scss'; // навигация по ответам
-
 
 
 /*  
