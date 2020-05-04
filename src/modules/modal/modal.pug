@@ -1,0 +1,59 @@
+include ../modal-question/modal-question
+include ../modal-success/modal-success
+include ../modal-city/modal-city
+include ../modal-settings/modal-settings
+include ../modal-licenses/modal-licenses
+include ../modal-delivery/modal-delivery
+include ../modal-order-signature/modal-order-signature
+include ../modal-order-signature-2/modal-order-signature-2
+include ../modal-order-signature-3/modal-order-signature-3
+include ../modal-order-signature-4/modal-order-signature-4
+include ../modal-detail-services/modal-detail-services
+include ../modal-try-service/modal-try-service
+include ../modal-state-platforms/modal-state-platforms
+include ../modal-become-partner/modal-become-partner
+include ../modal-solve-problems/modal-solve-problems
+include ../modal-tender-support/modal-tender-support
+include ../modal-tender-support-2/modal-tender-support-2
+include ../modal-educational-center/modal-educational-center
+include ../modal-search/modal-search
+
+
+include ../modal-training/modal-training
+include ../modal-support-223/modal-support-223
+include ../modal-support-44/modal-support-44
+
+include ../modal-answer/modal-answer
+
+mixin modal
+  .modal.hide-scrollbar#modal
+    .modal__overlay
+    .modal__content.hide-scrollbar
+      a.modal__close(href="./", title="Закрыть", data-modal)
+        +icon('icon-close', 'modal__close-icon')
+      +modal-question
+      +modal-success
+      +modal-city
+      +modal-settings
+      +modal-licenses
+      +modal-licenses-teacher
+      +modal-delivery
+      +modal-order-signature
+      +modal-order-signature-2
+      +modal-order-signature-3
+      +modal-order-signature-4
+      +modal-try-service
+      +modal-state-platforms
+      +modal-detail-services
+      +modal-become-partner
+      +modal-solve-problems
+      +modal-tender-support
+      +modal-tender-support-2
+      +modal-training
+      +modal-support-223
+      +modal-support-44
+      +modal-educational-center
+      +modal-answer
+      +modal-search
+    a.modal__close-screen(href="./", title="Закрыть", data-modal)
+        +icon('icon-close', 'modal__close-icon')

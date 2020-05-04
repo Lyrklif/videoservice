@@ -1,0 +1,82 @@
+//- Подвал сайта
+
+mixin footer()
+  footer.footer
+    .container
+      +footerList
+        +footerItem('О нас')
+          +footerSubList
+            +footerSubItemActive('1', 'ЭЦП в Москве')
+            +footerSubItem('2', 'Регламент УЦ')
+            +footerSubItem('3', 'Сертификаты УЦ')
+            +footerSubItem('4', 'Договоры-оферты')
+            +footerSubItem('5', 'Пользовательское соглашение')
+            +footerSubItem('6', 'Контроль качества (анонимно)')
+            +footerSubItem('7', 'Стать партнёром')
+            +footerSubItem('8', 'Проверка партнера УЦ')
+        +footerItem('Бесплатные Услуги')
+          +footerSubList
+            +footerSubItem('9', 'Найти торги', '#find-trades')
+            +footerSubItem('10', 'Открыть спец. счет', '#open-special-account')
+            +footerSubItem('11', 'Сравнить банковские гарантии', '#compare-bank-guarantees')
+        +footerItem('Учебный центр')
+          +footerSubList
+            +footerSubItem('12', 'Нормативная база')
+            +footerSubItem('13', 'Вопрос-Ответ')
+        +footerItem('Техподдержка')
+          +footerSubList
+            +footerSubItem('14', 'Настройка подписи', 'tech-support.html#tech-support-banner')
+            +footerSubItem('15', 'Инструкции', 'tech-support.html#tech-support-instructions')
+            +footerSubItem('16', 'Вопросы и ответы', 'tech-support.html#faq')
+            +footerSubItem('17', 'Задать вопрос', 'tech-support.html#tech-support-contacts')
+    hr
+    .container
+      .row
+        .col.col-12.col-lg-8.footer__cookie-wp
+          p.footer__cookie
+            |ООО &laquo;ИжТендер&raquo; 
+            a.footer__cookie-link(href="#") использует файлы &laquo;cookie&raquo;
+            |, с&nbsp;целью 
+            |персонализации сервисов и&nbsp;повышения удобства пользования веб-сайтом. 
+            |&laquo;Cookie&raquo; представляют собой небольшие файлы, содержащие информацию 
+            |о&nbsp;предыдущих посещениях веб-сайта. Если вы&nbsp;не&nbsp;хотите использовать 
+            |файлы &laquo;cookie&raquo;, измените настройки браузера.
+    hr
+    .container
+      .row.footer__bottom
+        .col.col-12.col-sm-3
+          small.footer__copy © 2019 ООО «Ижтендер»
+        .col.col-12.col-sm-3
+          a.footer__tel(href="tel:+73412331040", title='Телефон: 73412331040') +7 (3412) 33-10-40
+          p.footer__tel-text Наш телефон в&nbsp;Ижевске
+        .col.col-12.col-sm-3
+          a.footer__email(href="mailto:info@izhtender.ru", title='Электронная почта: info@izhtender.ru') info@izhtender.ru
+        .col.col-12.col-sm-3
+          small.footer__copy.footer__nutnet 
+            |Сделано в 
+            a.nutnet-link(href="https://nutnet.ru/" title="Nutnet" target="_blank") Nutnet
+            |, 2020
+
+
+
+
+//- *********************** 
+//- вспомогательные миксины
+mixin footerList()
+  ul.row.footer__list 
+    block
+
+mixin footerItem(text)
+  li.col.col-12.col-sm-6.col-md-3.footer__item
+    a(href="#", title=text)= text
+    block
+
+mixin footerSubList()
+  ul.footer__sublist
+    block
+
+mixin footerSubItem(number, text, link)
+    li.footer__subitem: a.footer__link(href=(link), title=text)= text
+
+mixin footerSubItemActive(number, text)
+    li.footer__subitem: span.footer__link.active= text

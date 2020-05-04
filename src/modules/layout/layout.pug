@@ -1,0 +1,51 @@
+include ../icon/icon
+include ../preloader/preloader
+include ../modal/modal
+include ../burger/burger
+include ../site/site
+include ../arrow-up/arrow-up
+
+doctype html
+html(lang="ru")
+  head
+    block head
+      -siteTitle= "Название страницы"
+      -isMainPage = ''
+      -activeItemFooter = '0'
+    title #{siteTitle} - Ижтендер
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,viewport-fit=cover")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="format-detection" content="address=no")
+    meta(name="description" content="Template")
+    meta(name="keywords" content="Template")
+    meta(name="msapplication-TileColor" content="#ffffff")
+    //- meta(name="msapplication-TileImage" content="/images/favicon-windows-144x144.png")
+    meta(name="msapplication-TileImage" content="favicon.ico")
+    meta(name="msapplication-config" content="/browserconfig.xml")
+    link(href="site.webmanifest" rel="manifest")
+    link(href="favicon.ico" rel="icon" sizes="32x32" type="image/x-icon")
+    link(href="favicon.ico" rel="icon" sizes="16x16" type="image/x-icon")
+    link(href="favicon.ico" rel="apple-touch-icon" sizes="180x180")
+    link(href="favicon.ico" rel="mask-icon" color="#5bbad5")
+    link(href="preloader/preloader.css" rel="stylesheet")
+    script(src="preloader/preloader.js" defer)
+    link(href="styles/main.css" rel="stylesheet")
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=14c70ef2-bdd4-4483-a475-0b86920a2681&lang=ru_RU" defer)
+    script(src="scripts/main.js" defer)
+    script(src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js" defer)
+    script(src="https://yastatic.net/share2/share.js" defer)
+  body.body_hidden
+    //- Ссылки на страницы сайта
+    -linkMainPage = 'http://markup.nutnetdev.ru/izhtender/'
+    //- END
+    .svg-sprite#svg-sprite(data-path="images/sprite.svg")
+    if (isMainPage)
+      +preloader
+    else
+      +preloader2
+    +site(isMainPage)
+    +modal
+    +burger
+    //- Кнопка наверх
+    +arrow-up()

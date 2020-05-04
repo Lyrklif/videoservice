@@ -1,0 +1,166 @@
+//- поле ввода (input)
+
+//- +input('typeInput', 'nameInput', 'nameId', 'placeholder', 'required')
+mixin input(typeInput, nameInput, nameId, placeholder, required)
+  //- Интервал
+  if (nameInput == 'interval' || nameInput == 'summary_end' || nameInput == 'summary_start')
+    label.input.input-interval(class!=attributes.class)
+      +inpitFluid(typeInput, nameInput, nameId, required)
+      .input-interval__designation=attributes.designation
+      span.input__placeholder=placeholder
+      span.input__error(data-error="error")
+  //- Поле поиска по сайту
+  else if (nameInput === 'search-of-site')
+    label.input.input-search(class!=attributes.class)
+      +inpitFluid(typeInput, nameInput, nameId, required)(standardPlaceholder=placeholder)
+      button.input-search__reset.js-search-reset(type="reset")
+        +icon('icon-reset', 'input-search__icon input-search__icon--reset')
+      button.input-search__start-search(type="submit")
+        +icon('icon-start-search', 'input-search__icon input-search__icon--search')
+  //- Поле поиска
+  else if (nameInput === 'search-fluid')
+    label.input.input-search(class!=attributes.class)
+      +inpitFluid(typeInput, nameInput, nameId, required)
+      span.input-search__reset.js-search-reset
+        +icon('icon-reset', 'input-search__icon input-search__icon--reset')
+      span.input-search__start-search.js-start-search
+        +icon('icon-start-search', 'input-search__icon input-search__icon--search')
+  //- Поле ИНН с проверкой
+  else if (nameInput === 'check-inn')
+    label.input.input-check-inn(class!=attributes.class)
+      +inpitFluid(typeInput, nameInput, nameId, required)
+      +icon('icon-correct', 'input-check-inn__icon')
+      span.input__placeholder=placeholder
+      span.input__error(data-error="error")
+  //- Стадартное поле
+  else
+    label.input(class!=attributes.class)
+      +inpitFluid(typeInput, nameInput, nameId, required)
+      span.input__placeholder=placeholder
+      span.input__error(data-error="error")
+
+
+
+mixin inpitFluid(typeInput, nameInput, nameId, required)
+  if required
+    -isRequired = 'true'
+    -msgRequired = 'Обязательное поле'
+  else
+    -isRequired = 'false'
+    -msgRequired = false
+
+  //- Email
+  if (typeInput == 'email')
+    -isEmail = 'true'
+    -dataEmailValidate = '^($|[a-zA-Z0-9_\\.\\+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-\\.]+)$'
+    -msgEmail = 'Пожалуйста, введите корректный адрес электронной почты'
+  else
+    -isEmail = false
+    -dataEmailValidate = false
+    -msgEmail = false
+
+  //- Интервал
+  if (nameInput == 'interval' || nameInput == 'summary_end' || nameInput == 'summary_start')
+    -dataIntervalValidate = '^[0-9 ]+$'
+    -dataMaskMoney = 'true'
+  else
+    -dataIntervalValidate = false
+    -dataMaskMoney = false
+ 
+  //- Телефон
+  if (typeInput == 'tel')
+    -isTel = 'true'
+    -dataMask = "0 (000) 000-00-00"
+    -dataTelValidate = '[\\d]{1}[\\s]\\([\\d]{3}\\)[\\s][\\d]{3}[\\-][\\d]{2}[\\-][\\d]{2}$'
+    -maxlength = '17'
+    -minlength = '17'
+    -msgTel = 'Пожалуйста, введите корректный номер телефона'
+    -dataChechMask = "true"
+  else
+    -isTel = false
+    -maxlength = '30'
+    -minlength = '3'
+    -msgTel = false
+    -dataMask = false
+    -dataTelValidate = false
+    -msgMaxlength = 'Пожалуйста, введите не больше ' + maxlength + ' символов'
+    -msgMinlength = 'Пожалуйста, введите больше ' + minlength + ' символов'
+
+  //- Ключевые слова 
+  if (nameInput == 'keyword')
+    -maxlength = '100'
+    -msgMaxlength = 'Пожалуйста, введите не больше ' + maxlength + ' символов'
+    -msgName = 'Можно вводить только буквы'
+    -msgDefault = msgName
+    -dataNameValidate = '^[A-Za-zА-Яа-яЁё\\s\,]+$'
+  else
+    -msgDefault = 'Заполните поле'
+    -dataNameValidate = false
+
+  //- Имя
+  if (nameInput == "name")
+    -msgName = 'Можно вводить только буквы'
+    -msgDefault = msgName
+    -dataNameValidate = '^[A-Za-zА-Яа-яЁё\\s]+$'
+  else if (nameInput != "name" && nameInput != "keyword")
+    -msgDefault = 'Заполните поле'
+    -dataNameValidate = false
+
+  if (nameInput == 'delivery_address' || nameInput == 'subject')
+    -maxlength = '50'
+    -msgMaxlength = 'Пожалуйста, введите не больше ' + maxlength + ' символов'
+    -msgMinlength = 'Пожалуйста, введите больше ' + minlength + ' символов'
+  else if (nameInput != 'keyword')
+    -maxlength = '30'
+    -msgMaxlength = 'Пожалуйста, введите не больше ' + maxlength + ' символов'
+    -msgMinlength = 'Пожалуйста, введите больше ' + minlength + ' символов'
+
+  //- Телефон
+  if (typeInput == 'tel')
+    -msgMaxlength = 'Пожалуйста, укажите номер из 10 цифр'
+    -msgMinlength = 'Пожалуйста, укажите номер из 10 цифр'
+  else
+    -msgMaxlength = 'Пожалуйста, введите не больше ' + maxlength + ' символов'
+    -msgMinlength = 'Пожалуйста, введите больше ' + minlength + ' символов'
+
+  //- Полное наименование учреждения
+  if (nameInput == 'institution-name')
+    -maxlength = '100'
+    -msgMaxlength = 'Пожалуйста, введите не больше ' + maxlength + ' символов'
+    -msgMinlength = 'Пожалуйста, введите больше ' + minlength + ' символов'
+
+  //- ИНН 
+  if (nameInput == 'institution-inn' || nameInput == 'check-inn')
+    -maxlength = '12'
+    -minlength = '12'
+    -msgMaxlength = 'Пожалуйста, укажите номер ИНН из ' + maxlength + ' цифр'
+    -msgMinlength = 'Пожалуйста, укажите номер ИНН из ' + maxlength + ' цифр'
+
+  //- К-во процедур || interval
+  if (nameInput == 'institution-procedure' || nameInput == 'interval' || nameInput == 'summary_end' || nameInput == 'summary_start')
+    -minlength = '1'
+    -msgMaxlength = 'Пожалуйста, введите не больше ' + maxlength + ' символов'
+    -msgMinlength = 'Пожалуйста, введите больше ' + minlength + ' символов'
+
+  input.input__fluid.js-input(type=typeInput, 
+    placeholder!=attributes.standardPlaceholder
+    name=nameInput, 
+    id=nameId, 
+    value="", 
+    data-msg=msgDefault, 
+    data-rule-required!=isRequired, 
+    data-rule-email!=isEmail, 
+    data-msg-tel!=msgTel, 
+    data-rule-tel!=isTel, 
+    data-rule-minlength=minlength, 
+    data-rule-maxlength=maxlength, 
+    data-msg-required!=msgRequired, 
+    data-msg-minlength!=msgMinlength, 
+    data-msg-maxlength!=msgMaxlength, 
+    data-msg-email!=msgEmail, 
+    data-mask!=dataMask, 
+    data-mask-money!=dataMaskMoney, 
+    data-regexp-interval!=dataIntervalValidate, 
+    data-regexp-email!=dataEmailValidate, 
+    data-regexp-tel!=dataTelValidate, 
+    data-regexp-name!=dataNameValidate)

@@ -1,0 +1,160 @@
+// Подвал сайта
+.footer {
+  color: $footer-color;
+  background-color: $footer-bg;
+
+  font-size: 12px;
+  line-height: em(14px, 12px);
+
+  @include media-breakpoint-up(md) {
+    padding-top: 20px;
+  }
+}
+
+.footer__list {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-bottom: 37px;
+}
+
+.footer__cookie-wp {
+  padding-top: .5em;
+  // padding-bottom: 0.1em;
+}
+
+.footer__cookie {
+  font-size: 1em;
+  // line-height: em(22px, 12px);
+
+  // margin-top: 1.5em;
+  // margin-bottom: 1.9em;
+}
+
+.footer__cookie-link {
+  color: $main-blue;
+}
+
+.footer__item {
+  text-transform: uppercase;
+  // font-size: 12px;
+  // line-height: em(14px, 12px);
+
+  margin-top: 40px;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 20px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    &:nth-of-type(1) {
+      order: 3;
+    }
+
+    &:nth-of-type(2) {
+      order: 1;
+    }
+
+    &:nth-of-type(3) {
+      order: 2;
+    }
+
+    &:nth-of-type(4) {
+      order: 4;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &:nth-of-type(n) {
+      order: 0;
+    }
+  }
+}
+
+.footer__sublist {
+  text-transform: none;
+  // font-size: 12px;
+  // line-height: 14px;
+  margin-top: 24px;
+}
+
+.footer__subitem {
+  margin-top: 12px;
+
+  &>.active {
+    color: $link-color-hover;
+  }
+}
+
+.footer__link {
+  cursor: pointer;
+
+  &.active {
+    cursor: default;
+  }
+}
+
+.anchor {
+  position: relative;
+  top: -70px;
+
+  @include media-breakpoint-up(sm) {
+    top: -70px;
+  }
+
+  @include media-breakpoint-up(md) {
+    top: -70px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    top: -90px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    top: -130px;
+  }
+}
+
+// **************************
+.footer__bottom {
+  margin-top: 24px;
+  // font-size: 12px;
+  // line-height: 14px;
+}
+
+.footer__copy {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 1.2em;
+
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 0;
+  }
+}
+
+.footer__tel-text {
+  margin-top: 0;
+  font-size: 1em;
+  margin-bottom: 0.8em;
+}
+
+.footer__email {
+  // margin-bottom: 1em;
+  // display: block;
+}
+
+.footer__nutnet {
+  text-align: right;
+
+  .nutnet-link {
+    cursor: pointer;
+    border-bottom: 1px solid $main-yellow;
+  }
+
+  text-align: left;
+  margin-top: 1.2em;
+
+  @include media-breakpoint-up(sm) {
+    text-align: right;
+    margin-top: 0;
+  }
+}

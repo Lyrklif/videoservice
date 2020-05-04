@@ -1,0 +1,8 @@
+include ../header/header
+include ../footer/footer
+
+mixin site(isMainPage)
+  .site
+    +header(isMainPage)
+    block page
+    +footer()

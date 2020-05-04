@@ -1,0 +1,425 @@
+// ********************************
+// Миксины для анимаций 
+// @include animateColor;
+@mixin animateColor {
+  transition: color 0.3s ease-out;
+}
+
+// @include animateBgcolor;
+@mixin animateBgcolor {
+  transition: background-color 0.3s ease-out;
+}
+
+// @include animateOpacity;
+@mixin animateOpacity {
+  transition: opacity 0.3s ease-out;
+}
+
+// @include animateTransform;
+@mixin animateTransform {
+  transition: transform 0.1s ease-out;
+}
+
+// @include animateBorder;
+@mixin animateBorder {
+  transition: border 0.3s ease-out;
+}
+
+// @include animateImageZooming;
+@mixin animateImageZooming {
+  transition: .5s ease-out;
+}
+
+// @include animateDefault;
+@mixin animateDefault {
+  transition: color 0.3s ease-out,
+    background-color 0.3s ease-out,
+    background 0.3s ease-out,
+    box-shadow 0.3s ease-out,
+    opacity 0.3s ease-out,
+    transform 0.1s ease-out,
+    border 0.3s ease-out;
+}
+
+// @include animateButton;
+@mixin animateButton {
+  transition: color 0.3s ease-out,
+    background-color 0.3s ease-out,
+    transform 0.1s ease-out,
+    border-radius 0.3s ease-out,
+    border-color 0.3s ease-out;
+}
+
+// @include animateMaxHeight;
+@mixin animateMaxHeight {
+  transition: max-height .5s;
+}
+
+// @include animateMaxHeight_hide;
+@mixin animateMaxHeight_hide {
+  transition: max-height $transitionHideState;
+}
+
+// @include animateMaxHeight_show;
+@mixin animateMaxHeight_show {
+  transition: max-height $transitionShowState;
+}
+
+// @include animateMaxWidth_hide;
+@mixin animateMaxWidth_hide {
+  transition: max-width $transitionHideState;
+}
+
+// @include animateMaxWidth_show;
+@mixin animateMaxWidth_show {
+  transition: max-width $transitionShowState;
+}
+
+// @include animateBoxShadow;
+@mixin animateBoxShadow {
+  transition: box-shadow 0.3s ease-out;
+}
+
+// @include animateInput;
+@mixin animateInput {
+  transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+}
+
+// ****************************
+// Стили заголовков
+// Заголовок h1
+@mixin h1-style() {
+  font-weight: 900;
+  font-size: 30px;
+  line-height: em(35px, 30px); // .857em
+  margin-bottom: 40px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 44px;
+    line-height: em(52px, 44px); // .846em
+  }
+}
+
+// Заголовок h2
+// @include h2-style;
+@mixin h2-style() {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: em(28px, 24px);
+  max-width: 689px;
+  margin-bottom: 30px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 34px;
+    line-height: em(40px, 34px);
+  }
+
+  @include media-breakpoint-only(lg) {
+    font-size: $h2-size-lg;
+  }
+}
+
+// Заголовок h3
+@mixin h3-style() {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: em(21px, 18px);
+  max-width: 487px;
+  margin-bottom: 30px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 24px;
+    line-height: em(34px, 24px);
+  }
+}
+
+
+// Заголовок h4
+@mixin h4-style() {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: em(19px, 16px);
+  max-width: 362px;
+  margin-bottom: 30px;
+
+  @include media-breakpoint-up(sm) {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: em(25px, 18px);
+  }
+}
+
+// Текст P1
+@mixin p-def-style() {
+  font-style: normal;
+  font-weight: normal;
+  font-size: $p-all-size-xs;
+  line-height: em(25px, $p-all-size-xs);
+  margin-bottom: em(24px, $p-all-size-xs);
+}
+
+@mixin p1-style() {
+  @include p-def-style();
+  max-width: 972px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 16px;
+    line-height: em(29px, 16px);
+  }
+
+  @include media-breakpoint-only(lg) {
+    font-size: $p2-size-lg;
+    line-height: $p2-line-height-lg;
+
+    // &>small {
+    //   font-size: 1em;
+    // }
+  }
+}
+
+@mixin p2-style() {
+  @include p-def-style();
+  max-width: 865px;
+
+  @include media-breakpoint-up(sm) {
+    // font-size: 16px;
+    font-size: 1em;
+    line-height: em(22px, 16px);
+  }
+}
+
+@mixin p3-style() {
+  @include p-def-style();
+  max-width: 865px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 14px;
+    line-height: em(25px, 14px);
+  }
+}
+
+
+// ********************************
+// Фоновое изображение
+// @include backgroundImage('name.png');
+@mixin backgroundImage($imageNameWhisExtension) {
+  background-image: url($image_dir + $imageNameWhisExtension );
+}
+
+// Ссылка
+// @include link-style;
+@mixin link-style() {
+  color: $link-color;
+
+  &.primary {
+    color: $main-blue;
+  }
+  text-decoration: none;
+  @include animateColor;
+
+  &:active {
+    color: $link-color-hover;
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    &:hover,
+    &:focus {
+      color: $link-color-hover;
+    }
+  }
+}
+
+// @include link-style-primary;
+@mixin link-style-primary() {
+  color: $main-blue;
+
+  &:active {
+    color: $link-color-hover;
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    &:hover,
+    &:focus {
+      color: $link-color-hover;
+    }
+  }
+}
+
+
+// @include card-style;
+@mixin card-style() {
+  background-color: $white;
+  border: 1px solid $main-light-grey;
+  border-radius: $border-radius;
+}
+
+// убрать стили списков
+// @include resetListStyle;
+@mixin resetListStyle() {
+  li {
+    padding-left: 0;
+
+    &:before {
+      display: none;
+    }
+  }
+}
+
+// контейнер для картинки
+// @include imgWp;
+@mixin imgWp {
+  background-color: #EDEDF1;
+  border-radius: $border-radius;
+}
+
+// кнопка
+// Шаблон кнопки
+// @include btn-template;
+@mixin btn-template() {
+  font-weight: normal;
+  border: 0;
+  background: none;
+  display: inline-block;
+  text-align: center;
+  font-size: $p-all-size-xs;
+  line-height: em(22px, 16px);
+  border-radius: 6px;
+  cursor: pointer;
+  @include animateButton();
+
+  @include media-breakpoint-up(sm) {
+    font-size: 16px;
+  }
+
+  @include media-breakpoint-only(lg) {
+    font-size: $p2-size-lg;
+  }
+}
+
+// @include btn-sizes;
+@mixin btn-sizes() {
+  // min-height: $btn-height-sm;
+
+  // @include media-breakpoint-up(sm) {
+  //   min-height: $btn-height;
+  // }
+}
+
+// @include btn-paddings;
+@mixin btn-paddings() {
+  padding-left: 40px;
+  padding-right: 40px;
+
+  padding-top: em(17px, 16px);
+  padding-bottom: em(17px, 16px);
+  // padding-top: 1em;
+  // padding-bottom: 1em;
+}
+
+// @include button-primary;
+@mixin button-primary() {
+  @include btn-sizes;
+  box-shadow: $btn-primary-box-shadow;
+  background-color: $btn-primary-bg !important;
+  color: $black !important;
+  border: 0;
+  display: inline-block;
+  text-align: center;
+
+  &:active {
+    background-color: $btn-primary-bg-hover !important;
+    color: $black !important;
+  }
+
+  @include media-breakpoint-up(sm) {
+    &:hover {
+      background-color: $btn-primary-bg-hover !important;
+      color: $black !important;
+    }
+  }
+}
+
+// @include button-skelet;
+@mixin button-skelet() {
+  @include btn-sizes;
+  border: 1px solid $btn-skelet-border-color;
+  color: $btn-skelet-color !important;
+  border-radius: 6px;
+  display: inline-block;
+  text-align: center;
+
+  &:active {
+    border-color: $btn-skelet-border-color-hover;
+    color: $btn-skelet-color !important;
+  }
+
+  @include media-breakpoint-up(sm) {
+    &:hover {
+      border-color: $btn-skelet-border-color-hover;
+      color: $btn-skelet-color !important;
+    }
+  }
+}
+
+// @include button-triangular;
+@mixin button-triangular() {
+  position: relative;
+  padding: 7px 14px 6px 4px;
+  height: 36px;
+
+  margin-left: 15px;
+  border-radius: 0 6px 6px 0;
+
+  border-color: #aeb6cc;
+  border-left: 0 solid transparent;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -15px;
+    top: 1px;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #aeb6cc;
+    border-right: 1px solid transparent;
+    border-top: 1px solid transparent;
+    // border-radius: 6px 4px 6px 9px;
+    border-radius: 11px 0 11px 8px;
+    transform: rotate(45deg);
+    @include animateBorder;
+  }
+
+
+  &:active {
+    &:after {
+      border-color: #F6BF46;
+      border-right: 1px solid transparent;
+      border-top: 1px solid transparent;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    &:hover {
+      &:after {
+        border-color: #F6BF46;
+        border-right: 1px solid transparent;
+        border-top: 1px solid transparent;
+      }
+    }
+  }
+}
+
+
+// плавное отображение
+@keyframes sweep {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

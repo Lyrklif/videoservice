@@ -1,0 +1,56 @@
+# VARIABLES IN GITLAB:
+# PROJECT_NAME - name dir for project in markup. default: "name repository"
+# USER - username to connect via ssh
+# HOST - host name to connect vie ssh
+# SYNC_DIR - synchronized directory. default: build
+# SSH_PRIVATE_KEY :
+#  -----BEGIN RSA PRIVATE KEY-----
+#  MIIEpAIBAAKCAQEAtRMHFSI9UznZ5sY2zHZ8GiNwElxw9joJ7m1XH92Yln8VsnJU
+#  Q2Q8Zw48FzEwayB44/aqor+G1cu9cFprrKR6ctXBOxl0Fn5TSgCjM7ry2/DyHaDs
+#  p4T/cumiLisYergL3FAe5X52PusaZdZGCnj/dHYUfC+1mi07d89B67uj/uETfrRP
+#  iwyWIdH+/1cpq++aRKqjRpvEO6CXsQwmSvfxIQTYqxv0vmnhSuMB7z2gCVf4Y8ld
+#  stAdPLZSHsCRSgk14vXxE8nSGR6zzXinJfC+xOAtPDyt9/BJ6NKMHN1MYynraM4L
+#  Z7mIjls30O7UR7pL22mGKu3WFA0uzGoQ4PTibwIDAQABAoIBAHILqvFPoGpTzH9C
+#  Jm9+zMk1ureFy4v5oBmweihSzHE1V7gNtC7B6h1KZOSCkalXSWzjBjP9B3KOoSEr
+#  ghe5fHnpUYvkiy5DoDfC0Qea3q1SQ1wP6B3WcYGxzvjfIcrhMm8vc1Y94UHdl8G+
+#  RF0COnriiCJzdiDGDmd2fWF4zGCR2PYTJIHyrr553K9M8vsOEAwywgmQ5O3Qpwrz
+#  FDYblIcTFjlBV/pX8jV3TGomREv98ijGMn9eKCms1o2aVdaaIwQlQfGpDeNrvBm3
+#  Md6iy4YcOBZ1GfMz+ne6ZcYfnCat6KbNKr4yfbL0WWk55eMdUqF1zf59Q4vw1Bbk
+#  JChaVuECgYEA3pfAP3o82V6qQB5aqpWGTsgVMyHq+YvyeypRJMS2IQH/qELg3Y0t
+#  1SvsI87aNYRxgpsx9HZLdHaZWxxcnxqLXlgWkaWwaNNM5r4cxewKE/dFl4SVRbE+
+#  i1DgOyIz0jhXHYMpncp/T1lhy3X1Ia3ktCGNDK3p0EiRDxySfbZrydECgYEA0EAY
+#  FiljigXURzEOcXr2ziet9yvZHssbo8BA2BmhXP7dg1aTj4mzS8aWv/N08kXsca+O
+#  1pYqAFdKIfSZDRC8apPoPCD4n8EeHp6l6mf75uBV4lBqDGRA5RqEoxP4UlFQDTil
+#  Ed81heK93o/Ik71brOHkd1QGbC6zv9SbKsVguD8CgYEAjLtO/hMvw5K5ez51vmI4
+#  /zg7Rw/LuyjDDyHrGZ8RM39K/zwBZbHr51oUu3L9vVZWWef7Rn9AJ4sQXG1rFeC3
+#  etegtUcXaL8nYL+T+4LHwGXW5vwZUG3GiFiC3IA8WU3rrioONsgfg7CURwn2COwj
+#  q8uGnRybtmca533+FGMwdPECgYEAgR5cUNFUsC0xEvrtk5rED8o2aLw9IISaHIuF
+#  KPerPvee7GHvl92u11rH+Te/2L9V/J73F0F/xTpZ8nevtZQc3o/aO/3NaW/Zdu6y
+#  vIXAf8O0PF/TgN9gBSzN9Dbbjl5wHeJzJoOYseyGAMpxeHi9sJFWkE3+tXC3bkcp
+#  9fjvIQ0CgYAvx9Ub3Fyz7qmQ6oG8Wy7+iaRqfOJi3yzo8FMVb8UThwqiKZPMXn9G
+#  UeaPbcwfiHBmSWPDln0Tc4L1CrVnaEOpRwVDAsnriIsJe0RlAAawKNbsre0PqLsh
+#  1ACenwQBjzbogR0BkoYWDbKRAXgDFmAEpTOsEXM+rTSg2oamO2JMSA==
+#  -----END RSA PRIVATE KEY-----
+
+image: alpine:latest
+
+stages:
+  - deploy
+
+deploy:rsync:
+  stage: deploy
+  variables:
+    MARKUP_DIR: "/home/nutnetdevelop/markup.nutnetdev.ru/"
+  script:
+    - apk --update add openssh-client bash rsync
+    - bash
+    - if [ "$PROJECT_NAME" ]; then PROJECT_DIR="$MARKUP_DIR$PROJECT_NAME"; else PROJECT_DIR="$MARKUP_DIR$CI_PROJECT_NAME"; fi;
+    - if [ -z "$SYNC_DIR" ]; then SYNC_DIR="build/"; else SYNC_DIR="${SYNC_DIR}/"; fi;
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh $USER@$HOST "mkdir -p $PROJECT_DIR"
+    - rsync -r --delete $SYNC_DIR $USER@$HOST:$PROJECT_DIR/$CI_COMMIT_REF_NAME
+    - ssh $USER@$HOST "find $PROJECT_DIR/ -maxdepth 1 -type d -mtime +60 -not -name 'master' -not -path $PROJECT_DIR/ -exec rm -rf {} +; exit;"

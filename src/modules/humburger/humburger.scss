@@ -1,0 +1,97 @@
+// humburger - кнопка открытия меню в мобильной версии
+
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+
+  // width: 20px;
+  width: 35px;
+  // height: 16px;
+  height: 30px;
+  // max-width: 20px;
+  max-width: 35px;
+  height: 100%;
+  // padding: 0;
+  padding: .23em;
+  margin: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: -.23em;
+
+  @media (pointer:coarse) {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    outline: none !important;
+    background: none !important;
+  }
+
+  &:hover, &:active {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+  }
+}
+
+.hamburger-box {
+  width: 20px;
+  height: 16px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -3px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 20px;
+  height: 2px;
+  background-color: $humburger-color;
+  border-radius: 3px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  bottom: -8px;
+}
+
+.hamburger--slider .hamburger-inner {
+  top: 2px;
+}
+
+.hamburger--slider .hamburger-inner::before {
+  top: 8px;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+}
+
+.hamburger--slider .hamburger-inner::after {
+  top: 16px;
+}

@@ -1,0 +1,16 @@
+extends ../modules/layout/layout.pug
+
+block page
+  .page
+    .container.content
+      h1 Видеосервис
+      h2 Навигация по страницам
+      ul
+        li: a(href="./home.html", title="Главная страница (Фильмы)") Главная страница (Фильмы)
+        li: a(href="./home.html", title="Главная страница (Телеканалы)") Главная страница (Телеканалы)
+        li: a(href="./style.html", title="Стилевая") Стилевая
+      h2 Модальные окна
+      ul
+        li:  a(href="#authorize", data-modal="authorize", title="Вход") Вход
+        li:  a(href="#empty", data-modal="empty", title="Пустая модалка") Пустая модалка
+
