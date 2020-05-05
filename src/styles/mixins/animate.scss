@@ -3,11 +3,11 @@
 // Миксины для анимаций 
 // @include animateColor;
 @mixin animateColor {
-  transition: color 0.3s ease-out;
+  transition: color $easing;
 }
 
 
 // @include animateOpacity;
 @mixin animateOpacity {
-  transition: opacity 0.3s ease-out;
+  transition: opacity $easing;
 }

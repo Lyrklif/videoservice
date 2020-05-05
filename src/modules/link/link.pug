@@ -1,0 +1,16 @@
+//- link
+
+
+mixin link(title, href)
+  a.link(title=title href=href || '#')&attributes(attributes)
+    block
+
+
+mixin link-primary(title, href)
+  a.primary(title=title href=href || '#')&attributes(attributes)
+    block
+
+
+mixin link-secondary(title, href)
+  a.secondary(title=title href=href || '#')&attributes(attributes)
+    block

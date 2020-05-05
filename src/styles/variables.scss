@@ -33,8 +33,26 @@ $gray: #F2F2F2;
 $default-white: #ffffff;
 $default-black: #000000;
 
+$primary-dark: #CC221B;
 
 $border-radius: 8px;
+
+$easing: 0.3s ease-out;
+
+
+// Ссылки
+$link-color: $black;
+$link-color-hover: $primary;
+
+$link-primary-color: $primary;
+$link-primary-color-hover: $primary-dark;
+
+$link-secondary-color: $blue;
+$link-secondary-color-hover: $primary;
+
+
+
+
 
 
 
