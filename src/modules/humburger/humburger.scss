@@ -1,28 +1,18 @@
 // humburger - кнопка открытия меню в мобильной версии
 
-.hamburger {
-  display: inline-block;
-  cursor: pointer;
-  transition-property: opacity, filter;
-  transition-duration: 0.15s;
-  transition-timing-function: linear;
-  color: inherit;
-  text-transform: none;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  overflow: visible;
 
-  width: 35px;
-  height: 30px;
-  max-width: 35px;
-  height: 100%;
-  padding: .23em;
-  margin: 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-right: -.23em;
+
+
+.hamburger {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
 
   @media (pointer:coarse) {
     -webkit-tap-highlight-color: transparent;
@@ -31,62 +21,41 @@
     background: none !important;
   }
 
-  &:hover, &:active {
+
+  &:hover,
+  &:active {
     -webkit-tap-highlight-color: transparent;
     -webkit-appearance: none;
   }
+
+
+  &:active {
+    .hamburger__line {
+      background-color: $primary;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    &:hover,
+    &:focus {
+      .hamburger__line {
+        background-color: $primary;
+      }
+    }
+  }
 }
 
-.hamburger-box {
-  width: 20px;
-  height: 16px;
-  display: inline-block;
-  position: relative;
-}
 
-.hamburger-inner {
+
+.hamburger__line {
   display: block;
-  top: 50%;
-  margin-top: -3px;
-}
-
-.hamburger-inner,
-.hamburger-inner::before,
-.hamburger-inner::after {
   width: 20px;
   height: 2px;
-  border-radius: 3px;
-  position: absolute;
-  transition-property: transform;
-  transition-duration: 0.15s;
-  transition-timing-function: ease;
-}
+  background-color: $black;
 
-.hamburger-inner::before,
-.hamburger-inner::after {
-  content: "";
-  display: block;
-}
+  margin-top: 2px;
+  margin-bottom: 2px;
 
-.hamburger-inner::before {
-  top: -8px;
-}
-
-.hamburger-inner::after {
-  bottom: -8px;
-}
-
-.hamburger--slider .hamburger-inner {
-  top: 2px;
-}
-
-.hamburger--slider .hamburger-inner::before {
-  top: 8px;
-  transition-property: transform, opacity;
-  transition-timing-function: ease;
-  transition-duration: 0.15s;
-}
-
-.hamburger--slider .hamburger-inner::after {
-  top: 16px;
+  transition: background-color $easing;
 }

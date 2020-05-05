@@ -1,12 +1,17 @@
 
 
 
-mixin btn(alt)
-  button.btn(alt!=alt title!=alt)&attributes(attributes)
-    block
+//- +btn('title', 'href')
+mixin btn(title, href)
+  if href
+    a.btn(href!=href title!=title)&attributes(attributes): block
+  else
+    button.btn(title!=title)&attributes(attributes): block
 
 
-
-mixin btn-contained(alt)
-  button.btn-contained(alt!=alt title!=alt)&attributes(attributes)
-    block
+//- +btn-contained('title', 'href')
+mixin btn-contained(title, href)
+  if href
+    a.btn-contained(href!=href title!=title)&attributes(attributes): block
+  else
+    button.btn-contained(title!=title)&attributes(attributes): block

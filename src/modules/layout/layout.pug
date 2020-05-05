@@ -36,13 +36,10 @@ html(lang="ru")
 
   body.body_hidden
     //- Ссылки на страницы сайта
-    -linkMainPage = 'https://github.com/Lyrklif/videoservice'
+    -linkMainPage = 'https://lyrklif.github.io/videoservice/home.html'
     //- END
     .svg-sprite#svg-sprite(data-path="images/sprite.svg")
-    if (isMainPage)
-      +preloader
-    else
-      +preloader2
+    +preloader
     +site(isMainPage)
     +modal
     +burger

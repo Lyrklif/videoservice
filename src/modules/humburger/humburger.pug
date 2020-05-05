@@ -1,7 +1,10 @@
 //- humburger - кнопка открытия меню в мобильной версии
 
+
+
+
 mixin humburger
-  button.hamburger.hamburger--slider(data-burger="data-burger", class!=attributes.class)
-    span.hamburger-box
-      span.hamburger-inner
-    span.burder-open-btn__line
+  button.hamburger(data-burger="data-burger" title="Открыть мобильную версию меню")&attributes(attributes)
+    span.hamburger__line
+    span.hamburger__line
+    span.hamburger__line
