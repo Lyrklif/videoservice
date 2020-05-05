@@ -1,6 +1,6 @@
 body {
   font: 16px/1.5 $font-family;
-  color: $main-black;
+  color: $black;
   -webkit-text-size-adjust: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -19,4 +19,9 @@ a {
 
 h2 {
   @include h2-style;
+}
+
+
+h3 {
+  @include h3-style;
 }

@@ -4,10 +4,10 @@
 // Ссылка
 // @include link-style;
 @mixin link-style() {
-  color: $link-color;
+  // color: $link-color;
 
   &.primary {
-    color: $main-blue;
+    // color: $blue;
   }
 
   text-decoration: none;
@@ -24,7 +24,7 @@
 
 // @include link-style-primary;
 @mixin link-style-primary() {
-  color: $main-blue;
+  color: $blue;
 
   &:active {}
 

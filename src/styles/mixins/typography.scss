@@ -18,7 +18,11 @@
 
 
 // Заголовок h3
-@mixin h3-style() {}
+// @include h3-style;
+@mixin h3-style() {
+  font-size: 20px;
+  line-height: em(20px, 24px);
+}
 
 
 // Заголовок h4
