@@ -1,37 +1,59 @@
-// link
 
 
 // Ссылка
 // @include link-style;
 @mixin link-style() {
-  // color: $link-color;
-
-  &.primary {
-    // color: $blue;
-  }
-
-  text-decoration: none;
+  color: $link-color;
   @include animateColor;
 
-  &:active {}
+  &:active {
+    color: $link-color-hover;
+  }
 
   @include media-breakpoint-up(sm) {
 
     &:hover,
-    &:focus {}
+    &:focus {
+      color: $link-color-hover;
+    }
   }
 }
+
+
 
 // @include link-style-primary;
 @mixin link-style-primary() {
-  color: $blue;
+  color: $link-primary-color;
+  @include animateColor;
 
-  &:active {}
+  &:active {
+    color: $link-primary-color-hover;
+  }
 
   @include media-breakpoint-up(sm) {
 
     &:hover,
-    &:focus {}
+    &:focus {
+      color: $link-primary-color-hover;
+    }
   }
 }
 
+
+// @include link-style-secondary;
+@mixin link-style-secondary() {
+  color: $link-secondary-color;
+  @include animateColor;
+
+  &:active {
+    color: $link-secondary-color-hover;
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    &:hover,
+    &:focus {
+      color: $link-secondary-color-hover;
+    }
+  }
+}

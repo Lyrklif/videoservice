@@ -1,7 +1,7 @@
 //- img
 
-mixin img(fileName)
+mixin img(fileName, alt)
   - const url = `images/${fileName}`
   - const url2x = url.replace(/(\.\w+$)/, '@2x$1')
 
-  img(src=url srcset=`${url2x} 2x`)&attributes(attributes)
+  img(src=url srcset=`${url2x} 2x` alt=alt)&attributes(attributes)

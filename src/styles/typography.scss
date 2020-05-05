@@ -9,12 +9,9 @@ body {
 
 
 a {
-  @include link-style();
-
-  // &.primary {
-  //   @include link-style-primary;
-  // }
+  text-decoration: none;
 }
+
 
 
 h2 {
