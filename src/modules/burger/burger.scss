@@ -3,7 +3,7 @@
   max-width: 100%;
   height: 100%;
   position: fixed;
-  background-color: $white;
+  background-color: $default-white;
   z-index: 800;
   transform: translateX(100%);
   right: 0;
@@ -20,7 +20,7 @@
 
   &_active {
     transform: none;
-    box-shadow: 2px 0 10px 0 rgba($black, .25);
+    box-shadow: 2px 0 10px 0 rgba($default-black, .25);
   }
 
   hr {

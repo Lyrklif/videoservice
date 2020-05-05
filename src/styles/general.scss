@@ -1,14 +1,12 @@
-// *******************************
 * {
-  outline: none;
+  // outline: none;
 
   &::before,
   *::after {
-    outline: none;
+    // outline: none;
   }
 }
 
-/* way the hell off screen */
 .scrollbar-measure {
   width: 100px;
   height: 100px;
@@ -32,7 +30,20 @@ img {
   height: 30px;
 }
 
+.container {
+  width: 100%;
+  max-width: calc(100% - #{$grid-gap} * 2);
+  margin-left: auto;
+  margin-right: auto;
 
+  @include media-breakpoint-up(sm) {
+    max-width: $grid-width;
+  }
+
+  @include media-breakpoint-up(xl) {
+    max-width: $grid-width-xl;
+  }
+}
 
 
 ul,
@@ -40,10 +51,14 @@ ol {
   @include resetListStyle;
 }
 
+
+
 // Скрытый заголовок
 .meta-title {
   display: none;
 }
+
+
 
 input,
 textarea {
@@ -52,7 +67,9 @@ textarea {
   appearance: none;
 }
 
-// *** убрать стрелки
+
+
+// убрать стрелки
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none !important;
@@ -69,8 +86,8 @@ textarea {
 }
 
 
-// *********************
-// *** Скрыть скроллбар
+
+// Скрыть скроллбар
 .hide-scrollbar {
 
   &::-webkit-scrollbar {
@@ -94,13 +111,7 @@ textarea {
 
 }
 
-// **************************
 
-.container-fluid {
-  overflow-x: hidden;
-}
-
-// ***************
 // размываются только изображения, которых нет в кэше
 .mediabox-img {
   font-family: "blur-up: auto", "object-fit: cover";

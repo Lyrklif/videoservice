@@ -1,5 +1,4 @@
-// ********************************
 // Функция перевода px в em. 
 @function em($pixels, $context: $browser-context) {
-    @return #{$pixels/$context}em;
+  @return #{$pixels/$context}em;
 }

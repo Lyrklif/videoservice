@@ -1,70 +1,39 @@
-@import 'variables'; // переменные
-@import '../../node_modules/bootstrap/scss/functions'; // функции bootstrap
-@import '../../node_modules/bootstrap/scss/variables'; // переменные bootstrap
-@import '../../node_modules/bootstrap/scss/mixins'; // миксины bootstrap
+@import '../../node_modules/normalize.css/normalize';
 
-@import '../../node_modules/normalize.css/normalize'; // сброс стилей
-@import 'mixins'; // миксины
-@import 'functions'; // функции
+@import 'variables'; // переменные
+@import 'node_modules/sass-breakpoints-mixins/breakpoints'; // breakpoints mixins
+
+
+@import 'mixins/base'; // основные миксины
+@import 'mixins/typography'; // текст
+@import 'mixins/animate'; // анимации
+@import 'mixins/link'; // ссылки
+@import 'keyframes/sweep'; // opacity 0%-100%
+@import 'functions/em'; // px to em
+
+
+
 @import 'fonts'; // шрифты
 @import 'typography'; // стилизация текста
+
+
 @import '../modules/layout/layout'; // шаблон страницы
-@import '../../node_modules/bootstrap/scss/grid'; // сетка bootstrap
-@import '../../node_modules/bootstrap/scss/utilities/display';
-@import '../../node_modules/jquery.scrollbar/sass/jquery.scrollbar'; // scrollbar
 @import 'general'; // основные стили
+@import '../modules/site/site'; // страница сайта (шапка, контент, подвал)
+
+
+@import '../../node_modules/jquery.scrollbar/sass/jquery.scrollbar'; // scrollbar
+
+
 
 @import '../modules/icon/icon'; // svg иконка
-// @import '../modules/preloader/preloader'; // логотип preloader
-// @import '../modules/animations/preloader'; // анимация логотипа preloader
 @import '../modules/modal/modal'; // модальное окно
-
-@import '../modules/site/site'; // страница сайта (шапка, контент, подвал)
 @import '../modules/humburger/humburger'; // humburger - кнопка открытия меню в мобильной версии
-@import '../modules/header/header'; // шапка сайта
-@import '../modules/footer/footer'; // подвал сайта
 @import '../modules/burger/burger'; // burger menu в мобильной версии
-
-
-
-
-
-// ********* Основные элементы и стили главной страницы
 @import '../modules/input/input.scss'; // поле ввода (input)
 
 
-/*  
-Шпаргалка
-***********
-@include media-breakpoint-up(sm) {}
-@include media-breakpoint-up(md) {}
-@include media-breakpoint-up(lg) {}
-@include media-breakpoint-up(xl) {}
-*** ***
-@include media-breakpoint-up(sm)
-@include media-breakpoint-down(sm)
-@include media-breakpoint-only(sm)
-@include media-breakpoint-between(sm, md)
-***********
-Ленивая загрузка изображений 
-srcImgLQIP - размытое изображение низкого качества
-srcImg - само изображение
-img.lazyload.mediabox-img(src=srcImgLQIP, data-src=srcImg)
+// отдельные блоки
+@import '../modules/header/header'; // шапка сайта
+@import '../modules/footer/footer'; // подвал сайта
 
-Если это фоновое изображение, то в scss прописать:
-background-color: [какой-то цвет];
-&.lazyloaded {
-    background-image: url($image_dir + 'image-name.png' );
-}
-***********
-font-weight 
-100	- Thin (Hairline) - Тонкий (Волосяной) 
-200	- Extra Light (Ultra Light) - Дополнительный светлый (Сверхсветлый) 
-300	- Light - Светлый
-400	- Normal - Нормальный
-500	- Medium - Средний
-600	- Semi Bold (Demi Bold) - Полужирный
-700	- Bold Жирный
-800	- Extra Bold (Ultra Bold) - Дополнительный жирный (Сверхжирный) 
-900	- Black (Heavy) - Черный (Густой) 
-*/

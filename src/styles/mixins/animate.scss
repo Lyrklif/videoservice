@@ -1,0 +1,13 @@
+// animate
+
+// Миксины для анимаций 
+// @include animateColor;
+@mixin animateColor {
+  transition: color 0.3s ease-out;
+}
+
+
+// @include animateOpacity;
+@mixin animateOpacity {
+  transition: opacity 0.3s ease-out;
+}

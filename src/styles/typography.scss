@@ -1,38 +1,12 @@
 body {
   font: 16px/1.5 $font-family;
-  color: $main-black;
+  color: $black;
   -webkit-text-size-adjust: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-style: normal;
-}
-
-h1 {
-  @include h1-style();
-}
-
-h2 {
-  @include h2-style();
-}
-
-h3 {
-  @include h3-style();
-}
-
-h4 {
-  @include h4-style();
-}
-
-p {
-  
-}
 
 a {
   @include link-style();
@@ -43,6 +17,11 @@ a {
 }
 
 
-button {
-  @include btn-template;
+h2 {
+  @include h2-style;
+}
+
+
+h3 {
+  @include h3-style;
 }

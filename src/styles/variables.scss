@@ -1,38 +1,75 @@
-$grid-gutter-width-xs: 40px;
-$grid-gutter-width-md: 20px;
-$grid-gutter-width-lg: 32px;
-$grid-gutter-width: 32px; // ширина отступов между столбцами сетки
-
-
-$container-max-widths: (md: 687px + $grid-gutter-width-md,
-  lg: 897px + $grid-gutter-width-lg,
-  xl: 1312px + $grid-gutter-width-lg, // старое значение (для подгона к макету значений в %)
-);
-
 $grid-breakpoints: (xs: 0,
-  ssm: 400px,
   sm: 576px,
   md: 768px,
-  lg: 1024px,
-  xl: 1440px,
-);
+  lg: 992px,
+  xl: 1200px) !default;
 
-// Шрифты
-$font-family: 'Roboto',
+
+$grid-gap: 20px;
+$grid-width: 90%;
+$grid-width-xl: 1180px;
+
+
+// Шрифт
+$font-family: 'Rubik',
+'Roboto',
 'Helvetica',
 'Arial',
 sans-serif;
 
+
 // Путь к директории изображений для подключения через scss
 $image_dir: '../images/';
 
-// Основные цвета сайта
-$main-black: #0F1112;
-$main-yellow: #F6BF46;
-$main-dark-grey: #828282;
-$main-light-grey: #E0E0E0;
-$main-white: #ffffff;
-$main-blue: #5C6D99;
 
+// Основные цвета сайта
+$black: #333333;
 $white: #ffffff;
-$black: #000000;
+
+$primary: #E5261E;
+$blue: #1F4766;
+$gray: #F2F2F2;
+
+$default-white: #ffffff;
+$default-black: #000000;
+
+
+$border-radius: 8px;
+
+
+
+/*  
+Шпаргалка
+***********
+@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(xl) {}
+*** ***
+@include media-breakpoint-up(sm)
+@include media-breakpoint-down(sm)
+@include media-breakpoint-only(sm)
+@include media-breakpoint-between(sm, md)
+***********
+Ленивая загрузка изображений 
+srcImgLQIP - размытое изображение низкого качества
+srcImg - само изображение
+img.lazyload.mediabox-img(src=srcImgLQIP, data-src=srcImg)
+
+Если это фоновое изображение, то в scss прописать:
+background-color: [какой-то цвет];
+&.lazyloaded {
+    background-image: url($image_dir + 'image-name.png' );
+}
+***********
+font-weight 
+100	- Thin (Hairline) - Тонкий (Волосяной) 
+200	- Extra Light (Ultra Light) - Дополнительный светлый (Сверхсветлый) 
+300	- Light - Светлый
+400	- Normal - Нормальный
+500	- Medium - Средний
+600	- Semi Bold (Demi Bold) - Полужирный
+700	- Bold Жирный
+800	- Extra Bold (Ultra Bold) - Дополнительный жирный (Сверхжирный) 
+900	- Black (Heavy) - Черный (Густой) 
+*/

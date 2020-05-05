@@ -16,15 +16,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/nutnet/izhtender-markup.git"
+    "url": "https://github.com/Lyrklif/videoservice"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/nutnet/izhtender-markup/issues"
+    "url": "https://github.com/Lyrklif/videoservice/issues"
   },
-  "homepage": "https://gitlab.com/nutnet/izhtender-markup#readme",
+  "homepage": "https://github.com/Lyrklif/videoservice#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-transform-object-assign": "^7.2.0",
@@ -146,6 +146,7 @@
     "plugin": "^0.3.3",
     "sa-polyfills": "^1.1.2",
     "sa-source": "^1.1.7",
+    "sass-breakpoints-mixins": "^1.0.0",
     "slick-carousel": "^1.8.1",
     "yo": "^3.1.0"
   }

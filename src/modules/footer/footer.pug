@@ -1,6 +1,15 @@
 //- Подвал сайта
 
+include ../icon/icon
+
 mixin footer()
   footer.footer
     .container
-      p Footer
+      a(href="https://htc-cs.ru/" title="Центр Высоких Технологий")
+        +icon('htc-logo')
+      p 426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК&nbsp;&laquo;Металлург&raquo;)
+      p
+        a(href="tel:+73412938861" title="Позвонить по номеру +7 (3412) 93-88-61") +7 (3412) 93-88-61
+        |, 
+        a(href="tel:432929" title="Позвонить по номеру 43-29-29") 43-29-29
+      a(href="https://htc-cs.ru/" title="Центр Высоких Технологий") htc-cs.ru

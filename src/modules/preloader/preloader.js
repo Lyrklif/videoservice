@@ -38,7 +38,6 @@ import {
 //     // enableBodyScroll(this.preloader);
 //     this.html.classList.remove('modalOpen');
 
-//     window.globalSpecifyCity.start();
 //   }
 // }
 
