@@ -2,6 +2,7 @@ extends ../modules/layout/layout.pug
 include ../modules/input/input
 include ../modules/icon/icon
 include ../modules/link/link
+include ../modules/btn/btn
 
 block page
   .page
@@ -32,3 +33,12 @@ block page
       p
         +link-secondary('синяя сылка')
           |синяя сылка
+      hr
+      p
+        button кнопка без доп. стилей
+      p
+        +btn('кнопка с красным фоном')
+          |кнопка с красным текстом
+      p
+        +btn-contained('кнопка с красным фоном')
+          |кнопка с красным фоном

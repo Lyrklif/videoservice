@@ -1,0 +1,54 @@
+%btn-default {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: em(19px, 16px);
+  min-height: em(38px, 16px);
+  padding: em(9px, 16px) em(32px, 16px);
+}
+
+
+
+// @include btn;
+@mixin btn () {
+  @extend %btn-default;
+
+  color: $btn-color;
+  transition: color $easing;
+
+  &:active {
+    color: $btn-color-hover;
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    &:hover,
+    &:focus {
+      color: $btn-color-hover;
+    }
+  }
+}
+
+
+
+// @include btn-contained;
+@mixin btn-contained () {
+  @extend %btn-default;
+
+  background-color: $btn-contained-bg;
+  color: $btn-contained-color;
+
+  transition: background-color $easing;
+
+
+  &:active {
+    background-color: $btn-contained-bg-hover;
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    &:hover,
+    &:focus {
+      background-color: $btn-contained-bg-hover;
+    }
+  }
+}
