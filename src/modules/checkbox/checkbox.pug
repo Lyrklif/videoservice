@@ -1,0 +1,8 @@
+//- checkbox
+
+
+mixin checkbox(checked)
+  label.checkbox
+    input.checkbox__input(type="checkbox", name="", checked!=checked)
+    span.checkbox__text
+      block

@@ -4,6 +4,7 @@ include ../modules/icon/icon
 include ../modules/link/link
 include ../modules/btn/btn
 include ../modules/input/input
+include ../modules/checkbox/checkbox
 
 block page
   .page
@@ -58,4 +59,12 @@ block page
       +input("password", 'input-password', 'Пароль')
       +input("text", 'input-text', 'Логин')
       +input("text", 'input-text', 'Поиск...')
+      hr
+      h2 Чекбокс
+      p
+        +checkbox()
+          |Выбрать
+      p
+        +checkbox('checked')
+          |Выбрать
       hr
