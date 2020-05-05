@@ -4,13 +4,13 @@
 @import 'node_modules/sass-breakpoints-mixins/breakpoints'; // breakpoints mixins
 
 
+@import 'functions/em'; // px to em
+@import 'keyframes/sweep'; // opacity 0%-100%
 @import 'mixins/base'; // основные миксины
 @import 'mixins/typography'; // текст
 @import 'mixins/animate'; // анимации
 @import 'mixins/link'; // ссылки
 @import 'mixins/btn'; // btn
-@import 'keyframes/sweep'; // opacity 0%-100%
-@import 'functions/em'; // px to em
 
 
 
