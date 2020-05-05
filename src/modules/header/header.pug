@@ -11,7 +11,7 @@ mixin header(isMainPage)
   else 
     mixin logo
       a.header__logo.logo-link(href=linkMainPage, title="Логотип"): +icon("logotype", "logotype")
-  header.header.js-header
+  header.header.container.js-header
     +logo
     form(action="" method="")
       input(type="text" placeholder="Поиск...")
