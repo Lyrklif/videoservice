@@ -1,19 +1,31 @@
+//- Шапка сайта
+
+
 include ../icon/icon
 include ../humburger/humburger
+include ../link/link
+include ../btn/btn
+include ../input/input
 
 
-//- Шапка сайта
+
+
+
 mixin header(isMainPage)
-  //- Если это главная страница, то лого обёрнуто в ссылку, если нет - в div
   if (isMainPage)
     mixin logo
       .header__logo: +icon("logotype", "logotype")
   else 
     mixin logo
-      a.header__logo.logo-link(href=linkMainPage, title="Логотип"): +icon("logotype", "logotype")
-  header.header.container.js-header
+      +link("Видеосервис", linkMainPage)(class="header__logo")
+        +icon("logotype", "logotype")
+  
+  
+  header.header.container
     +logo
-    form(action="" method="")
-      input(type="text" placeholder="Поиск...")
-      button Найти
-    a(href="#authorize" data-modal="authorize") Войти
+    form.header__form(action="" method="")
+      +input('text', 'search', 'Поиск...')(class="header__search")
+      +btn('Найти')
+        |Найти
+    +btn-contained('Войти', '#authorize')(data-modal="authorize" class="header__authorize")
+      |Войти

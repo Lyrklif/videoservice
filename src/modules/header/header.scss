@@ -1,0 +1,39 @@
+// Шапка сайта
+
+
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+
+.header__logo {
+  height: 36px;
+  width: 182px;
+  flex-shrink: 0;
+  display: block;
+}
+
+
+
+.header__form {
+  display: flex;
+  align-items: center;
+  margin-right: 36px;
+}
+
+
+.header__search {
+  width: 320px;
+
+}
+
+
+.header__authorize {
+  margin-top: 2px;
+}

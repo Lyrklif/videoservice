@@ -40,7 +40,11 @@ input {
   border-bottom: 1px solid $input-border-color;
 
   transition: color $easing;
-  min-height: em(25px, 16px);
+  height: em(25px, 16px);
+
+  padding-bottom: 6px;
+
+  vertical-align: sub;
 
   &::placeholder {
     color: $input-color;
