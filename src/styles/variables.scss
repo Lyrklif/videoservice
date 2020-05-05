@@ -60,6 +60,18 @@ $btn-contained-bg: $primary;
 $btn-contained-bg-hover: $primary-dark;
 
 
+// input
+$input-color: #828282;
+$input-color-hover: $black;
+
+$input-border-color: $black;
+
+
+
+
+
+
+
 
 
 /*  
@@ -74,18 +86,8 @@ $btn-contained-bg-hover: $primary-dark;
 @include media-breakpoint-down(sm)
 @include media-breakpoint-only(sm)
 @include media-breakpoint-between(sm, md)
-***********
-Ленивая загрузка изображений 
-srcImgLQIP - размытое изображение низкого качества
-srcImg - само изображение
-img.lazyload.mediabox-img(src=srcImgLQIP, data-src=srcImg)
 
-Если это фоновое изображение, то в scss прописать:
-background-color: [какой-то цвет];
-&.lazyloaded {
-    background-image: url($image_dir + 'image-name.png' );
-}
-***********
+************
 font-weight 
 100	- Thin (Hairline) - Тонкий (Волосяной) 
 200	- Extra Light (Ultra Light) - Дополнительный светлый (Сверхсветлый) 

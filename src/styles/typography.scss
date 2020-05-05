@@ -13,12 +13,45 @@ a {
   cursor: pointer;
 }
 
+
 button {
   background: none;
   box-shadow: none;
   border: none;
   user-select: none;
   cursor: pointer;
+}
+
+
+input {
+  font-size: 16px;
+  color: $input-color;
+  font-weight: 500;
+
+  border-right: none;
+  border-left: none;
+  border-top: none;
+
+  background-color: transparent;
+  border-bottom: 1px solid $input-border-color;
+
+  transition: color $easing;
+  min-height: em(25px, 16px);
+
+  &::placeholder {
+    color: $input-color;
+    font-weight: 400;
+    transition: color $easing;
+  }
+
+  &:hover,
+  &:focus {
+    color: $input-color-hover;
+
+    &::placeholder {
+      color: $input-color-hover;
+    }
+  }
 }
 
 

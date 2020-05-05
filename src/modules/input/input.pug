@@ -1,49 +1,9 @@
 //- поле ввода (input)
 
-//- +input('typeInput', 'nameInput', 'nameId', 'placeholder', 'required')
-mixin input(typeInput, nameInput, nameId, placeholder, required)
-  //- Интервал
-  if (nameInput == 'interval' || nameInput == 'summary_end' || nameInput == 'summary_start')
-    label.input.input-interval(class!=attributes.class)
-      +inpitFluid(typeInput, nameInput, nameId, required)
-      .input-interval__designation=attributes.designation
-      span.input__placeholder=placeholder
-      span.input__error(data-error="error")
-  //- Поле поиска по сайту
-  else if (nameInput === 'search-of-site')
-    label.input.input-search(class!=attributes.class)
-      +inpitFluid(typeInput, nameInput, nameId, required)(standardPlaceholder=placeholder)
-      button.input-search__reset.js-search-reset(type="reset")
-        +icon('icon-reset', 'input-search__icon input-search__icon--reset')
-      button.input-search__start-search(type="submit")
-        +icon('icon-start-search', 'input-search__icon input-search__icon--search')
-  //- Поле поиска
-  else if (nameInput === 'search-fluid')
-    label.input.input-search(class!=attributes.class)
-      +inpitFluid(typeInput, nameInput, nameId, required)
-      span.input-search__reset.js-search-reset
-        +icon('icon-reset', 'input-search__icon input-search__icon--reset')
-      span.input-search__start-search.js-start-search
-        +icon('icon-start-search', 'input-search__icon input-search__icon--search')
-  //- Поле ИНН с проверкой
-  else if (nameInput === 'check-inn')
-    label.input.input-check-inn(class!=attributes.class)
-      +inpitFluid(typeInput, nameInput, nameId, required)
-      +icon('icon-correct', 'input-check-inn__icon')
-      span.input__placeholder=placeholder
-      span.input__error(data-error="error")
-  //- Стадартное поле
-  else
-    label.input(class!=attributes.class)
-      +inpitFluid(typeInput, nameInput, nameId, required)
-      span.input__placeholder=placeholder
-      span.input__error(data-error="error")
 
 
-
-mixin inpitFluid(typeInput, nameInput, nameId, required)
-  input.input__fluid.js-input(type=typeInput, 
-    placeholder!=attributes.standardPlaceholder
-    name=nameInput, 
-    id=nameId, 
-    value="")
+//- +input('type', 'name', 'placeholder')
+mixin input(type, name, placeholder)
+  label.input&attributes(attributes)
+    input.input__fluid(type=type || 'text', name!=name, placeholder!=placeholder)
+    span.input__error-text 
