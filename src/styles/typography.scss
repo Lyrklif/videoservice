@@ -10,8 +10,16 @@ body {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
+button {
+  border-radius: 4px;
+  background: none;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
 
 
 h2 {

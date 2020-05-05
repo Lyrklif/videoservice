@@ -4,7 +4,7 @@
 // @include link-style;
 @mixin link-style() {
   color: $link-color;
-  @include animateColor;
+  transition: color $easing;
 
   &:active {
     color: $link-color-hover;
@@ -24,7 +24,7 @@
 // @include link-style-primary;
 @mixin link-style-primary() {
   color: $link-primary-color;
-  @include animateColor;
+  transition: color $easing;
 
   &:active {
     color: $link-primary-color-hover;
@@ -43,7 +43,7 @@
 // @include link-style-secondary;
 @mixin link-style-secondary() {
   color: $link-secondary-color;
-  @include animateColor;
+  transition: color $easing;
 
   &:active {
     color: $link-secondary-color-hover;
