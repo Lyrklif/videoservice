@@ -6,6 +6,7 @@ include ../humburger/humburger
 include ../link/link
 include ../btn/btn
 include ../input/input
+include ../humburger/humburger
 
 
 
@@ -29,3 +30,4 @@ mixin header(isMainPage)
         |Найти
     +btn-contained('Войти', '#authorize')(data-modal="authorize" class="header__authorize")
       |Войти
+    +humburger(class="header__humburger")

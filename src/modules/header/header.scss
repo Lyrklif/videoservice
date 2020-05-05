@@ -20,20 +20,35 @@
 }
 
 
-
 .header__form {
-  display: flex;
-  align-items: center;
-  margin-right: 36px;
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    align-items: center;
+    margin-right: 36px;
+  }
 }
 
 
 .header__search {
   width: 320px;
-
 }
 
 
 .header__authorize {
+  display: none;
   margin-top: 2px;
+
+
+  @include media-breakpoint-up(lg) {
+    display: inline-block;
+  }
+}
+
+
+.header__humburger {
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
 }
