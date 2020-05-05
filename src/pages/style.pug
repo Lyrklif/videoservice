@@ -5,6 +5,10 @@ include ../modules/link/link
 include ../modules/btn/btn
 include ../modules/input/input
 include ../modules/checkbox/checkbox
+include ../modules/genre/genre
+
+
+
 
 block page
   .page
@@ -67,4 +71,14 @@ block page
       p
         +checkbox('checked')
           |Выбрать
+      hr
+      h2 Жанр
+      +genre('comedy')
+        |Комедии
+      +genre('drama')
+        |Драмы
+      +genre('fiction')
+        |Фантастика
+      +genre('horror')
+        |Ужасы
       hr

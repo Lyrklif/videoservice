@@ -1,0 +1,12 @@
+//- Жанр
+
+include ../icon/icon
+
+
+
+
+mixin genre(iconName)
+  .genre(class="genre_"+iconName)
+    +icon('genre-'+iconName, 'genre__icon')
+    h3.genre__title
+      block

@@ -1,0 +1,70 @@
+// Жанр
+
+
+
+.genre {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  box-shadow: inset 0px 0px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  opacity: 0.8;
+
+  cursor: pointer;
+
+  min-height: 208px;
+  width: 280px;
+  max-width: 100%;
+
+  padding: 24px;
+
+
+  transition: opacity $easing;
+
+  &:active {
+    opacity: 1;
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+
+  &_comedy {
+    background: linear-gradient(136.27deg, #F2C94C 8.44%, #F29A4A 91.36%);
+  }
+
+
+  &_drama {
+    background: linear-gradient(136.27deg, #F2994A 8.44%, #EB5757 91.36%);
+  }
+
+
+  &_fiction {
+    background: linear-gradient(136.27deg, #56CCF2 8.44%, #2F80ED 91.36%);
+  }
+
+
+  &_horror {
+    background: linear-gradient(136.27deg, #828282 8.44%, #333333 91.36%);
+  }
+}
+
+
+.genre__title {
+  color: $white;
+  margin-bottom: 0;
+  margin-top: 32px;
+}
+
+
+.genre__icon {
+  width: 48px;
+  height: 48px;
+}
