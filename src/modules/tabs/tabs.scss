@@ -1,0 +1,18 @@
+// tabs
+
+
+.tab-content {
+  display: none;
+  opacity: 0;
+
+
+  transition: opacity $easing;
+
+  &.active {
+    display: block;
+  }
+
+  &.show-slow {
+    opacity: 1;
+  }
+}

@@ -20,6 +20,23 @@
 }
 
 
+a.header__logo {
+  transition: opacity $easing;
+
+  &:active {
+    opacity: 0.7;
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+  }
+}
+
+
 .header__form {
   display: none;
 
