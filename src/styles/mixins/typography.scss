@@ -13,7 +13,7 @@
 @mixin h2-style() {
   font-weight: 500;
   font-size: 24px;
-  line-height: em(24px, 28px);
+  line-height: em(28px, 24px);
 }
 
 
@@ -21,7 +21,7 @@
 // @include h3-style;
 @mixin h3-style() {
   font-size: 20px;
-  line-height: em(20px, 24px);
+  line-height: em(24px, 20px);
   font-weight: normal;
 }
 
