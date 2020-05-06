@@ -1,0 +1,13 @@
+//- channel
+
+
+
+mixin channel(title, data)
+  article.channel
+    h3=title
+    table
+      tbody
+        each val in data
+          tr
+            td= val.time
+            td= val.text
