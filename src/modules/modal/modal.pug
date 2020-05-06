@@ -3,11 +3,8 @@ include ../modal-authorize/modal-authorize
 
 
 mixin modal
-  .modal.hide-scrollbar#modal.js-modal
+  - classes= 'modal__tab';
+  .modal.hide-scrollbar.js-modal
     .modal__overlay.js-modal-overlay
     .modal__content.hide-scrollbar
-      a.modal__close(href="./", title="Закрыть", data-modal)
-        +icon('icon-close', 'modal__close-icon')
-      +modal-authorize
-    a.modal__close-screen(href="./", title="Закрыть", data-modal)
-        +icon('icon-close', 'modal__close-icon')
+      +modal-authorize(class=classes)

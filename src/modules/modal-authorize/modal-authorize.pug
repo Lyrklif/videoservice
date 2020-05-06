@@ -5,6 +5,6 @@ include ../icon/icon
 
 //- Модальное окно order-signature
 mixin modal-authorize
-  .modal__tab#authorize
+  #authorize&attributes(attributes)
     form(action="", method="post" )
       p authorize

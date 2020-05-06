@@ -90,7 +90,7 @@ export default class Modal {
     const input = tab.querySelector('input:not([type="checkbox"]):not([type="radio"])'); // первый input в модальном окне
 
     if (tab) tab.classList.add('modal__tab_active');
-    tabModal.classList.add('modal_active'); // ***
+    this.modal.classList.add('modal_active'); // ***
 
     this.focusInput(input); // поставить focus на input
 
