@@ -1,0 +1,16 @@
+//- main-nav
+
+include ../tabs/tabs
+
+
+
+mixin main-nav()
+  nav.main-nav
+    ul.main-nav__list
+      block
+
+
+
+//- вспомогательный миксин
+mixin nav-item(title, href, active)
+  li.main-nav__item: +tab-control(title, href)(class=`main-nav__link ${active ? 'active' : ''}`)

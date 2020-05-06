@@ -11,11 +11,6 @@
 // убрать стили списков
 // @include resetListStyle;
 @mixin resetListStyle() {
-  li {
-    padding-left: 0;
-
-    &:before {
-      display: none;
-    }
-  }
+  padding-left: 0;
+  list-style-type: none;
 }
