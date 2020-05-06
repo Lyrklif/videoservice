@@ -15,6 +15,7 @@ import detection from 'sa-polyfills/build/sa-detection';
 import Icon from '../modules/icon/icon';
 import Burger from '../modules/burger/burger';
 import Modal from '../modules/modal/modal';
+import Film from '../modules/film/film';
 
 if (detection.isIE10Plus()) {
   cssVars({
@@ -22,8 +23,11 @@ if (detection.isIE10Plus()) {
   });
 }
 
-new Icon();
-new Header();
-new Burger();
-new Input();
-window.globalModal = new Modal();
+window.addEventListener('load', () => {
+  new Icon();
+  new Header();
+  new Burger();
+  new Input();
+  window.globalModal = new Modal();
+  new Film();
+});

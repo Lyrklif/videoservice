@@ -13,7 +13,6 @@
 @import 'mixins/btn'; // btn
 
 
-
 @import 'fonts'; // шрифты
 @import 'typography'; // стилизация текста
 
@@ -26,19 +25,23 @@
 @import '../../node_modules/jquery.scrollbar/sass/jquery.scrollbar'; // scrollbar
 
 
-
 @import '../modules/icon/icon'; // svg иконка
-@import '../modules/modal/modal'; // модальное окно
-@import '../modules/humburger/humburger'; // humburger - кнопка открытия меню в мобильной версии
-@import '../modules/burger/burger'; // burger menu в мобильной версии
 @import '../modules/input/input.scss'; // поле ввода (input)
 @import '../modules/link/link.scss'; // link
 @import '../modules/btn/btn.scss'; // btn
 @import '../modules/checkbox/checkbox.scss'; // checkbox
-@import '../modules/genre/genre.scss'; // genre
 
 
-// отдельные блоки
+@import '../modules/humburger/humburger'; // humburger - кнопка открытия меню в мобильной версии
+@import '../modules/burger/burger'; // burger menu в мобильной версии
+@import '../modules/modal/modal'; // модальное окно
+
+
 @import '../modules/header/header'; // шапка сайта
 @import '../modules/footer/footer'; // подвал сайта
+
+
+@import '../modules/genre/genre.scss'; // genre
+@import '../modules/film/film.scss'; // film
+
 

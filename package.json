@@ -135,6 +135,7 @@
     "bootstrap": "^4.2.1",
     "clampify": "^1.2.1",
     "css-vars-ponyfill": "^1.17.2",
+    "dotdotdot-js": "^4.0.11",
     "gulp-file-include": "^2.1.0",
     "jquery": "^3.4.1",
     "jquery-ajax": "^2.1.4",
