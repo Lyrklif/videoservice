@@ -17,17 +17,36 @@ export default class Tabs {
   }
 
   init() {
+    this.hashChange();
+
     for (let i = 0; i < this.tabs.length; i++) {
       this.tabs[i].addEventListener('click', e => {
-        if (this.tabs[i].classList.contains(cssClasses.activeElem)) {
-          e.preventDefault();
-        } else {
-          this.removeClasses();
-          this.tabs[i].classList.add(cssClasses.activeElem);
-          this.showFoundContent(i, this.tabs[i].dataset.tabControl);
+        e.preventDefault();
+        if (!this.tabs[i].classList.contains(cssClasses.activeElem)) {
+          let attr = this.tabs[i].dataset.tabControl;
+          this.open(attr, i);
         }
       });
     }
+  }
+
+  open(name, index) {
+    let indexContent;
+    let indexTab;
+
+    // если в адресной строке есть текст после #
+    if (name) {
+      indexContent = this.getIndexFoundedContent(name, index);
+      indexTab = this.getIndexFoundedTab(name, index);
+    }
+
+    if (indexContent !== undefined && indexTab !== undefined) {
+      this.removeClasses();
+      this.tabs[indexTab].classList.add(cssClasses.activeElem);
+      this.addClassesContent(indexContent);
+    }
+
+    // history.pushState({}, `${href}`, `#${href}`); // добавить hash в адресную строку
   }
 
   // удалить лишние классы
@@ -38,22 +57,35 @@ export default class Tabs {
     }
   }
 
+  getIndexFoundedContent(href, index) {
+    return this.getIndexFoundedElem(this.contents, 'tabContent', href, index);
+  }
+
+  getIndexFoundedTab(href, index) {
+    return this.getIndexFoundedElem(this.tabs, 'tabControl', href, index);
+  }
+
   // показать найденный блок
-  showFoundContent(index, href) {
-    if (this.contents[index].dataset.tabContent === href) {
-      this.addClasses(index);
-    } else {
-      for (let i = 0; i < this.contents.length; i++) {
-        let data = this.contents[i].dataset.tabContent;
-        if (data === href) {
-          this.addClasses(i);
-        }
+  getIndexFoundedElem(arr, attr, href, index) {
+    // eslint-disable-next-line no-undefined
+    if (index !== undefined && arr[index].dataset[attr] === href) {
+      return index;
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+      let data = arr[i].dataset[attr];
+      if (data === href) {
+        return i;
       }
     }
+
+    return null;
   }
 
   // добавить классы
-  addClasses(i) {
+  addClassesContent(i) {
+    if (!this.contents[i]) return false;
+
     // показать блок с тем же индексом, что и у кнопки (display: block; opacity: 0;)
     this.contents[i].classList.add(cssClasses.activeElem);
 
@@ -62,4 +94,25 @@ export default class Tabs {
       this.contents[i].classList.add(cssClasses.decorShow);
     }, 100);
   }
+
+  // отслеживать изменение хэша
+  hashChange() {
+    this.hash();
+
+    // при изменении адресной строки
+    window.addEventListener('hashchange', () => {
+      this.hash();
+    });
+  }
+
+  hash() {
+    let hash = window.location.hash.substring(1);
+
+    // если в адресной строке есть текст после #
+    if (hash) {
+      this.open(hash);
+    }
+  }
 }
+
+// window.globalTabs.open(name);

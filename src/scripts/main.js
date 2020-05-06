@@ -29,6 +29,6 @@ window.addEventListener('load', () => {
   new Burger();
   new Input();
   window.globalModal = new Modal();
-  new Tabs();
+  window.globalTabs = new Tabs();
   new Film();
 });
