@@ -1,14 +1,14 @@
 
 
 
-a.link {
+.link {
   @include link-style();
 }
 
-a.primary {
+.primary {
   @include link-style-primary();
 }
 
-a.secondary {
+.secondary {
   @include link-style-secondary();
 }
