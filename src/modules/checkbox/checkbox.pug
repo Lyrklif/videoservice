@@ -2,7 +2,7 @@
 
 
 mixin checkbox(checked)
-  label.checkbox
-    input.checkbox__input(type="checkbox", name="", checked!=checked)
+  label.checkbox&attributes(attributes)
+    input.checkbox__input(type="checkbox", checked!=checked)
     span.checkbox__text
       block
