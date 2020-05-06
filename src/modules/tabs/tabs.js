@@ -8,41 +8,58 @@ import { cssClasses } from '../../scripts/vars.js';
 
 export default class Tabs {
   constructor() {
-    this.tabsList = [...document.querySelectorAll('[data-tab-control]')];
-    this.contentList = [...document.querySelectorAll('[data-tab-content]')];
+    this.tabs = [...document.querySelectorAll('[data-tab-control]')];
+    this.contents = [...document.querySelectorAll('[data-tab-content]')];
 
-    if (this.tabsList.length && this.contentList.length) {
-      this.settings(this.tabsList, this.contentList);
+    if (this.tabs.length && this.contents.length) {
+      this.init();
     }
   }
 
-  settings(tabsList, contentList) {
-    // классы, которые добавляются к элементам в процессе выполнения скрипта
-    const activeClass = cssClasses.activeElem; // класс, который присваивается активному tab
-    const animateClass = cssClasses.decorShow; // класс, который нужен для плавного появления блока
+  init() {
+    for (let i = 0; i < this.tabs.length; i++) {
+      this.tabs[i].addEventListener('click', e => {
+        if (this.tabs[i].classList.contains(cssClasses.activeElem)) {
+          e.preventDefault();
+        } else {
+          this.removeClasses();
+          this.tabs[i].classList.add(cssClasses.activeElem);
+          this.showFoundContent(i, this.tabs[i].dataset.tabControl);
+        }
+      });
+    }
+  }
 
-    tabsList.forEach((tab, index) => tab.addEventListener('click', () => {
-      // если нажали на неактивную кнопку
-      if (!(tab.classList.contains(activeClass))) {
-        tabsList.forEach(tab => {
-          tab.classList.remove(activeClass);
-        });
+  // удалить лишние классы
+  removeClasses() {
+    for (let i = 0; i < this.tabs.length; i++) {
+      this.tabs[i].classList.remove(cssClasses.activeElem);
+      this.contents[i].classList.remove(cssClasses.activeElem, cssClasses.decorShow);
+    }
+  }
 
-        // скрыть все блоки с контентом
-        contentList.forEach(content => {
-          content.classList.remove(activeClass, animateClass); // удалить классы .active и .show-slow
-        });
-
-        tabsList[index].classList.add(activeClass); // добавить класс .active
-
-        // показать блок с тем же индексом, что и у кнопки (display: block; opacity: 0;)
-        contentList[index].classList.add(activeClass); // добавить класс .active
-
-        // через 300ms добавить этому блоку доп класс с opacity: 1;
-        setTimeout(() => {
-          contentList[index].classList.add(animateClass); // добавить класс .show-slow
-        }, 300);
+  // показать найденный блок
+  showFoundContent(index, href) {
+    if (this.contents[index].dataset.tabContent === href) {
+      this.addClasses(index);
+    } else {
+      for (let i = 0; i < this.contents.length; i++) {
+        let data = this.contents[i].dataset.tabContent;
+        if (data === href) {
+          this.addClasses(i);
+        }
       }
-    }));
+    }
+  }
+
+  // добавить классы
+  addClasses(i) {
+    // показать блок с тем же индексом, что и у кнопки (display: block; opacity: 0;)
+    this.contents[i].classList.add(cssClasses.activeElem);
+
+    // добавить доп класс с opacity: 1;
+    setTimeout(() => {
+      this.contents[i].classList.add(cssClasses.decorShow);
+    }, 100);
   }
 }
