@@ -86,15 +86,16 @@ export default class Modal {
 
   show(id) {
     const tab = document.getElementById(id); // текущее модальное окно
-    const tabModal = tab.parentElement.parentElement;
     const input = tab.querySelector('input:not([type="checkbox"]):not([type="radio"])'); // первый input в модальном окне
+
+    history.pushState({}, `${id}`, `#${id}`); // добавить hash в адресную строку
 
     if (tab) tab.classList.add('modal__tab_active');
     this.modal.classList.add('modal_active'); // ***
 
     this.focusInput(input); // поставить focus на input
 
-    disableBodyScroll(tabModal);
+    disableBodyScroll(this.modal);
 
     this.main.style.paddingRight = `${this.scrollbarWidth}px`; // добавить отступ размером с ширину скроллбара
     this.html.classList.add('modalOpen');
