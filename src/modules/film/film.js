@@ -14,8 +14,8 @@ export default class Film {
       maxLines: 18
     };
 
-    this.text.forEach(el => {
-      $clampify(el, options);
-    });
+    for (let i = 0; i < this.text.length; i++) {
+      $clampify(this.text[i], options);
+    }
   }
 }
