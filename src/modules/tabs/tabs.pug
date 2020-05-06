@@ -4,7 +4,7 @@ include ../link/link
 
 //- +tab-control('title', 'href')
 mixin tab-control(title, href)
-  +link(title, href)(data-tab-control=href, class="tab-control")&attributes(attributes)= title
+  +link(title, `#${href}`)(data-tab-control=href, class="tab-control")&attributes(attributes)= title
 
 //- +tab-content('name')
 mixin tab-content(name, active)

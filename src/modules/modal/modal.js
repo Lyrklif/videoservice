@@ -88,7 +88,7 @@ export default class Modal {
     const tab = document.getElementById(id); // текущее модальное окно
     const input = tab.querySelector('input:not([type="checkbox"]):not([type="radio"])'); // первый input в модальном окне
 
-    history.pushState({}, `${id}`, `#${id}`); // добавить hash в адресную строку
+    // history.pushState({}, `${id}`, `#${id}`); // добавить hash в адресную строку
 
     if (tab) tab.classList.add('modal__tab_active');
     this.modal.classList.add('modal_active'); // ***
@@ -114,7 +114,7 @@ export default class Modal {
     this.modal.classList.remove('modal_active');
 
     // удалить hash из адресной строки
-    history.pushState('', document.title, window.location.pathname);
+    // history.pushState('', document.title, window.location.pathname);
     enableBodyScroll(this.modal);
 
     const tab = document.querySelector('.modal__tab_active');

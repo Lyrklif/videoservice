@@ -8,41 +8,111 @@ import { cssClasses } from '../../scripts/vars.js';
 
 export default class Tabs {
   constructor() {
-    this.tabsList = [...document.querySelectorAll('[data-tab-control]')];
-    this.contentList = [...document.querySelectorAll('[data-tab-content]')];
+    this.tabs = [...document.querySelectorAll('[data-tab-control]')];
+    this.contents = [...document.querySelectorAll('[data-tab-content]')];
 
-    if (this.tabsList.length && this.contentList.length) {
-      this.settings(this.tabsList, this.contentList);
+    if (this.tabs.length && this.contents.length) {
+      this.init();
     }
   }
 
-  settings(tabsList, contentList) {
-    // классы, которые добавляются к элементам в процессе выполнения скрипта
-    const activeClass = cssClasses.activeElem; // класс, который присваивается активному tab
-    const animateClass = cssClasses.decorShow; // класс, который нужен для плавного появления блока
+  init() {
+    this.hashChange();
 
-    tabsList.forEach((tab, index) => tab.addEventListener('click', () => {
-      // если нажали на неактивную кнопку
-      if (!(tab.classList.contains(activeClass))) {
-        tabsList.forEach(tab => {
-          tab.classList.remove(activeClass);
-        });
+    for (let i = 0; i < this.tabs.length; i++) {
+      this.tabs[i].addEventListener('click', e => {
+        e.preventDefault();
+        if (!this.tabs[i].classList.contains(cssClasses.activeElem)) {
+          let attr = this.tabs[i].dataset.tabControl;
+          this.open(attr, i);
+        }
+      });
+    }
+  }
 
-        // скрыть все блоки с контентом
-        contentList.forEach(content => {
-          content.classList.remove(activeClass, animateClass); // удалить классы .active и .show-slow
-        });
+  open(name, index) {
+    let indexContent;
+    let indexTab;
 
-        tabsList[index].classList.add(activeClass); // добавить класс .active
+    // если в адресной строке есть текст после #
+    if (name) {
+      indexContent = this.getIndexFoundedContent(name, index);
+      indexTab = this.getIndexFoundedTab(name, index);
+    }
 
-        // показать блок с тем же индексом, что и у кнопки (display: block; opacity: 0;)
-        contentList[index].classList.add(activeClass); // добавить класс .active
+    if (indexContent !== undefined && indexTab !== undefined) {
+      this.removeClasses();
+      this.tabs[indexTab].classList.add(cssClasses.activeElem);
+      this.addClassesContent(indexContent);
+    }
 
-        // через 300ms добавить этому блоку доп класс с opacity: 1;
-        setTimeout(() => {
-          contentList[index].classList.add(animateClass); // добавить класс .show-slow
-        }, 300);
+    // history.pushState({}, `${href}`, `#${href}`); // добавить hash в адресную строку
+  }
+
+  // удалить лишние классы
+  removeClasses() {
+    for (let i = 0; i < this.tabs.length; i++) {
+      this.tabs[i].classList.remove(cssClasses.activeElem);
+      this.contents[i].classList.remove(cssClasses.activeElem, cssClasses.decorShow);
+    }
+  }
+
+  getIndexFoundedContent(href, index) {
+    return this.getIndexFoundedElem(this.contents, 'tabContent', href, index);
+  }
+
+  getIndexFoundedTab(href, index) {
+    return this.getIndexFoundedElem(this.tabs, 'tabControl', href, index);
+  }
+
+  // показать найденный блок
+  getIndexFoundedElem(arr, attr, href, index) {
+    // eslint-disable-next-line no-undefined
+    if (index !== undefined && arr[index].dataset[attr] === href) {
+      return index;
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+      let data = arr[i].dataset[attr];
+      if (data === href) {
+        return i;
       }
-    }));
+    }
+
+    return null;
+  }
+
+  // добавить классы
+  addClassesContent(i) {
+    if (!this.contents[i]) return false;
+
+    // показать блок с тем же индексом, что и у кнопки (display: block; opacity: 0;)
+    this.contents[i].classList.add(cssClasses.activeElem);
+
+    // добавить доп класс с opacity: 1;
+    setTimeout(() => {
+      this.contents[i].classList.add(cssClasses.decorShow);
+    }, 100);
+  }
+
+  // отслеживать изменение хэша
+  hashChange() {
+    this.hash();
+
+    // при изменении адресной строки
+    window.addEventListener('hashchange', () => {
+      this.hash();
+    });
+  }
+
+  hash() {
+    let hash = window.location.hash.substring(1);
+
+    // если в адресной строке есть текст после #
+    if (hash) {
+      this.open(hash);
+    }
   }
 }
+
+// window.globalTabs.open(name);

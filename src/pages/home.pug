@@ -13,9 +13,9 @@ block page
   main.page.container
     header.meta-title: h1 Видеосервис
     +main-nav
-      +nav-item('Фильмы', '#films', 'active')
-      +nav-item('Телеканалы', '#channels')
-    +tab-content('#films', 'active')
+      +nav-item('Фильмы', 'films', 'active')
+      +nav-item('Телеканалы', 'channels')
+    +tab-content('films', 'active')
       |block 1
-    +tab-content('#channels')
+    +tab-content('channels')
       |block 2
