@@ -2,6 +2,9 @@ extends ../modules/layout/layout.pug
 
 include ../modules/tabs/tabs
 include ../modules/main-nav/main-nav
+include ../modules/films/films
+include ../modules/genres/genres
+include ../modules/channel/channel
 
 
 
@@ -15,7 +18,15 @@ block page
     +main-nav
       +nav-item('Фильмы', 'films', 'active')
       +nav-item('Телеканалы', 'channels')
+    //- tab #films
     +tab-content('films', 'active')
-      |block 1
+      section
+        header: h2 Новинки
+        +films
+      section
+        header: h2 Жанры
+        +genres
+
+    //- tab #channels
     +tab-content('channels')
       |block 2

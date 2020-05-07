@@ -1,0 +1,15 @@
+// grid
+
+
+
+
+
+// @include grid(min, max);
+@mixin grid($min: 280px, $max: 1fr) {
+  display: grid;
+  grid-gap: $grid-gap;
+  grid-template-columns: repeat(auto-fit, minmax($min, $max));
+  justify-items: center;
+}
+
+

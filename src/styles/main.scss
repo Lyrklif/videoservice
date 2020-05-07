@@ -9,9 +9,9 @@
 @import 'mixins/hover'; // hover
 @import 'mixins/base'; // основные миксины
 @import 'mixins/typography'; // текст
-@import 'mixins/animate'; // анимации
 @import 'mixins/link'; // ссылки
 @import 'mixins/btn'; // btn
+@import 'mixins/grid'; // grid
 
 
 @import 'fonts'; // шрифты
@@ -48,5 +48,8 @@
 @import '../modules/genre/genre.scss'; // genre
 @import '../modules/film/film.scss'; // film
 @import '../modules/channel/channel.scss'; // channel
+
+@import '../modules/films/films.scss'; // films
+@import '../modules/genres/genres.scss'; // genres
 
 
