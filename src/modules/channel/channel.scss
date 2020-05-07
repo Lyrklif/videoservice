@@ -4,25 +4,66 @@
 
 
 .channel {
-  background-color: #F2F2F2;
+  background-color: $gray;
   border-radius: $border-radius;
+  position: relative;
+
+  padding: 17px 24px 14px 398px;
 }
+
+
+.channel__table {
+  display: block;
+
+  th,
+  td {
+    padding: 0;
+  }
+}
+
 
 .channel__title {
   font-weight: 500;
   text-align: left;
   margin-top: 0;
+  margin-bottom: 13px;
 }
 
-.channel__row {}
 
-.channel__row_primary {}
+.channel__row {
+  margin-bottom: 7px;
+  display: flex;
 
-
-.channel__col {
-  padding: 0;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
-.channel__col_primary {
+
+.channel__time {
+  width: 62px;
+}
+
+
+.channel__time_primary {
   color: $primary;
+}
+
+
+.channel__logo-wp {
+  position: absolute;
+  left: 143px;
+  top: 50%;
+  height: 64px;
+  width: 114px;
+  transform: translateY(-50%);
+}
+
+
+.channel__logo {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

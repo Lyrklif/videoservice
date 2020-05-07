@@ -23,7 +23,7 @@
 // @include link-style-secondary;
 @mixin link-style-secondary() {
   color: $link-secondary-color;
-  transition: color $easing;
+  transition: opacity $easing;
 
-  @include hover(color, $link-secondary-color-hover);
+  @include hover(opacity, 0.7);
 }
