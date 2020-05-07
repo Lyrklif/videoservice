@@ -1,13 +1,21 @@
 //- channel
 
+include ../link/link
+
 
 
 mixin channel(title, data)
   article.channel
-    h3=title
     table
+      thead
+        tr: th(colspan="2"): h3.channel__title: +link(title)= title
       tbody
-        each val in data
-          tr
-            td= val.time
-            td= val.text
+        each val, i in data
+          if (i === 0)
+            tr.channel__row.channel__row_primary
+              td.channel__col.channel__col_primary= val.time
+              td.channel__col: +link-primary(`${val.time} ${val.text}`)= val.text
+          else
+            tr.channel__row
+              td.channel__col= val.time
+              td.channel__col: +link(`${val.time} ${val.text}`)= val.text

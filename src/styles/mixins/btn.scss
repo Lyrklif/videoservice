@@ -17,17 +17,7 @@
   color: $btn-color;
   transition: color $easing;
 
-  &:active {
-    color: $btn-color-hover;
-  }
-
-  @include media-breakpoint-up(sm) {
-
-    &:hover,
-    &:focus {
-      color: $btn-color-hover;
-    }
-  }
+  @include hover(color, $btn-color-hover);
 }
 
 
@@ -41,16 +31,5 @@
 
   transition: background-color $easing;
 
-
-  &:active {
-    background-color: $btn-contained-bg-hover;
-  }
-
-  @include media-breakpoint-up(sm) {
-
-    &:hover,
-    &:focus {
-      background-color: $btn-contained-bg-hover;
-    }
-  }
+  @include hover(background-color, $btn-contained-bg-hover);
 }

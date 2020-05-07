@@ -20,20 +20,9 @@
 
   padding: 24px;
 
-
   transition: opacity $easing;
 
-  &:active {
-    opacity: 1;
-  }
-
-  @include media-breakpoint-up(sm) {
-
-    &:hover,
-    &:focus {
-      opacity: 1;
-    }
-  }
+  @include hover(opacity, 1);
 
 
   &_comedy {
