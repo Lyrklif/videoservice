@@ -1,0 +1,80 @@
+// channel
+
+
+
+
+.channel {
+  background-color: $gray;
+  border-radius: $border-radius;
+  position: relative;
+
+  padding: 17px;
+
+  @include media-breakpoint-up(md) {
+    padding: 17px 24px 14px 33.8%;
+  }
+}
+
+
+.channel__table {
+  display: block;
+
+  th,
+  td {
+    padding: 0;
+  }
+}
+
+
+.channel__title {
+  font-weight: 500;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 13px;
+}
+
+
+.channel__row {
+  margin-bottom: 7px;
+  display: flex;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+
+.channel__time {
+  width: 62px;
+  flex-shrink: 0;
+}
+
+
+.channel__time_primary {
+  color: $primary;
+}
+
+
+.channel__logo-wp {
+  height: 64px;
+  width: 114px;
+  display: block;
+  margin-bottom: 20px;
+
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    left: 12.2%;
+    top: 50%;
+
+    transform: translateY(-50%);
+  }
+}
+
+
+.channel__logo {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

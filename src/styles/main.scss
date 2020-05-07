@@ -6,6 +6,7 @@
 
 @import 'functions/em'; // px to em
 @import 'keyframes/sweep'; // opacity 0%-100%
+@import 'mixins/hover'; // hover
 @import 'mixins/base'; // основные миксины
 @import 'mixins/typography'; // текст
 @import 'mixins/animate'; // анимации
@@ -46,5 +47,6 @@
 
 @import '../modules/genre/genre.scss'; // genre
 @import '../modules/film/film.scss'; // film
+@import '../modules/channel/channel.scss'; // channel
 
 

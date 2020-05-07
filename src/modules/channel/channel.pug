@@ -1,0 +1,27 @@
+//- channel
+
+include ../link/link
+include ../icon/icon
+
+
+
+mixin channel(title, icon, data)
+  - iconName = icon ? icon : 'image'
+
+  article.channel
+    table.channel__table
+      thead
+        tr: th.channel__logo-wp(colspan="2")
+          +link-secondary(title)(class="channel__logo")
+            +icon(iconName)
+        tr: th(colspan="2"): h3.channel__title: +link(title)= title
+      tbody
+        each val, i in data
+          if (i === 0)
+            tr.channel__row
+              td.channel__time.channel__time_primary= val.time
+              td: +link-primary(`${val.time} ${val.text}`)= val.text
+          else
+            tr.channel__row
+              td.channel__time= val.time
+              td: +link(`${val.time} ${val.text}`)= val.text
