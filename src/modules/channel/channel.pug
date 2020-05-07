@@ -11,7 +11,7 @@ mixin channel(title, icon, data)
   article.channel
     table.channel__table
       thead
-        tr: th.channel__logo-wp 
+        tr: th.channel__logo-wp(colspan="2")
           +link-secondary(title)(class="channel__logo")
             +icon(iconName)
         tr: th(colspan="2"): h3.channel__title: +link(title)= title

@@ -8,7 +8,11 @@
   border-radius: $border-radius;
   position: relative;
 
-  padding: 17px 24px 14px 398px;
+  padding: 17px;
+
+  @include media-breakpoint-up(md) {
+    padding: 17px 24px 14px 33.8%;
+  }
 }
 
 
@@ -42,6 +46,7 @@
 
 .channel__time {
   width: 62px;
+  flex-shrink: 0;
 }
 
 
@@ -51,12 +56,18 @@
 
 
 .channel__logo-wp {
-  position: absolute;
-  left: 143px;
-  top: 50%;
   height: 64px;
   width: 114px;
-  transform: translateY(-50%);
+  display: block;
+  margin-bottom: 20px;
+
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    left: 12.2%;
+    top: 50%;
+
+    transform: translateY(-50%);
+  }
 }
 
 
