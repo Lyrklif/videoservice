@@ -1,0 +1,20 @@
+// 
+
+
+
+
+
+.simplebar-track {
+  background-color: #F2F2F2;
+  border-radius: 2px;
+  width: 8px;
+}
+
+.simplebar-scrollbar:before {
+  opacity: 1;
+  background: #BDBDBD;
+  border-radius: 2px;
+  width: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}

@@ -16,7 +16,8 @@ mixin channel(data)
 
     table.channel__table
       tbody
-        each val, i in data.items
+        - items = data.items ? data.items : []
+        each val, i in items
           tr.channel__row
             td.channel__time(class=(i === 0) ? 'channel__time_primary' : '')= val.time
             if (i === 0)

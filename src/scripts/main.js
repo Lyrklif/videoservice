@@ -1,10 +1,9 @@
 'use strict';
 
 // your code here
-import './jquery-global.js'; // jquery
 import 'lazysizes'; // ленивая загрузка изображений
 import 'clampify'; // скрытие длинного текста
-import 'jquery.scrollbar'; // jquery.scrollbar
+import 'simplebar';
 
 import '@babel/polyfill';
 import cssVars from 'css-vars-ponyfill';
@@ -17,6 +16,7 @@ import Header from '../modules/header/header'; // настройка появл�
 import Input from '../modules/input/input'; // при вводе текста в input placeholder поднимается
 import Checkbox from '../modules/checkbox/checkbox'; // checkbox
 import Tabs from '../modules/tabs/tabs'; // при вводе текста в input placeholder поднимается
+import Channels from '../modules/channels/channels'; // channels
 
 if (detection.isIE10Plus()) {
   cssVars({
@@ -33,4 +33,5 @@ window.addEventListener('load', () => {
   window.globalModal = new Modal();
   window.globalTabs = new Tabs();
   new Film();
+  new Channels();
 });
