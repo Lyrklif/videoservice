@@ -9,12 +9,13 @@ mixin channel(title, icon, data)
   - iconName = icon ? icon : 'image'
 
   article.channel
+    header: h3.channel__title: +link(title)= title
+
+    .channel__logo-wp
+      +link-secondary(title)(class="channel__logo")
+        +icon(iconName)
+
     table.channel__table
-      thead
-        tr: th.channel__logo-wp(colspan="2")
-          +link-secondary(title)(class="channel__logo")
-            +icon(iconName)
-        tr: th(colspan="2"): h3.channel__title: +link(title)= title
       tbody
         each val, i in data
           if (i === 0)
