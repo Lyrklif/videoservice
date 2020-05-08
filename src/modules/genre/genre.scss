@@ -24,25 +24,7 @@
 
   @include hover(opacity, 1);
 
-
-  &_comedy {
-    background: linear-gradient(136.27deg, #F2C94C 8.44%, #F29A4A 91.36%);
-  }
-
-
-  &_drama {
-    background: linear-gradient(136.27deg, #F2994A 8.44%, #EB5757 91.36%);
-  }
-
-
-  &_fiction {
-    background: linear-gradient(136.27deg, #56CCF2 8.44%, #2F80ED 91.36%);
-  }
-
-
-  &_horror {
-    background: linear-gradient(136.27deg, #828282 8.44%, #333333 91.36%);
-  }
+  background-color: #828282;
 }
 
 
@@ -53,7 +35,7 @@
 }
 
 
-.genre__icon {
+.genre__img {
   width: 48px;
   height: 48px;
 }

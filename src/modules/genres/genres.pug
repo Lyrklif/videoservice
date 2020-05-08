@@ -6,7 +6,7 @@ include ../genre/genre
 
 mixin genres
   ul.genres
-    li: +genre('comedy') Комедии
-    li: +genre('drama') Драмы
-    li: +genre('fiction') Фантастика
-    li: +genre('horror') Ужасы
+    li: +genre('emoji-grinning-face.png', 'Комедии')(class="genres__comedy")
+    li: +genre('emoji-loudly-crying-face.png', 'Драмы')(class="genres__drama")
+    li: +genre('emoji-alien.png', 'Фантастика')(class="genres__fiction")
+    li: +genre('emoji-ghost.png', 'Ужасы')(class="genres__horror")
