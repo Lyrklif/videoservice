@@ -17,11 +17,9 @@ mixin channel(title, icon, data)
     table.channel__table
       tbody
         each val, i in data
-          if (i === 0)
-            tr.channel__row
-              td.channel__time.channel__time_primary= val.time
+          tr.channel__row
+            td.channel__time(class=(i === 0) ? 'channel__time_primary' : '')= val.time
+            if (i === 0)
               td: +link-primary(`${val.time} ${val.text}`)= val.text
-          else
-            tr.channel__row
-              td.channel__time= val.time
+            else 
               td: +link(`${val.time} ${val.text}`)= val.text
