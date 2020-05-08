@@ -5,6 +5,7 @@ include ../modules/main-nav/main-nav
 include ../modules/films/films
 include ../modules/genres/genres
 include ../modules/channel/channel
+include ../modules/channels/channels
 
 
 
@@ -29,4 +30,6 @@ block page
 
     //- tab #channels
     +tab-content('channels')
-      |block 2
+      section
+        header.meta-title: h2 Телепрограмма 
+        +channels
