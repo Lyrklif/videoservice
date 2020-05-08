@@ -5,18 +5,18 @@ include ../icon/icon
 
 
 
-mixin channel(title, icon, data)
-  - iconName = icon ? icon : 'image'
+mixin channel(data)
+  - iconName = data.logo ? data.logo : 'image'
 
   article.channel
-    header: h3.channel__title: +link(title)= title
+    header: h3.channel__title: +link(data.title)= data.title
 
-    +link-secondary(title)(class="channel__logo")
+    +link-secondary(data.title)(class="channel__logo")
       +icon(iconName)
 
     table.channel__table
       tbody
-        each val, i in data
+        each val, i in data.items
           tr.channel__row
             td.channel__time(class=(i === 0) ? 'channel__time_primary' : '')= val.time
             if (i === 0)

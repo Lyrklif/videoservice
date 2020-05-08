@@ -2,7 +2,7 @@
   "browserslist": [
     "> 0.5%"
   ],
-  "name": "izhtender-markup",
+  "name": "videoservice",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

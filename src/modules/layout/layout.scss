@@ -10,7 +10,7 @@ body {
   height: 100%; // ******* 
 
   &.modalOpen {
-    // height: auto !important; // чтобы при показе/скрытии модалок сайт не прокручивался вверх
+    height: auto !important; // чтобы при показе/скрытии модалок сайт не прокручивался вверх
     overflow-y: hidden !important;
   }
 }
