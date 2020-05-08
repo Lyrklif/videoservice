@@ -132,16 +132,9 @@
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "body-scroll-lock": "^2.6.1",
-    "bootstrap": "^4.2.1",
     "clampify": "^1.2.1",
     "css-vars-ponyfill": "^1.17.2",
-    "dotdotdot-js": "^4.0.11",
     "gulp-file-include": "^2.1.0",
-    "jquery": "^3.4.1",
-    "jquery-ajax": "^2.1.4",
-    "jquery-mask-plugin": "^1.14.16",
-    "jquery-validation": "^1.19.1",
-    "jquery.scrollbar": "^0.2.11",
     "lazysizes": "^5.2.0",
     "normalize.css": "^8.0.1",
     "plugin": "^0.3.3",
@@ -150,6 +143,7 @@
     "sass-breakpoints-mixins": "^1.0.0",
     "simplebar": "^5.2.0",
     "slick-carousel": "^1.8.1",
-    "yo": "^3.1.0"
+    "yo": "^3.1.0",
+    "bootstrap": "^4.2.1"
   }
 }
