@@ -22,7 +22,9 @@
 @import '../modules/site/site'; // страница сайта (шапка, контент, подвал)
 
 
-@import '../../node_modules/jquery.scrollbar/sass/jquery.scrollbar'; // scrollbar
+@import '../../node_modules/simplebar/dist/simplebar';
+
+@import 'plugins/simplebar'; // simplebar
 
 
 @import '../modules/icon/icon'; // svg иконка

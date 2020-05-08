@@ -43,8 +43,27 @@ mixin channels()
           {'time': '15:00', 'text': 'Секс в большом городе'},
         ]
       },
+      {
+        'title': 'Название канала', 
+        'logo': '',
+        'items': [
+          {'time': '00:00', 'text': 'Фильм'},
+          {'time': '00:00', 'text': 'Фильм'},
+          {'time': '00:00', 'text': 'Фильм'},
+        ]
+      },
+      {
+        'title': 'Название канала', 
+        'logo': '',
+        'items': [
+          {'time': '00:00', 'text': 'Фильм'},
+          {'time': '00:00', 'text': 'Фильм'},
+          {'time': '00:00', 'text': 'Фильм'},
+        ]
+      },
     ];
 
-  ul.channels
-    each val, i in data
-      li.channels__item: +channel(val)
+  div.channels(data-simplebar)
+    ul.channels__list
+      each val, i in data
+        li.channels__item: +channel(val)

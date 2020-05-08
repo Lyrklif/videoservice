@@ -148,6 +148,7 @@
     "sa-polyfills": "^1.1.2",
     "sa-source": "^1.1.7",
     "sass-breakpoints-mixins": "^1.0.0",
+    "simplebar": "^5.2.0",
     "slick-carousel": "^1.8.1",
     "yo": "^3.1.0"
   }
