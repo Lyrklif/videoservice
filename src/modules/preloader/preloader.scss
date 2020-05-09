@@ -19,21 +19,25 @@
   z-index: 1000;
 }
 
+
 .preloader_active {
   opacity: 1;
   visibility: visible;
 }
+
 
 .preloader__logotype {
   max-width: 100%;
   max-height: 100%;
 }
 
+
 .preloader img {
-  width: 182px;
+  width: 300px;
   opacity: 0.8;
   animation: eye 1.5s infinite alternate;
 }
+
 
 @keyframes eye {
   from {
