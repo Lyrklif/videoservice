@@ -35,8 +35,12 @@ a.header__logo {
   @include media-breakpoint-up(lg) {
     display: flex;
     align-items: center;
-    margin-right: 57px;
+    margin-right: 20px;
     margin-left: auto;
+  }
+  
+  @include media-breakpoint-up(xl) {
+    margin-right: 57px;
   }
 }
 
@@ -50,9 +54,10 @@ a.header__logo {
   display: none;
   margin-top: 2px;
 
-  width: 300px;
-
+  width: 200px;
+  
   @include media-breakpoint-up(lg) {
+    width: 300px;
     display: flex;
 
   }
