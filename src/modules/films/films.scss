@@ -1,6 +1,32 @@
 // films
 
 
+
 .films {
+  margin-top: 35px;
+}
+
+
+.films__header {
+  display: flex;
+  align-items: flex-start;
+}
+
+
+.films__emoji {
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
+
+.films__title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.films-list {
   @include grid();
+  margin-top: 17px;
+  margin-bottom: 0;
 }

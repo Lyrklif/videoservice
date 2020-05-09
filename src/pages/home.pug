@@ -21,12 +21,8 @@ block page
       +nav-item('Телеканалы', 'channels')
     //- tab #films
     +tab-content('films', 'active')
-      section
-        header: h2 Новинки
-        +films
-      section
-        header: h2 Жанры
-        +genres
+      +films
+      +genres
 
     //- tab #channels
     +tab-content('channels')
