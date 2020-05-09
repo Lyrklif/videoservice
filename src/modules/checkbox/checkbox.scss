@@ -11,7 +11,7 @@
 .checkbox__text {
   user-select: none;
 
-  &:before {
+  &::before {
     content: '';
     display: block;
     position: absolute;
@@ -23,17 +23,16 @@
     border: 1px solid #333333;
   }
 
-  &:after {
+  &::after {
     content: '';
     display: block;
     position: absolute;
     opacity: 0;
     transition: opacity $easing;
-
     height: 5px;
     width: 9px;
-    border-left: 1px solid #E5261E;
-    border-bottom: 1px solid #E5261E;
+    border-left: 1px solid #e5261e;
+    border-bottom: 1px solid #e5261e;
     transform: rotate(-45deg);
     left: 3px;
     top: 7px;
@@ -47,8 +46,8 @@
   display: none;
 
   &:checked {
-    &+.checkbox__text {
-      &:after {
+    & + .checkbox__text {
+      &::after {
         opacity: 1;
       }
     }

@@ -26,7 +26,7 @@ export default class Modal {
     // Получить scrollbar width
     const width = scrollDiv.offsetWidth - scrollDiv.clientWidth;
 
-    // Удалить созданный блок 
+    // Удалить созданный блок
     document.body.removeChild(scrollDiv);
 
     return width;
@@ -74,7 +74,7 @@ export default class Modal {
   }
 
   hash() {
-    let hash = window.location.hash.substring(1);
+    const hash = window.location.hash.substring(1);
 
     // если в адресной строке есть текст после # и существует модальное окно с таким id
     if (hash && this.modal.querySelector(`#${hash}`)) {

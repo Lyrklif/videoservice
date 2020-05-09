@@ -7,7 +7,6 @@
 .channels {
   max-height: 696px;
   margin-top: 31px;
-
   margin-right: -10px;
 
   @include media-breakpoint-up(md) {
@@ -19,7 +18,6 @@
 .channels__list {
   margin-top: 0;
   margin-bottom: 0;
-
   margin-right: 10px;
 
   @include media-breakpoint-up(md) {

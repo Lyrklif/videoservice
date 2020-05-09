@@ -1,8 +1,8 @@
 $grid-breakpoints: (xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1280px) !default;
+sm: 576px,
+md: 768px,
+lg: 992px,
+xl: 1280px) !default;
 
 
 $grid-gap: 20px;
@@ -12,10 +12,10 @@ $grid-width-xl: 1180px;
 
 // Шрифт
 $font-family: 'Rubik',
-'Roboto',
-'Helvetica',
-'Arial',
-sans-serif;
+  'Roboto',
+  'Helvetica',
+  'Arial',
+  sans-serif;
 
 
 // Путь к директории изображений для подключения через scss
@@ -26,18 +26,18 @@ $image_dir: '../images/';
 $black: #333333;
 $white: #ffffff;
 
-$primary: #E5261E;
-$blue: #1F4766;
-$gray: #F2F2F2;
+$primary: #e5261e;
+$blue: #1f4766;
+$gray: #f2f2f2;
 
 $default-white: #ffffff;
 $default-black: #000000;
 
-$primary-dark: #CC221B;
+$primary-dark: #cc221b;
 
 $border-radius: 8px;
 
-$easing: 0.3s ease-in-out;
+$easing: .3s ease-in-out;
 
 
 // Ссылки
@@ -74,7 +74,7 @@ $input-border-color: $black;
 
 
 
-/*  
+/*
 Шпаргалка
 ***********
 @include media-breakpoint-up(sm) {}
@@ -88,14 +88,14 @@ $input-border-color: $black;
 @include media-breakpoint-between(sm, md)
 
 ************
-font-weight 
-100	- Thin (Hairline) - Тонкий (Волосяной) 
-200	- Extra Light (Ultra Light) - Дополнительный светлый (Сверхсветлый) 
+font-weight
+100	- Thin (Hairline) - Тонкий (Волосяной)
+200	- Extra Light (Ultra Light) - Дополнительный светлый (Сверхсветлый)
 300	- Light - Светлый
 400	- Normal - Нормальный
 500	- Medium - Средний
 600	- Semi Bold (Demi Bold) - Полужирный
 700	- Bold Жирный
-800	- Extra Bold (Ultra Bold) - Дополнительный жирный (Сверхжирный) 
+800	- Extra Bold (Ultra Bold) - Дополнительный жирный (Сверхжирный)
 900	- Black (Heavy) - Черный (Густой) 
 */

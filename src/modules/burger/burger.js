@@ -14,7 +14,7 @@ export default class Burger {
   }
 
   events() {
-    const triggers = [...document.querySelectorAll('[data-burger]')];
+    const triggers = [ ...document.querySelectorAll('[data-burger]') ];
 
     for (let i = 0; i < triggers.length; i++) {
       triggers[i].addEventListener('click', e => {

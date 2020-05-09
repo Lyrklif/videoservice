@@ -31,10 +31,9 @@
   font-weight: 500;
   margin-top: 0;
   margin-bottom: 0;
-
   cursor: pointer;
   transition: opacity $easing;
-  @include hover(opacity, 0.8);
+  @include hover(opacity, .8);
 }
 
 .site-authorize__sign-out-btn {

@@ -4,14 +4,14 @@ import { cssClasses, savedData } from '../../scripts/vars.js';
 
 export default class SiteAuthorize {
   constructor() {
-    this.exitButtons = [...document.querySelectorAll('.js-sign-out-btn')];
+    this.exitButtons = [ ...document.querySelectorAll('.js-sign-out-btn') ];
 
-    this.wrapSignIn = [...document.querySelectorAll('.js-sign-in-wrap')];
-    this.wrapSignOut = [...document.querySelectorAll('.js-sign-out-wrap')];
+    this.wrapSignIn = [ ...document.querySelectorAll('.js-sign-in-wrap') ];
+    this.wrapSignOut = [ ...document.querySelectorAll('.js-sign-out-wrap') ];
 
-    this.names = [...document.querySelectorAll('.js-text-name')];
-    this.labels = [...document.querySelectorAll('.js-label-name')];
-    this.inputs = [...document.querySelectorAll('.js-input-name')];
+    this.names = [ ...document.querySelectorAll('.js-text-name') ];
+    this.labels = [ ...document.querySelectorAll('.js-label-name') ];
+    this.inputs = [ ...document.querySelectorAll('.js-input-name') ];
 
     if (this.names.length && this.inputs.length) {
       this.writeDefaultNameInInput();

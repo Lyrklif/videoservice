@@ -16,7 +16,6 @@
 // @include btn;
 @mixin btn () {
   @extend %btn-default;
-
   color: $btn-color;
   transition: color $easing;
 
@@ -28,10 +27,8 @@
 // @include btn-contained;
 @mixin btn-contained () {
   @extend %btn-default;
-
   background-color: $btn-contained-bg;
   color: $btn-contained-color;
-
   transition: background-color $easing;
 
   @include hover(background-color, $btn-contained-bg-hover);

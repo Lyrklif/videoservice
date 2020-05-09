@@ -15,12 +15,10 @@
   right: 0;
   top: 0;
   transition: transform .3s;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 30px 24px;
-
   overflow-y: auto;
 
   &_active {
@@ -45,7 +43,7 @@
   margin-right: 0;
   margin-left: auto;
 
-  @media (pointer:coarse) {
+  @media (pointer: coarse) {
     -webkit-tap-highlight-color: transparent;
     -webkit-appearance: none;
     outline: none !important;
@@ -57,7 +55,6 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-appearance: none;
   }
-
   transition: stroke $easing;
   @include hover(stroke, $btn-color-hover);
 }

@@ -3,12 +3,12 @@
 
 
 // Заголовок h1
-@mixin h1-style() {}
+@mixin h1-style () {}
 
 
 // Заголовок h2
 // @include h2-style;
-@mixin h2-style() {
+@mixin h2-style () {
   font-weight: 500;
   font-size: 24px;
   line-height: em(28px, 24px);
@@ -17,7 +17,7 @@
 
 // Заголовок h3
 // @include h3-style;
-@mixin h3-style() {
+@mixin h3-style () {
   font-size: 20px;
   line-height: em(24px, 20px);
   font-weight: normal;
@@ -25,4 +25,4 @@
 
 
 // Заголовок h4
-@mixin h4-style() {}
+@mixin h4-style () {}

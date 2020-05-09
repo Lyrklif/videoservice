@@ -6,7 +6,6 @@
 .hamburger {
   width: 36px;
   height: 36px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +13,7 @@
 
 
 
-  @media (pointer:coarse) {
+  @media (pointer: coarse) {
     -webkit-tap-highlight-color: transparent;
     -webkit-appearance: none;
     outline: none !important;
@@ -36,7 +35,6 @@
   }
 
   @include media-breakpoint-up(sm) {
-
     &:hover,
     &:focus {
       .hamburger__line {
@@ -53,9 +51,7 @@
   width: 20px;
   height: 2px;
   background-color: $black;
-
   margin-top: 2px;
   margin-bottom: 2px;
-
   transition: background-color $easing;
 }
