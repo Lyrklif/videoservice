@@ -44,8 +44,8 @@ export default class ModalAuthorize {
   }
 
   writeData() {
-    const login = localStorage.getItem('login');
-    const password = localStorage.getItem('password');
+    const login = localStorage.getItem('videoservice_login');
+    const password = localStorage.getItem('videoservice_password');
 
     if (login) this.login.value = login;
     if (password) this.password.value = password;
@@ -57,8 +57,8 @@ export default class ModalAuthorize {
     const remember = this.remember.checked;
 
     if (remember) {
-      localStorage.setItem('login', login);
-      localStorage.setItem('password', password);
+      localStorage.setItem('videoservice_login', login);
+      localStorage.setItem('videoservice_password', password);
     }
   }
 }
