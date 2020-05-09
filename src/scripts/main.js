@@ -7,12 +7,12 @@ import 'simplebar';
 import Icon from '../modules/icon/icon';
 import Burger from '../modules/burger/burger';
 import Modal from '../modules/modal/modal';
-import Form from '../modules/form/form';
 import Film from '../modules/film/film';
 import Checkbox from '../modules/checkbox/checkbox'; // checkbox
 import Tabs from '../modules/tabs/tabs'; // при вводе текста в input placeholder поднимается
 import Channels from '../modules/channels/channels'; // channels
 import SiteAuthorize from '../modules/site-authorize/site-authorize'; // site-authorize
+import ModalAuthorize from '../modules/modal-authorize/modal-authorize'; // site-authorize
 
 import '@babel/polyfill';
 import cssVars from 'css-vars-ponyfill';
@@ -27,11 +27,11 @@ if (detection.isIE10Plus()) {
 window.addEventListener('load', () => {
   new Icon();
   new Burger();
-  new Form();
   new Checkbox();
   window.globalModal = new Modal();
   window.globalTabs = new Tabs();
   new Film();
   new Channels();
   new SiteAuthorize();
+  new ModalAuthorize();
 });

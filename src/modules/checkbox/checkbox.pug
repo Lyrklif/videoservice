@@ -2,7 +2,7 @@
 
 
 mixin checkbox(checked)
-  label.checkbox.js-checkbox(tabindex="0")&attributes(attributes)
-    input.checkbox__input(type="checkbox", checked!=checked)
+  label.checkbox.js-checkbox(tabindex="0", class!=attributes.labelClass)
+    input.checkbox__input(type="checkbox", checked!=checked, class!=attributes.class)
     span.checkbox__text
       block

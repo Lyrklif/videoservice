@@ -5,4 +5,11 @@
 //- +input('type', 'name', 'placeholder')
 mixin input(type, name, placeholder)
   label.input(class!=attributes.labelClass)
-    input.input__fluid(type=type || 'text', name!=name, placeholder!=placeholder, required!=attributes.required, minlength!=attributes.minlength)
+    input.input__fluid(
+      type=type || 'text', 
+      name!=name, 
+      placeholder!=placeholder, 
+      required!=attributes.required, 
+      minlength!=attributes.minlength,
+      class!=attributes.class
+      )
