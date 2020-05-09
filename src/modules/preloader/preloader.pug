@@ -1,6 +1,6 @@
+include ../img/img
+
+
 mixin preloader
   .preloader.preloader_active#preloader
-    img.preloader__logotype(src="images/logotype.png", data-srcset="images/logotype-2x.png 2x", alt="Ижтендер")
-
-mixin preloader2
-  .preloader.preloader_active#preloader
+    +img('logotype.png', 'Видеосервис')(class="preloader__logotype")

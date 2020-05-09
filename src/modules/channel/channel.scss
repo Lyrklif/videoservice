@@ -60,16 +60,19 @@
 
 .channel__logo {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 
-  height: 64px;
   width: 114px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 
   order: -1;
 
   @include media-breakpoint-up(md) {
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+
     position: absolute;
     left: 12.2%;
     top: 50%;
