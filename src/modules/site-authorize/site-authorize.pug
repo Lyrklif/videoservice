@@ -8,6 +8,8 @@ include ../input/input
 
 
 mixin site-authorize()
-  .site-authorize&attributes(attributes)
-    +btn-contained('Войти', '#authorize')(data-modal="authorize" class="")
+  .site-authorize.js-site-authorize&attributes(attributes)
+    +btn-contained('Войти', '#authorize')(data-modal="authorize")
       |Войти
+    +btn('Выйти')(class="js-sign-out")
+      |Выйти

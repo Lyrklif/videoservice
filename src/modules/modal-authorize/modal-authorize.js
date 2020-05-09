@@ -38,6 +38,7 @@ export default class ModalAuthorize {
       if (valid) {
         this.setData();
         window.globalModal.hide();
+        window.globalSiteAuthorize.authorize();
       }
     });
   }

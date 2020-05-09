@@ -32,6 +32,6 @@ window.addEventListener('load', () => {
   window.globalTabs = new Tabs();
   new Film();
   new Channels();
-  new SiteAuthorize();
+  window.globalSiteAuthorize = new SiteAuthorize();
   new ModalAuthorize();
 });
