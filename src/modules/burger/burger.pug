@@ -13,7 +13,7 @@ mixin burger
         +icon('icon-close', 'burger__close-icon')
     .burger__content
       form.burger__form(action="" method="")
-        +input('text', 'search', 'Поиск...')(class="")
+        +input('text', 'search', 'Поиск...')(labelClass="")
         +btn('Найти')
           |Найти
       +site-authorize

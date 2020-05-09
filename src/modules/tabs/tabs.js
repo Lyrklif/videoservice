@@ -40,7 +40,7 @@ export default class Tabs {
       indexTab = this.getIndexFoundedTab(name, index);
     }
 
-    if (indexContent !== undefined && indexTab !== undefined) {
+    if (indexContent !== null && indexTab !== null) {
       this.removeClasses();
       this.tabs[indexTab].classList.add(cssClasses.activeElem);
       this.addClassesContent(indexContent);

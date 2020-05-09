@@ -132,18 +132,19 @@
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "body-scroll-lock": "^2.6.1",
+    "bootstrap": "^4.2.1",
     "clampify": "^1.2.1",
     "css-vars-ponyfill": "^1.17.2",
     "gulp-file-include": "^2.1.0",
     "lazysizes": "^5.2.0",
     "normalize.css": "^8.0.1",
     "plugin": "^0.3.3",
+    "pristinejs": "^0.1.6",
     "sa-polyfills": "^1.1.2",
     "sa-source": "^1.1.7",
     "sass-breakpoints-mixins": "^1.0.0",
     "simplebar": "^5.2.0",
     "slick-carousel": "^1.8.1",
-    "yo": "^3.1.0",
-    "bootstrap": "^4.2.1"
+    "yo": "^3.1.0"
   }
 }
