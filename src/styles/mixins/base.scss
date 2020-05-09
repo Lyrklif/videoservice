@@ -3,14 +3,14 @@
 
 // Фоновое изображение
 // @include backgroundImage('name.png');
-@mixin backgroundImage($imageNameWhisExtension) {
-  background-image: url($image_dir + $imageNameWhisExtension );
+@mixin backgroundImage ($imageNameWhisExtension) {
+  background-image: url($image_dir + $imageNameWhisExtension);
 }
 
 
 // убрать стили списков
 // @include resetListStyle;
-@mixin resetListStyle() {
+@mixin resetListStyle () {
   padding-left: 0;
   list-style-type: none;
 }

@@ -15,12 +15,10 @@
   right: 0;
   top: 0;
   transition: transform .3s;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 30px 24px;
-
   overflow-y: auto;
 
   &_active {
@@ -45,7 +43,7 @@
   margin-right: 0;
   margin-left: auto;
 
-  @media (pointer:coarse) {
+  @media (pointer: coarse) {
     -webkit-tap-highlight-color: transparent;
     -webkit-appearance: none;
     outline: none !important;
@@ -74,10 +72,21 @@
 .burger__content {
   width: 100%;
   margin-top: 24px;
+
+  .btn {
+    padding: 0;
+    margin-left: 16px;
+  }
+
+  .site-authorize__sign-out {
+    min-height: 25px;
+    align-items: center;
+  }
 }
 
 
 .burger__form {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 24px;
 }

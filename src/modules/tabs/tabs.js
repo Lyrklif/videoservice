@@ -8,8 +8,8 @@ import { cssClasses } from '../../scripts/vars.js';
 
 export default class Tabs {
   constructor() {
-    this.tabs = [...document.querySelectorAll('[data-tab-control]')];
-    this.contents = [...document.querySelectorAll('[data-tab-content]')];
+    this.tabs = [ ...document.querySelectorAll('[data-tab-control]') ];
+    this.contents = [ ...document.querySelectorAll('[data-tab-content]') ];
 
     if (this.tabs.length && this.contents.length) {
       this.init();

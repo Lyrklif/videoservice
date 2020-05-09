@@ -2,13 +2,13 @@
 
 
 .link {
-  @include link-style();
+  @include link-style;
 }
 
 .primary {
-  @include link-style-primary();
+  @include link-style-primary;
 }
 
 .secondary {
-  @include link-style-secondary();
+  @include link-style-secondary;
 }

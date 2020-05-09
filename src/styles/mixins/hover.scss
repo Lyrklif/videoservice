@@ -4,13 +4,12 @@
 
 
 // @include hover(color, green);
-@mixin hover($property, $value) {
+@mixin hover ($property, $value) {
   &:active {
     #{$property}: $value;
   }
 
   @include media-breakpoint-up(sm) {
-
     &:hover,
     &:focus {
       #{$property}: $value;

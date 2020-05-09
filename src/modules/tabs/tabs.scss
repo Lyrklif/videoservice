@@ -4,8 +4,6 @@
 .tab-content {
   display: none;
   opacity: 0;
-
-
   transition: opacity $easing;
 
   &.active {

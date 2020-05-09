@@ -10,6 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp serve",
     "build": "gulp build --production",
+    "deploy": "gh-pages -d build",
     "module": "node node_modules/sa-template-1/module.js",
     "lint-css": "stylelint src/**/*.scss -f verbose --fix",
     "lint-js": "eslint src/**/*.js --fix"
@@ -140,6 +141,7 @@
     "bootstrap": "^4.2.1",
     "clampify": "^1.2.1",
     "css-vars-ponyfill": "^1.17.2",
+    "gh-pages": "^2.2.0",
     "gulp-file-include": "^2.1.0",
     "lazysizes": "^5.2.0",
     "normalize.css": "^8.0.1",

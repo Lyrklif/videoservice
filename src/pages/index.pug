@@ -1,16 +1,78 @@
 extends ../modules/layout/layout.pug
+include ../modules/input/input
+include ../modules/icon/icon
+include ../modules/link/link
+include ../modules/btn/btn
+include ../modules/input/input
+include ../modules/checkbox/checkbox
+include ../modules/genre/genre
+include ../modules/film/film
+include ../modules/channel/channel
 
 block page
   .page
     .container.content
-      h1 Видеосервис
       h2 Навигация по страницам
       ul
         li: a(href="./home.html", title="Главная страница") Главная страница
         li: a(href="./home.html#channels", title="Главная страница (Телеканалы)") Главная страница (Телеканалы)
-        li: a(href="./style.html", title="Стилевая страница") Стилевая страница
-        li: a(href="./style.html#authorize", title="Стилевая страница с открытой модалкой") Стилевая страница с открытой модалкой
+        li: a(href="./home.html#authorize", title="Главная страница") Главная страница с открытой модалкой
+      hr
       h2 Модальные окна
       ul
         li:  a(href="#authorize", data-modal="authorize", title="Вход") Вход
-
+      hr
+      h1 h1 Заголовок
+      p 
+        |Рыбный текст. Равным образом реализация намеченных плановых заданий обеспечивает широкому кругу (специалистов) участие 
+        |в формировании дальнейших направлений развития.
+      h2 h2 Заголовок
+      p 
+        |Рыбный текст. Равным образом реализация намеченных плановых заданий обеспечивает широкому кругу (специалистов) участие 
+        |в формировании дальнейших направлений развития.
+      h3 h3 Заголовок
+      p 
+        |Рыбный текст. Равным образом реализация намеченных плановых заданий обеспечивает широкому кругу (специалистов) участие 
+        |в формировании дальнейших направлений развития.
+      hr 
+      h2 Ссылки
+      p 
+        a(href="#") ссылка без доп. стилей
+      p
+        +link('ссылка, похожая на обычный текст')
+          |ссылка, похожая на обычный текст
+      p
+        +link-primary('красная ссылка')
+          |красная ссылка
+      p
+        +link-secondary('синяя сылка')
+          |синяя сылка
+      hr
+      h2 Кнопки
+      p
+        button кнопка без доп. стилей
+      p
+        +btn('кнопка с красным фоном')
+          |кнопка с красным текстом
+      p
+        +btn-contained('кнопка с красным фоном')
+          |кнопка с красным фоном
+      p
+        a.btn(href="#" title='кнопка с красным фоном')
+          |ссылка, похожая на кнопку с красным текстом
+      p
+        a.btn-contained(href="#" title='кнопка с красным фоном')
+          |ссылка, похожая на кнопку с красным фоном
+      hr
+      h2 Поля ввода
+      +input("password", 'input-password', 'Пароль')
+      +input("text", 'input-text', 'Логин')
+      +input("text", 'input-text', 'Поиск...')
+      hr
+      h2 Чекбокс
+      p
+        +checkbox()
+          |Выбрать
+      p
+        +checkbox('checked')
+          |Выбрать

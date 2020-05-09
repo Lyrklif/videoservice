@@ -14,35 +14,35 @@
 
 
 .genres__list {
-  @include grid();
+  @include grid;
   margin-bottom: 0;
 }
 
 
 
 .genres__comedy {
-  &:before {
-    background: linear-gradient(136.27deg, #F2C94C 8.44%, #F29A4A 91.36%);
+  &::before {
+    background: linear-gradient(136.27deg, #f2c94c 8.44%, #f29a4a 91.36%);
   }
 }
 
 
 .genres__drama {
-  &:before {
-    background: linear-gradient(136.27deg, #F2994A 8.44%, #EB5757 91.36%);
+  &::before {
+    background: linear-gradient(136.27deg, #f2994a 8.44%, #eb5757 91.36%);
   }
 }
 
 
 .genres__fiction {
-  &:before {
-    background: linear-gradient(136.27deg, #56CCF2 8.44%, #2F80ED 91.36%);
+  &::before {
+    background: linear-gradient(136.27deg, #56ccf2 8.44%, #2f80ed 91.36%);
   }
 }
 
 
 .genres__horror {
-  &:before {
+  &::before {
     background: linear-gradient(136.27deg, #828282 8.44%, #333333 91.36%);
   }
 }

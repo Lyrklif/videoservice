@@ -7,9 +7,7 @@
   background-color: $gray;
   border-radius: $border-radius;
   position: relative;
-
   padding: 24px 20px;
-
   display: flex;
   flex-direction: column;
 
@@ -62,21 +60,17 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-
   width: 114px;
   margin-bottom: 24px;
-
   order: -1;
 
   @include media-breakpoint-up(md) {
     height: 64px;
     align-items: center;
     justify-content: center;
-
     position: absolute;
     left: 12.2%;
     top: 50%;
-
     transform: translateY(-50%);
   }
 }

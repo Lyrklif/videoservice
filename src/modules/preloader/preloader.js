@@ -7,7 +7,7 @@ class Preloader {
 
     if (this.preloader) {
       this.show();
-      let timer = setTimeout(() => {
+      const timer = setTimeout(() => {
         this.hide();
       }, 10000);
 
