@@ -10,7 +10,6 @@ import Modal from '../modules/modal/modal';
 import Film from '../modules/film/film';
 import Checkbox from '../modules/checkbox/checkbox'; // checkbox
 import Tabs from '../modules/tabs/tabs'; // при вводе текста в input placeholder поднимается
-import Channels from '../modules/channels/channels'; // channels
 import SiteAuthorize from '../modules/site-authorize/site-authorize'; // site-authorize
 import ModalAuthorize from '../modules/modal-authorize/modal-authorize'; // site-authorize
 
@@ -31,7 +30,6 @@ window.addEventListener('load', () => {
   window.globalModal = new Modal();
   window.globalTabs = new Tabs();
   new Film();
-  new Channels();
   window.globalSiteAuthorize = new SiteAuthorize();
   new ModalAuthorize();
 });
