@@ -19,6 +19,8 @@ const {
 } = packageJSON;
 const target = isProd ? production : development;
 
+console.log('tasks', tasks);
+
 glob.sync('./tasks/**/*.js').map(file => require(file)({
   packageJSON,
   gulp,

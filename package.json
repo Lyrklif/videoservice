@@ -116,6 +116,10 @@
         "sprite": [
           "images/svg",
           "images"
+        ],
+        "preloader": [
+          "modules/preloader",
+          ""
         ]
       }
     },
@@ -126,7 +130,8 @@
       "js",
       "fonts",
       "images",
-      "sprite"
+      "sprite",
+      "preloader"
     ]
   },
   "dependencies": {

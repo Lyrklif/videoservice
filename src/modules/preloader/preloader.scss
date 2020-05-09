@@ -1,6 +1,6 @@
 // 
 
-
+@import '../../styles/variables.scss';
 
 
 .preloader {
@@ -33,9 +33,16 @@
 
 
 .preloader img {
-  width: 300px;
+  width: 200px;
   opacity: 0.8;
   animation: eye 1.5s infinite alternate;
+}
+
+// md
+@media screen and (min-width: 768px) {
+  .preloader img {
+    width: 300px;
+  }
 }
 
 
