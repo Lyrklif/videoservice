@@ -9,5 +9,13 @@ include ../input/input
 
 mixin site-authorize()
   .site-authorize&attributes(attributes)
-    +btn-contained('Войти', '#authorize')(data-modal="authorize" class="")
-      |Войти
+
+    .site-authorize__sign-in.show.js-sign-in-wrap
+      +btn-contained('Войти', '#authorize')(data-modal="authorize")
+        |Войти
+
+    .site-authorize__sign-out.js-sign-out-wrap
+      p.site-authorize__text-name.js-text-name.show(tabindex="0") Константин К.
+      +input("text", 'input-name', 'Имя')(labelClass="site-authorize__label-name js-label-name", class="js-input-name")
+      +btn('Выйти')(class="js-sign-out-btn")
+        |Выйти

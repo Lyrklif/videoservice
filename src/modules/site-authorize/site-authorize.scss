@@ -3,6 +3,21 @@
 
 
 
-.site-authorize {
+.site-authorize {}
 
+
+.site-authorize__text-name,
+.site-authorize__label-name,
+.site-authorize__sign-in,
+.site-authorize__sign-out {
+  display: none;
+
+  &.show {
+    display: flex;
+  }
+}
+
+
+.site-authorize__text-name {
+  font-weight: 500;
 }
