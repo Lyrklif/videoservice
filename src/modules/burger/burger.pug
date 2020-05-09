@@ -1,9 +1,19 @@
 include ../icon/icon
+include ../btn/btn
+include ../input/input
+include ../site-authorize/site-authorize
+
+
+
 
 mixin burger
   .burger#burger
     .burger__header
-      a.burger__close(href="./" data-burger, title="Закрыть")
+      +btn('Закрыть')(class="burger__close", data-burger)
         +icon('icon-close', 'burger__close-icon')
     .burger__content
-      p Burger
+      form.burger__form(action="" method="")
+        +input('text', 'search', 'Поиск...')(class="")
+        +btn('Найти')
+          |Найти
+      +site-authorize

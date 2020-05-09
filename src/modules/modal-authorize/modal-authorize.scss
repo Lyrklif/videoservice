@@ -1,4 +1,4 @@
-.authorize {
+.modal-authorize {
   // display: flex;
   // flex-direction: column;
   padding: 36px;
@@ -12,26 +12,26 @@
   }
 }
 
-.authorize__title {
+.modal-authorize__title {
   text-align: center;
   font-size: 28px;
   margin-top: 0;
   margin-bottom: 0.65em;
 }
 
-.authorize__input {
+.modal-authorize__input {
   width: 100%;
   margin-bottom: 18px;
 }
 
-.authorize__input {}
+.modal-authorize__input {}
 
-.authorize__checkbox {
+.modal-authorize__checkbox {
   margin-top: 3px;
   display: block;
 }
 
-.authorize__btn {
+.modal-authorize__btn {
   margin-top: 108px;
   display: block;
   margin-left: auto;
