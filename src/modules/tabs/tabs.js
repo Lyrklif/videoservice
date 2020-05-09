@@ -21,7 +21,7 @@ export default class Tabs {
 
     for (let i = 0; i < this.tabs.length; i++) {
       this.tabs[i].addEventListener('click', e => {
-        e.preventDefault();
+        // e.preventDefault();
         if (!this.tabs[i].classList.contains(cssClasses.activeElem)) {
           let attr = this.tabs[i].dataset.tabControl;
           this.open(attr, i);
@@ -45,8 +45,6 @@ export default class Tabs {
       this.tabs[indexTab].classList.add(cssClasses.activeElem);
       this.addClassesContent(indexContent);
     }
-
-    // history.pushState({}, `${href}`, `#${href}`); // добавить hash в адресную строку
   }
 
   // удалить лишние классы
@@ -67,8 +65,7 @@ export default class Tabs {
 
   // показать найденный блок
   getIndexFoundedElem(arr, attr, href, index) {
-    // eslint-disable-next-line no-undefined
-    if (index !== undefined && arr[index].dataset[attr] === href) {
+    if (typeof index !== 'undefined' && arr[index].dataset[attr] === href) {
       return index;
     }
 

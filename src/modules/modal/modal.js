@@ -38,7 +38,7 @@ export default class Modal {
 
     for (let i = 0; i < links.length; i++) {
       links[i].addEventListener('click', e => {
-        e.preventDefault();
+        // e.preventDefault();
         const id = links[i].dataset.modal;
 
         if (id && id !== 'data-modal') {
@@ -79,16 +79,12 @@ export default class Modal {
     // если в адресной строке есть текст после # и существует модальное окно с таким id
     if (hash && this.modal.querySelector(`#${hash}`)) {
       this.show(hash);
-    } else {
-      this.hide();
     }
   }
 
   show(id) {
     const tab = document.getElementById(id); // текущее модальное окно
     const input = tab.querySelector('input:not([type="checkbox"]):not([type="radio"])'); // первый input в модальном окне
-
-    // history.pushState({}, `${id}`, `#${id}`); // добавить hash в адресную строку
 
     if (tab) tab.classList.add('modal__tab_active');
     this.modal.classList.add('modal_active'); // ***
@@ -114,7 +110,8 @@ export default class Modal {
     this.modal.classList.remove('modal_active');
 
     // удалить hash из адресной строки
-    // history.pushState('', document.title, window.location.pathname);
+    history.replaceState({}, '', window.location.href.split('#')[0]);
+
     enableBodyScroll(this.modal);
 
     const tab = document.querySelector('.modal__tab_active');
