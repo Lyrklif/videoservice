@@ -13,7 +13,7 @@ const cssnano = require('gulp-cssnano');
 module.exports = params => {
   const { gulp, isProd, source, target, dirs, entries, plumber, notify, gulpif, browserSync, sourcemaps } = params;
   const tasks = [];
-  const inputCss = entries.css.map(value => `${source}/modules/preloader/preloader.scss`);
+  const inputCss = `${source}/modules/preloader/preloader.scss`;
   const inputJs = `${source}/modules/preloader/preloader.js`;
   const output = `${target}/${dirs.copy[1]}/preloader`;
 
