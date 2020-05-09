@@ -67,6 +67,8 @@ export default class SiteAuthorize {
       this.names[i].addEventListener('click', () => {
         this.hide(this.names[i]);
         this.show(this.labels[i]);
+
+        this.inputs[i].focus();
       });
     }
   }
