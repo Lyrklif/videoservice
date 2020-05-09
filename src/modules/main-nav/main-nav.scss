@@ -1,24 +1,26 @@
 // main-nav
 
 
-.main-nav {}
+.main-nav {
+  margin-top: 8px;
+}
 
 
 .main-nav__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-
-.main-nav__item {}
 
 
 .main-nav__link {
   font-weight: 500;
   font-size: 28px;
 
-  padding-bottom: 8px;
+  padding-bottom: 7px;
 
   border-bottom: 2px solid transparent;
 

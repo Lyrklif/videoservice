@@ -19,17 +19,12 @@ block page
     +main-nav
       +nav-item('Фильмы', 'films', 'active')
       +nav-item('Телеканалы', 'channels')
+
     //- tab #films
     +tab-content('films', 'active')
-      section
-        header: h2 Новинки
-        +films
-      section
-        header: h2 Жанры
-        +genres
+      +films
+      +genres
 
     //- tab #channels
     +tab-content('channels')
-      section
-        header.meta-title: h2 Телепрограмма 
-        +channels
+      +channels

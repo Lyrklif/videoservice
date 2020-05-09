@@ -3,7 +3,16 @@
 
 
 
-.site-authorize {}
+.site-authorize {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .input__fluid {
+    text-align: right;
+  }
+}
 
 
 .site-authorize__text-name,
@@ -20,4 +29,16 @@
 
 .site-authorize__text-name {
   font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  cursor: pointer;
+  transition: opacity $easing;
+  @include hover(opacity, 0.8);
+}
+
+.site-authorize__sign-out-btn {
+  padding: 0;
+  min-height: 1px;
+  margin-left: 16px;
 }

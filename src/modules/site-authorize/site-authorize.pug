@@ -16,6 +16,6 @@ mixin site-authorize()
 
     .site-authorize__sign-out.js-sign-out-wrap
       p.site-authorize__text-name.js-text-name.show(tabindex="0") Константин К.
-      +input("text", 'input-name', 'Имя')(labelClass="site-authorize__label-name js-label-name", class="js-input-name")
-      +btn('Выйти')(class="js-sign-out-btn")
+      +input("text", 'input-name', 'Имя')(labelClass="site-authorize__label-name js-label-name", class="js-input-name" )
+      +btn('Выйти')(class="site-authorize__sign-out-btn js-sign-out-btn")
         |Выйти

@@ -63,7 +63,8 @@ mixin channels()
       },
     ];
 
-  div.channels(data-simplebar)
+  section.channels(data-simplebar)
+    header.meta-title: h2 Телепрограмма 
     ul.channels__list
       each val, i in data
         li.channels__item: +channel(val)
