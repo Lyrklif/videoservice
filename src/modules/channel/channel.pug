@@ -2,17 +2,17 @@
 
 include ../link/link
 include ../icon/icon
+include ../img/img
 
 
 
 mixin channel(data)
-  - iconName = data.logo ? data.logo : 'image'
-
   article.channel
     header: h3.channel__title: +link(data.title)= data.title
 
-    +link-secondary(data.title)(class="channel__logo")
-      +icon(iconName)
+    if (data.logo)
+      +link-secondary(data.title)(class="channel__logo")
+        +img(data.logo, data.title)
 
     table.channel__table
       tbody
