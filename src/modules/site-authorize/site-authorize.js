@@ -98,10 +98,21 @@ export default class SiteAuthorize {
 
   // изменить имя
   changeName(input) {
-    const name = input.value;
+    const name = this.getFixName(input.value);
+
     localStorage.setItem(savedData.name, name);
     this.writeName();
     this.showTextName();
+  }
+
+  getFixName(value) {
+    let fixedName = value;
+
+    if (value.length > 12) {
+      fixedName = `${value.substr(0, 12)}.`;
+    }
+
+    return fixedName;
   }
 
   // записать имя в input и p
