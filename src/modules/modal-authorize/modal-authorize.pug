@@ -4,13 +4,15 @@ include ../input/input
 include ../icon/icon
 include ../checkbox/checkbox
 
+
+
 //- Модальное окно order-signature
 mixin modal-authorize
   #authorize&attributes(attributes)
-    form.modal-authorize(action="", method="post" )
+    form.modal-authorize(action="", method="post", novalidate)
       h2.modal-authorize__title Вход
-      +input("text", 'input-text', 'Логин')(class="modal-authorize__input")
-      +input("password", 'input-password', 'Пароль')(class="modal-authorize__input")
+      +input("text", 'input-text', 'Логин')(labelClass="modal-authorize__input", required, minlength="1" )
+      +input("password", 'input-password', 'Пароль')(labelClass="modal-authorize__input", required, minlength="1" )
       +checkbox()(class="modal-authorize__checkbox")
         |Запомнить
       +btn-contained('Войти')(class="modal-authorize__btn")

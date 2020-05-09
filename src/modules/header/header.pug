@@ -26,8 +26,8 @@ mixin header(isMainPage)
   header.header.container
     +logo
     form.header__form(action="" method="")
-      +input('text', 'search', 'Поиск...')(class="header__search")
+      +input('text', 'search', 'Поиск...')(labelClass="header__search")
       +btn('Найти')
         |Найти
-    +site-authorize()(class='class="header__authorize')
+    +site-authorize()(class='header__authorize')
     +humburger(class="header__humburger")
