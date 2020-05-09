@@ -55,6 +55,7 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-appearance: none;
   }
+
   transition: stroke $easing;
   @include hover(stroke, $btn-color-hover);
 }
@@ -71,10 +72,21 @@
 .burger__content {
   width: 100%;
   margin-top: 24px;
+
+  .btn {
+    padding: 0;
+    margin-left: 16px;
+  }
+
+  .site-authorize__sign-out {
+    min-height: 25px;
+    align-items: center;
+  }
 }
 
 
 .burger__form {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 24px;
 }
