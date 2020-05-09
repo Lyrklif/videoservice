@@ -1,17 +1,17 @@
 'use strict';
 
-import { cssClasses } from '../../scripts/vars.js';
+import { cssClasses, savedData } from '../../scripts/vars.js';
 
 export default class SiteAuthorize {
   constructor() {
-    this.exitButtons = document.querySelectorAll('.js-sign-out-btn');
+    this.exitButtons = [...document.querySelectorAll('.js-sign-out-btn')];
 
-    this.wrapSignIn = document.querySelectorAll('.js-sign-in-wrap');
-    this.wrapSignOut = document.querySelectorAll('.js-sign-out-wrap');
+    this.wrapSignIn = [...document.querySelectorAll('.js-sign-in-wrap')];
+    this.wrapSignOut = [...document.querySelectorAll('.js-sign-out-wrap')];
 
-    this.names = document.querySelectorAll('.js-name');
-    this.labels = document.querySelectorAll('.js-label-name');
-    this.inputs = document.querySelectorAll('.js-input-name');
+    this.names = [...document.querySelectorAll('.js-text-name')];
+    this.labels = [...document.querySelectorAll('.js-label-name')];
+    this.inputs = [...document.querySelectorAll('.js-input-name')];
 
     if (this.names.length) {
       this.writeName();
@@ -22,11 +22,9 @@ export default class SiteAuthorize {
     }
 
     if (this.names.length && this.labels.length && this.inputs.length) {
-      this.showInputChangeName();
+      this.clickTextNameEvent();
       this.changeName();
     }
-
-    // cssClasses.showElem
   }
 
   // при нажатии на кнопки "выйти"
@@ -38,8 +36,8 @@ export default class SiteAuthorize {
     }
   }
 
-  // показать input для изменения имени
-  showInputChangeName() {
+  // при нажатии на имя показать input для изменения имени
+  clickTextNameEvent() {
     for (let i = 0; i < this.names.length; i++) {
       this.names[i].addEventListener('click', () => {
         this.hide(this.names[i]);
@@ -61,7 +59,7 @@ export default class SiteAuthorize {
     for (let i = 0; i < this.inputs.length; i++) {
       this.inputs[i].addEventListener('blur', () => {
         const name = this.inputs[i].value;
-        localStorage.setItem('videoservice_name', name);
+        localStorage.setItem(savedData.name, name); // savedData.name
         this.writeName();
         this.showTextName();
       });
@@ -69,7 +67,7 @@ export default class SiteAuthorize {
   }
 
   writeName() {
-    const savedName = localStorage.getItem('videoservice_name');
+    const savedName = localStorage.getItem(savedData.name);
 
     if (savedName) {
       for (let i = 0; i < this.names.length; i++) {
