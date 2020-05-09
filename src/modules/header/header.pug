@@ -7,6 +7,7 @@ include ../link/link
 include ../btn/btn
 include ../input/input
 include ../humburger/humburger
+include ../site-authorize/site-authorize
 
 
 
@@ -28,6 +29,5 @@ mixin header(isMainPage)
       +input('text', 'search', 'Поиск...')(class="header__search")
       +btn('Найти')
         |Найти
-    +btn-contained('Войти', '#authorize')(data-modal="authorize" class="header__authorize")
-      |Войти
+    +site-authorize()(class='class="header__authorize')
     +humburger(class="header__humburger")

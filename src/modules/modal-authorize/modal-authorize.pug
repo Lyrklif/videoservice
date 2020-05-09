@@ -7,11 +7,11 @@ include ../checkbox/checkbox
 //- Модальное окно order-signature
 mixin modal-authorize
   #authorize&attributes(attributes)
-    form.authorize(action="", method="post" )
-      h2.authorize__title Вход
-      +input("text", 'input-text', 'Логин')(class="authorize__input")
-      +input("password", 'input-password', 'Пароль')(class="authorize__input")
-      +checkbox()(class="authorize__checkbox")
+    form.modal-authorize(action="", method="post" )
+      h2.modal-authorize__title Вход
+      +input("text", 'input-text', 'Логин')(class="modal-authorize__input")
+      +input("password", 'input-password', 'Пароль')(class="modal-authorize__input")
+      +checkbox()(class="modal-authorize__checkbox")
         |Запомнить
-      +btn-contained('Войти')(class="authorize__btn")
+      +btn-contained('Войти')(class="modal-authorize__btn")
         |Войти

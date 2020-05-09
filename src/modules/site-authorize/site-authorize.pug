@@ -1,0 +1,13 @@
+//- site-authorize
+
+
+include ../btn/btn
+include ../input/input
+
+
+
+
+mixin site-authorize()
+  .site-authorize&attributes(attributes)
+    +btn-contained('Войти', '#authorize')(data-modal="authorize" class="")
+      |Войти

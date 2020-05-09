@@ -17,6 +17,7 @@ import Input from '../modules/input/input'; // при вводе текста в
 import Checkbox from '../modules/checkbox/checkbox'; // checkbox
 import Tabs from '../modules/tabs/tabs'; // при вводе текста в input placeholder поднимается
 import Channels from '../modules/channels/channels'; // channels
+import SiteAuthorize from '../modules/site-authorize/site-authorize'; // site-authorize
 
 if (detection.isIE10Plus()) {
   cssVars({
@@ -34,4 +35,5 @@ window.addEventListener('load', () => {
   window.globalTabs = new Tabs();
   new Film();
   new Channels();
+  new SiteAuthorize();
 });
