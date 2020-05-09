@@ -2,7 +2,7 @@
 
 //- +img('fileName', 'alt')
 mixin img(fileName, alt)
-  - const url = `images/${fileName}`
-  - const url2x = url.replace(/(\.\w+$)/, '-2x$1')
+  - url = `images/${fileName}`
+  - url2x = url.replace(/(\.\w+$)/, '-2x$1')
 
-  img(src=url srcset=`${url2x} 2x` alt!=alt)&attributes(attributes)
+  img.lazyload(data-src=url data-srcset=`${url2x} 2x` alt!=alt)&attributes(attributes)
