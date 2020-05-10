@@ -9,7 +9,7 @@ include ../link/link
 mixin footer()
   footer.footer
     .container.footer__inner
-      +link-secondary('Центр Высоких Технологий', 'https://htc-cs.ru/')(class="footer__logo")
+      +link-secondary('Центр Высоких Технологий', 'https://htc-cs.ru/')(class="footer__logo", target="_blank")
         +icon('htc-logo')
       .footer__content
         p.footer__text 426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК&nbsp;&laquo;Металлург&raquo;)
@@ -18,5 +18,5 @@ mixin footer()
         |, 
         +link('Позвонить по номеру 43-29-29', 'tel:432929')
           |43-29-29
-        +link-secondary('Центр Высоких Технологий', 'https://htc-cs.ru/')(class="footer__htc")
+        +link-secondary('Центр Высоких Технологий', 'https://htc-cs.ru/')(class="footer__htc", target="_blank")
           |htc-cs.ru

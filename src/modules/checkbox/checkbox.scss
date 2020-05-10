@@ -5,6 +5,9 @@
   cursor: pointer;
   position: relative;
   padding-left: em(24px, 16px);
+  transition: color $easing;
+  @include hover(color, $primary);
+  outline: none;
 }
 
 

@@ -55,7 +55,6 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-appearance: none;
   }
-
   transition: stroke $easing;
   @include hover(stroke, $btn-color-hover);
 }
