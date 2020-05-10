@@ -103,6 +103,7 @@ textarea {
     width: 0;
     background: transparent;
   }
+
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
   scrollbar-width: none;
@@ -115,5 +116,18 @@ textarea {
 
   ::-webkit-scrollbar-thumb {
     background: transparent;
+  }
+}
+
+
+.content {
+  li {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  hr {
+    margin-top: 2em;
+    margin-bottom: 2em;
   }
 }

@@ -21,7 +21,8 @@
   background-color: transparent;
   transition: color $easing;
 
-  @include hover(color, $black);
+  // @include hover(color, $black);
+  @include hover(color, $btn-color-hover);
 }
 
 
