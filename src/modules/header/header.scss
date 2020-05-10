@@ -34,7 +34,7 @@ a.header__logo {
   @include media-breakpoint-up(lg) {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-right: auto;
     margin-left: auto;
   }
 
@@ -55,8 +55,11 @@ a.header__logo {
   width: 200px;
 
   @include media-breakpoint-up(lg) {
-    width: 300px;
     display: flex;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 300px;
   }
 }
 

@@ -8,7 +8,7 @@ mixin genres
   section.genres
     header: h2.genres__title Жанры
     ul.genres__list
-      li: +genre('emoji-grinning-face.png', 'Комедии')(class="genres__comedy")
-      li: +genre('emoji-loudly-crying-face.png', 'Драмы')(class="genres__drama")
-      li: +genre('emoji-alien.png', 'Фантастика')(class="genres__fiction")
-      li: +genre('emoji-ghost.png', 'Ужасы')(class="genres__horror")
+      li.genres__item: +genre('emoji-grinning-face.png', 'Комедии')(class="genres__comedy")
+      li.genres__item: +genre('emoji-loudly-crying-face.png', 'Драмы')(class="genres__drama")
+      li.genres__item: +genre('emoji-alien.png', 'Фантастика')(class="genres__fiction")
+      li.genres__item: +genre('emoji-ghost.png', 'Ужасы')(class="genres__horror")

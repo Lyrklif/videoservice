@@ -19,6 +19,10 @@
 }
 
 
+.genres__item {
+  margin-bottom: $grid-gap;
+}
+
 
 .genres__comedy {
   &::before {

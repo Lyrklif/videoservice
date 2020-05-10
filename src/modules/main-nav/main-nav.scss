@@ -15,16 +15,28 @@
 }
 
 
+.main-nav__item {
+  margin-bottom: em(12px, 28px);
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+}
+
 
 .main-nav__link {
   font-weight: 500;
-  font-size: 28px;
-  padding-bottom: 7px;
+  font-size: 22px;
+  padding-bottom: em(7px, 28px);
   border-bottom: 2px solid transparent;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: em(12px, 28px);
+  margin-right: em(12px, 28px);
   user-select: none;
   transition: color $easing, border-color $easing;
+
+  @include media-breakpoint-up(md) {
+    font-size: 28px;
+  }
 
 
   &.active {
