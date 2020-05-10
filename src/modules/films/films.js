@@ -9,20 +9,17 @@ export default class Films {
     this.films = document.querySelector('.js-films-list');
 
     if (this.films) {
-      this.title = [...document.querySelectorAll('.js-film-title')];
-      this.desc = [...document.querySelectorAll('.js-film-desc')];
-      this.img = [...document.querySelectorAll('.js-film-img')];
+      this.title = [ ...document.querySelectorAll('.js-film-title') ];
+      this.desc = [ ...document.querySelectorAll('.js-film-desc') ];
+      this.img = [ ...document.querySelectorAll('.js-film-img') ];
 
       this.init();
     }
   }
 
   init() {
-    fetch(url).then(value => {
-      return value.json();
-    }).then(result => {
+    fetch(url).then(value => value.json()).then(result => {
       console.log('films => success', result.results);
-
       this.setInfo(result.results);
     }).catch(err => {
       console.log('films => err', err);
@@ -30,13 +27,13 @@ export default class Films {
   }
 
   setInfo(data) {
-    const filmCount = this.films.children.length;
-    const counts = getRandomNumbers(filmCount, 0, data.length - 1);
+    const filmsApiCount = this.films.children.length;
+    const cardCounts = getRandomNumbers(filmsApiCount, 0, data.length - 1);
 
-    for (let i = 0; i < filmCount; i++) {
-      const title = data[counts[i]].title || data[counts[i]].name; // Название фильма
-      const desc = data[counts[i]].overview; // Описание
-      const img = data[counts[i]].backdrop_path; // Постер
+    for (let i = 0; i < filmsApiCount; i++) {
+      const title = data[cardCounts[i]].title || data[cardCounts[i]].name; // Название фильма
+      const desc = data[cardCounts[i]].overview; // Описание
+      const img = data[cardCounts[i]].backdrop_path; // Постер
 
       this.title[i].innerHTML = title;
       this.desc[i].innerHTML = desc;

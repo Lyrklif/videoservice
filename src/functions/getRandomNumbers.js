@@ -13,10 +13,10 @@ const checkNumber = (arr, number) => {
 };
 
 const getRandomNumbers = (length, min = 0, max = 100) => {
-  let arr = [];
+  const arr = [];
 
   for (let i = 0; i < length; i++) {
-    let number = randomInteger(min, max);
+    const number = randomInteger(min, max);
 
     if (checkNumber(arr, number)) arr.push(number);
     else --i;
