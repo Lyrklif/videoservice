@@ -19,10 +19,9 @@
   @extend %btn-default;
   color: $btn-color;
   background-color: transparent;
-  transition: background-color $easing, color $easing;
+  transition: color $easing;
 
-  @include hover(background-color, $primary);
-  @include hover(color, $white);
+  @include hover(color, $black);
 }
 
 
