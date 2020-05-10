@@ -18,6 +18,9 @@
 Авторизоваться  
 `window.globalSiteAuthorize.authorize();`  
 
+Выйти  
+`window.globalSiteAuthorize.exit();`  
+
 Показать модальное окно авторизации  
 `window.globalModal.show('authorize');`  
 
