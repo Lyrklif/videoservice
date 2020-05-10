@@ -31,7 +31,7 @@
 }
 
 
-.film__desk {
+.film__desc {
   position: absolute;
   top: 0;
   left: 0;
@@ -66,7 +66,7 @@
   &:hover,
   &:focus,
   &:active {
-    .film__desk {
+    .film__desc {
       opacity: 1;
     }
   }

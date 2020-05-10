@@ -11,7 +11,8 @@ export default class Film {
 
   init() {
     const options = {
-      maxLines: 18
+      maxLines: 18,
+      removeEndChars: /[.,?!\/\\:\-\s]+$/
     };
 
     for (let i = 0; i < this.text.length; i++) {
