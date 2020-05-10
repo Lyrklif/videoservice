@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
   new Checkbox();
   window.globalModal = new Modal();
   window.globalTabs = new Tabs();
-  new Film();
+  window.globalFilm = new Film();
   window.globalSiteAuthorize = new SiteAuthorize();
   new ModalAuthorize();
   new Films();

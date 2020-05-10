@@ -40,5 +40,7 @@ export default class Films {
       this.img[i].src = imgSrc + img;
       this.img[i].srcset = imgSrc + img;
     }
+
+    window.globalFilm.init();
   }
 }

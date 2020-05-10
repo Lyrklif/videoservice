@@ -12,7 +12,7 @@ mixin film(fileName, title, isApi)
     a.film__inner(href="#", target="_blank", title=title)
       .film__content
         +img(fileName, title)(class="film__img", class!=isApi && 'js-film-img')
-        .film__desk
+        .film__desc
           p.film__text.js-film-desc: block
       h3.film__title(class!=isApi && 'js-film-title')= title
 
