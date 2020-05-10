@@ -2,12 +2,11 @@
 
 const getURL = () => {
   const site = 'https://api.themoviedb.org/';
-  const request = '3/trending/all/week';
+  const param = '3/trending/all/week';
   const lang = '?language=ru';
-  const api = '&api_key=30bcec8f5dda885072b3eeb762fe32c3';
+  const api = '30bcec8f5dda885072b3eeb762fe32c3';
 
-  // https://api.themoviedb.org/3/trending/all/week?language=ru&api_key=30bcec8f5dda885072b3eeb762fe32c3
-  const url = `${site}${request}${lang}${api}`;
+  const url = `${site}${param}${lang}&api_key=${api}`;
 
   return url;
 };
