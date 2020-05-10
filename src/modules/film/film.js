@@ -2,7 +2,7 @@
 
 export default class Film {
   constructor() {
-    this.text = document.querySelectorAll('.js-film-text');
+    this.text = document.querySelectorAll('.js-film-desc');
 
     if (this.text.length) {
       this.init();

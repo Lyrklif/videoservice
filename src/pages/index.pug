@@ -9,18 +9,22 @@ include ../modules/genre/genre
 include ../modules/film/film
 include ../modules/channel/channel
 
+block head
+  - isMainPage = 'main page'
+
 block page
   .page
     .container.content
       h2 Навигация по страницам
       ul
-        li: a(href="./home.html", title="Главная страница") Главная страница
-        li: a(href="./home.html#channels", title="Главная страница (Телеканалы)") Главная страница (Телеканалы)
-        li: a(href="./home.html#authorize", title="Главная страница") Главная страница с открытой модалкой
+        li: +link-primary('Видеосервис с актуальными данными', './home-actual.html') Видеосервис с актуальными данными
+        li: +link-primary('Видеосервис [просто вёрстка]', './home.html') Видеосервис [просто вёрстка]
+        li: +link('Видеосервис (Телеканалы)', './home.html#channels') Видеосервис (Телеканалы)
+        li: +link('Видеосервис с открытой модалкой', './home.html#authorize') Видеосервис с открытой модалкой
       hr
       h2 Модальные окна
       ul
-        li:  a(href="#authorize", data-modal="authorize", title="Вход") Вход
+        li:  +link-secondary('Вход', '#authorize')(data-modal="authorize") Вход
       hr
       h1 h1 Заголовок
       p 
