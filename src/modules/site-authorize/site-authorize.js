@@ -45,6 +45,8 @@ export default class SiteAuthorize {
       this.hide(this.wrapSignIn[i]);
       this.show(this.wrapSignOut[i]);
     }
+
+    this.changeName(this.inputs[0]);
   }
 
   // выйти из аккаунта
@@ -123,23 +125,24 @@ export default class SiteAuthorize {
     for (let i = 0; i < this.inputs.length; i++) {
       this.inputs[i].addEventListener('blur', () => {
         this.changeName(this.inputs[i]);
+        this.showTextName();
       });
 
       this.inputs[i].addEventListener('keydown', e => {
         if (e.key === 'Enter') {
           this.changeName(this.inputs[i]);
+          this.showTextName();
         }
       });
     }
   }
 
   // изменить имя
-  changeName(input) {
-    const name = this.getFixName(input.value);
+  changeName(elem) {
+    const name = this.getFixName(elem.value);
 
     localStorage.setItem(savedData.name, name);
     this.writeName(name);
-    this.showTextName();
   }
 
   // вернуть исправленную строку имени
