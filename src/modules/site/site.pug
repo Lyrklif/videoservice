@@ -2,7 +2,6 @@ include ../header/header
 include ../footer/footer
 
 mixin site(isMainPage)
-  .site.js-site
-    +header(isMainPage)
-    block page
-    +footer()
+  +header(isMainPage)
+  block page
+  +footer()

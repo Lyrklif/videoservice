@@ -4,11 +4,11 @@
 
 
 
-// @include grid(min, max);
-@mixin grid ($min: 280px, $max: 1fr) {
+// @include grid();
+@mixin grid ($width: 280px, $maxWidth: 1fr) {
   // display: grid;
   // grid-gap: $grid-gap;
-  // grid-template-columns: repeat(auto-fit, minmax($min, $max));
+  // grid-template-columns: repeat(auto-fit, minmax($width, $maxWidth));
   // justify-items: center;
 
 
@@ -23,12 +23,13 @@
 
   &>li,
   &>div {
-    width: $min;
+    width: $width;
     margin-right: $grid-gap;
     margin-bottom: $grid-gap;
+    display: block;
   }
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(lg) {
     justify-content: space-between;
   }
 }

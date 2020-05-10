@@ -10,7 +10,6 @@ export default class Modal {
     this.modal = document.querySelector('.js-modal');
     this.overlay = document.querySelector('.js-modal-overlay');
     this.html = document.querySelector('html');
-    this.main = document.querySelector('.js-site');
     this.scrollbarWidth = this.getScrollbarWidth();
 
     if (this.modal) {
@@ -93,7 +92,7 @@ export default class Modal {
 
     disableBodyScroll(this.modal);
 
-    this.main.style.paddingRight = `${this.scrollbarWidth}px`; // добавить отступ размером с ширину скроллбара
+    this.html.style.paddingRight = `${this.scrollbarWidth}px`; // добавить отступ размером с ширину скроллбара
     this.html.classList.add('modalOpen');
   }
 
@@ -118,7 +117,7 @@ export default class Modal {
     if (tab) tab.classList.remove('modal__tab_active');
 
     setTimeout(() => {
-      this.main.style.paddingRight = ''; // убрать отступ
+      this.html.style.paddingRight = ''; // убрать отступ
       this.html.classList.remove('modalOpen');
     }, 0);
   }
