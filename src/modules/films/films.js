@@ -1,11 +1,12 @@
 'use strict';
 
 import { url, imgSrc } from '../../api/themoviedb';
+import getRandomNumbers from '../../functions/getRandomNumbers';
 
 // Актуальные данные по фильмам
 export default class Films {
   constructor() {
-    this.films = document.querySelector('.js-api-films');
+    this.films = document.querySelector('.js-films-list');
 
     if (this.films) {
       this.title = [...document.querySelectorAll('.js-film-title')];
@@ -29,10 +30,13 @@ export default class Films {
   }
 
   setInfo(data) {
-    for (let i = 0; i < data.length; i++) {
-      const title = data[i].title; // Название фильма
-      const desc = data[i].overview; // Описание
-      const img = data[i].backdrop_path; // Постер
+    const filmCount = this.films.children.length;
+    const counts = getRandomNumbers(filmCount, 0, data.length - 1);
+
+    for (let i = 0; i < filmCount; i++) {
+      const title = data[counts[i]].title || data[counts[i]].name; // Название фильма
+      const desc = data[counts[i]].overview; // Описание
+      const img = data[counts[i]].backdrop_path; // Постер
 
       this.title[i].innerHTML = title;
       this.desc[i].innerHTML = desc;

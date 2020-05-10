@@ -41,12 +41,12 @@ mixin films(isAPI)
       },
     ];
 
-  section.films(class!=isAPI && 'js-api-films')
+  section.films
     header.films__header
       +img('emoji-fire.png', 'emoji-fire')(class="films__emoji")
       h2.films__title Новинки
 
-    ul.films-list
+    ul.films-list(class!=isAPI && 'js-films-list')
       each val in data
         if (isAPI)
           li: +film('', '', isAPI) 
