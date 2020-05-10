@@ -10,6 +10,23 @@
 
 
 
-Для запуска проекта:  
-`npm i `
-`gulp`
+**Для запуска проекта:**  
+`npm i `  
+`gulp`  
+
+**Команды для консоли:**  
+Авторизоваться  
+`window.globalSiteAuthorize.authorize();`  
+
+Показать модальное окно авторизации  
+`window.globalModal.show('authorize');`  
+
+Скрыть модальные окна  
+`window.globalModal.hide();`  
+
+
+Перейти во вкладку "Фильмы"  
+`window.globalTabs.open('films');`  
+
+Перейти во вкладку "Телеканалы"  
+`window.globalTabs.open('channels');`  
