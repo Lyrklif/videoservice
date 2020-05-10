@@ -4,14 +4,12 @@ import { cssClasses, savedData } from '../../scripts/vars.js';
 
 export default class SiteAuthorize {
   constructor() {
-    this.wrapSignIn = [...document.querySelectorAll('.js-sign-in-wrap')];
-    this.wrapSignOut = [...document.querySelectorAll('.js-sign-out-wrap')];
-
-    this.exitButtons = [...document.querySelectorAll('.js-sign-out-btn')];
-
-    this.texts = [...document.querySelectorAll('.js-text-name')];
-    this.labels = [...document.querySelectorAll('.js-label-name')];
-    this.inputs = [...document.querySelectorAll('.js-input-name')];
+    this.wrapSignIn = [ ...document.querySelectorAll('.js-sign-in-wrap') ];
+    this.wrapSignOut = [ ...document.querySelectorAll('.js-sign-out-wrap') ];
+    this.exitButtons = [ ...document.querySelectorAll('.js-sign-out-btn') ];
+    this.texts = [ ...document.querySelectorAll('.js-text-name') ];
+    this.labels = [ ...document.querySelectorAll('.js-label-name') ];
+    this.inputs = [ ...document.querySelectorAll('.js-input-name') ];
 
     // авторизоваться если есть сохранённые данные
     this.autoAuthorization();
@@ -33,6 +31,7 @@ export default class SiteAuthorize {
       this.writeName(savedName);
       this.authorize();
     }
+
     // иначе записать в input значение из p (стандартное значение)
     else if (this.texts.length && this.inputs.length) {
       this.writeDefaultNameInInput();
@@ -46,7 +45,7 @@ export default class SiteAuthorize {
       this.show(this.wrapSignOut[i]);
     }
 
-    this.changeName(this.inputs[0]);
+    this.writeName(this.inputs[0].value);
   }
 
   // выйти из аккаунта
@@ -79,14 +78,17 @@ export default class SiteAuthorize {
     }
   }
 
-  // записать имя в input и p
+  // записать имя
   writeName(name) {
     const savedName = name || localStorage.getItem(savedData.name);
 
     if (savedName) {
+      const fixedName = this.getFixName(savedName);
+      localStorage.setItem(savedData.name, fixedName);
+
       for (let i = 0; i < this.texts.length; i++) {
-        this.texts[i].innerHTML = savedName;
-        this.inputs[i].value = savedName;
+        this.texts[i].innerHTML = fixedName;
+        this.inputs[i].value = fixedName;
       }
     }
   }
@@ -100,7 +102,7 @@ export default class SiteAuthorize {
     }
   }
 
-  // при нажатии на имя показать input для изменения имени
+  // при нажатии на имя показать input
   clickTextNameEvent() {
     for (let i = 0; i < this.texts.length; i++) {
       this.texts[i].addEventListener('click', () => {
@@ -112,37 +114,29 @@ export default class SiteAuthorize {
     }
   }
 
-  // показать текст 
-  showTextName() {
-    for (let i = 0; i < this.texts.length; i++) {
-      this.hide(this.labels[i]);
-      this.show(this.texts[i]);
-    }
-  }
-
   // при потере фокуса input
   inputBlurEvent() {
     for (let i = 0; i < this.inputs.length; i++) {
       this.inputs[i].addEventListener('blur', () => {
-        this.changeName(this.inputs[i]);
+        this.writeName(this.inputs[i].value);
         this.showTextName();
       });
 
       this.inputs[i].addEventListener('keydown', e => {
         if (e.key === 'Enter') {
-          this.changeName(this.inputs[i]);
+          this.writeName(this.inputs[i].value);
           this.showTextName();
         }
       });
     }
   }
 
-  // изменить имя
-  changeName(elem) {
-    const name = this.getFixName(elem.value);
-
-    localStorage.setItem(savedData.name, name);
-    this.writeName(name);
+  // показать текст
+  showTextName() {
+    for (let i = 0; i < this.texts.length; i++) {
+      this.hide(this.labels[i]);
+      this.show(this.texts[i]);
+    }
   }
 
   // вернуть исправленную строку имени
