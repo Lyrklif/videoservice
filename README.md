@@ -15,21 +15,11 @@
 `gulp`  
 
 **Команды для консоли:**  
-Авторизоваться  
-`window.globalSiteAuthorize.authorize();`  
-
-Выйти  
-`window.globalSiteAuthorize.exit();`  
-
-Показать модальное окно авторизации  
-`window.globalModal.show('authorize');`  
-
-Скрыть модальные окна  
-`window.globalModal.hide();`  
-
-
-Перейти во вкладку "Фильмы"  
-`window.globalTabs.open('films');`  
-
-Перейти во вкладку "Телеканалы"  
-`window.globalTabs.open('channels');`  
+| команда  |  описание |
+| :------------ | :------------ |
+| `window.globalSiteAuthorize.authorize();`  | Авторизоваться |
+| `window.globalSiteAuthorize.exit();` | Выйти |
+| `window.globalModal.show('authorize');` | Показать модальное окно авторизации |
+| `window.globalModal.hide();` | Скрыть модальные окна |
+| `window.globalTabs.open('films');` | Перейти во вкладку "Фильмы" |
+| `window.globalTabs.open('channels');` | Перейти во вкладку "Телеканалы" |
