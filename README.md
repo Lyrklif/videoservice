@@ -4,6 +4,7 @@
 
 | название  |  ссылка |
 | :------------ | :------------ |
+| Главная страница с актуальными данными по фильмам | https://lyrklif.github.io/videoservice/home-actual.html   |
 | Главная страница| https://lyrklif.github.io/videoservice/home.html   |
 | Главная страница (Телеканалы) | https://lyrklif.github.io/videoservice/home.html#channels  |
 | Главная страница с открытой модалкой |https://lyrklif.github.io/videoservice/home.html#authorize  |
