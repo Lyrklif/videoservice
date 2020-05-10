@@ -4,12 +4,32 @@
 
 
 
-// @include grid(min, max);
-@mixin grid ($min: 280px, $max: 1fr) {
-  display: grid;
-  grid-gap: $grid-gap;
-  grid-template-columns: repeat(auto-fit, minmax($min, $max));
-  justify-items: center;
+// @include grid();
+@mixin grid ($width: 280px, $maxWidth: 1fr) {
+  // display: grid;
+  // grid-gap: $grid-gap;
+  // grid-template-columns: repeat(auto-fit, minmax($width, $maxWidth));
+  // justify-items: center;
+
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: flex-start;
+
+  margin-right: -$grid-gap;
+
+
+  &>li,
+  &>div {
+    width: $width;
+    margin-right: $grid-gap;
+    margin-bottom: $grid-gap;
+    display: block;
+  }
+
+  @include media-breakpoint-up(lg) {
+    justify-content: flex-start;
+  }
 }
-
-

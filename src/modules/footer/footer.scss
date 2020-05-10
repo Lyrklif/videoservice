@@ -5,13 +5,13 @@
 .footer {
   background-color: $gray;
   padding-top: 22px;
-  padding-bottom: 25px;
-  margin-top: 72px;
+  padding-bottom: 22px;
+  // margin-top: 72px;
+  margin-top: 52px;
 }
 
 
 .footer__inner {
-
   @include media-breakpoint-up(sm) {
     display: flex;
   }
@@ -36,7 +36,7 @@
 
 
 .footer__content {
-  line-height: 19px;
+  // line-height: 19px;
 }
 
 
@@ -49,6 +49,6 @@
 .footer__htc {
   display: block;
   font-weight: 500;
-  margin-top: em(10px, 16px);
+  margin-top: em(3px, 16px);
   max-width: max-content;
 }

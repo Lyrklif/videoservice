@@ -3,7 +3,7 @@
 
 
 .genres {
-  margin-top: 12px;
+  
 }
 
 
@@ -18,6 +18,10 @@
   margin-bottom: 0;
 }
 
+
+.genres__item {
+  margin-bottom: $grid-gap;
+}
 
 
 .genres__comedy {

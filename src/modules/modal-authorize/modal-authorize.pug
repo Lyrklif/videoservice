@@ -10,7 +10,7 @@ include ../checkbox/checkbox
 mixin modal-authorize
   #authorize&attributes(attributes)
     form.modal-authorize.js-authorize-form(action="", method="post", novalidate)
-      h2.modal-authorize__title Вход
+      h3.modal-authorize__title Вход
       +input("text", 'input-login', 'Логин')(labelClass="modal-authorize__input", required, minlength="1", class="js-login")
       +input("password", 'input-password', 'Пароль')(labelClass="modal-authorize__input", required, minlength="1", class="js-password")
       +checkbox()(labelClass="modal-authorize__checkbox", class="js-remember")
