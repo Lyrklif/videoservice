@@ -11,6 +11,7 @@
 
 .film__inner {
   display: block;
+  outline: none;
 }
 
 
@@ -62,8 +63,11 @@
 }
 
 
-.film {
-  &:hover {
+.film__inner {
+
+  &:hover,
+  &:focus,
+  &:active {
     .film__desk {
       opacity: 1;
     }

@@ -19,7 +19,7 @@ mixin header(isMainPage)
       .header__logo: +icon("logotype", "logotype")
   else 
     mixin logo
-      a.header__logo(href=linkMainPage, title="Видеосервис")
+      +link-secondary("Видеосервис", linkMainPage)(class="header__logo")
         +icon("logotype", "logotype")
 
 

@@ -9,6 +9,7 @@
   padding: em(9px, 16px) em(32px, 16px);
   border-radius: 4px;
   display: inline-block;
+  outline: none;
 }
 
 
@@ -17,9 +18,11 @@
 @mixin btn () {
   @extend %btn-default;
   color: $btn-color;
-  transition: color $easing;
+  background-color: transparent;
+  transition: background-color $easing, color $easing;
 
-  @include hover(color, $btn-color-hover);
+  @include hover(background-color, $primary);
+  @include hover(color, $white);
 }
 
 

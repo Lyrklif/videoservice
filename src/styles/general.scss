@@ -1,9 +1,11 @@
 * {
   // outline: none;
+  outline-color: $primary;
 
   &::before,
   *::after {
     // outline: none;
+    outline-color: $primary;
   }
 }
 
@@ -69,6 +71,7 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  outline: none;
 }
 
 
@@ -100,6 +103,7 @@ textarea {
     width: 0;
     background: transparent;
   }
+
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
   scrollbar-width: none;
@@ -114,12 +118,3 @@ textarea {
     background: transparent;
   }
 }
-
-
-// размываются только изображения, которых нет в кэше
-
-.mediabox-img {
-  font-family: 'blur-up: auto', 'object-fit: cover';
-}
-
-
