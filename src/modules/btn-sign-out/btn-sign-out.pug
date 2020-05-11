@@ -1,0 +1,7 @@
+//- btn-sign-out
+
+include ../btn/btn
+
+mixin btnSignOut()
+  +btn('Выйти')(class="btn-sign-out js-btn-sign-out", class!=attributes.class)
+    |Выйти

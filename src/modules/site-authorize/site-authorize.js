@@ -6,7 +6,6 @@ export default class SiteAuthorize {
   constructor() {
     this.wrapSignIn = [ ...document.querySelectorAll('.js-sign-in-wrap') ];
     this.wrapSignOut = [ ...document.querySelectorAll('.js-sign-out-wrap') ];
-    this.exitButtons = [ ...document.querySelectorAll('.js-sign-out-btn') ];
     this.texts = [ ...document.querySelectorAll('.js-text-name') ];
     this.labels = [ ...document.querySelectorAll('.js-label-name') ];
     this.inputs = [ ...document.querySelectorAll('.js-input-name') ];
@@ -15,7 +14,6 @@ export default class SiteAuthorize {
     this.autoAuthorization();
 
     if (this.texts.length) this.simulateClick();
-    if (this.exitButtons.length) this.clickBtnExitEvent();
 
     if (this.texts.length && this.labels.length && this.inputs.length) {
       this.clickTextNameEvent();
@@ -93,15 +91,6 @@ export default class SiteAuthorize {
     }
   }
 
-  // при нажатии на кнопку "выйти"
-  clickBtnExitEvent() {
-    for (let i = 0; i < this.exitButtons.length; i++) {
-      this.exitButtons[i].addEventListener('click', () => {
-        this.exit();
-      });
-    }
-  }
-
   // при нажатии на имя показать input
   clickTextNameEvent() {
     for (let i = 0; i < this.texts.length; i++) {
@@ -156,3 +145,6 @@ export default class SiteAuthorize {
     elem.classList.add(cssClasses.showElem);
   }
 }
+
+
+// window.globalSiteAuthorize.exit();
