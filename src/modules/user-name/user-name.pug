@@ -1,0 +1,13 @@
+//- user-name
+
+include ../input/input
+
+
+
+mixin user-name()
+  .user-name
+    p.user-name__text.js-user-name-text.show(tabindex="0") Константин К.
+    +input("text", 'input-name', 'Имя')(
+      labelClass="user-name__label js-user-name-label" + (attributes.labelClass ? attributes.labelClass : ''), 
+      class="user-name__input js-user-name-input" + (attributes.class ? attributes.class : '')
+      )

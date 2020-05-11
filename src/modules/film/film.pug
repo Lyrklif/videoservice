@@ -12,7 +12,7 @@ mixin film(fileName, title, isApi)
     a.film__inner(href="#", target="_blank", title=title)
       .film__content
         if (isApi)
-          +imgSimple(fileName, title)(class='film__img js-film-img')
+          +imgSimple()(class='film__img js-film-img')
         else  
           +img(fileName, title)(class="film__img")
         .film__desc

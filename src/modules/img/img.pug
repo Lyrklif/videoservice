@@ -12,4 +12,4 @@ mixin img(fileName, alt)
 mixin imgSimple(fileName, alt)
   - url = `images/${fileName}`
 
-  img(src=url, alt=alt)&attributes(attributes)
+  img(src!=fileName && url, alt!=alt)&attributes(attributes)

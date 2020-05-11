@@ -1,0 +1,28 @@
+// user-name
+
+
+
+
+.user-name__label,
+.user-name__text {
+  display: none;
+
+  &.show {
+    display: flex;
+  }
+}
+
+
+.user-name__input {
+  text-align: right;
+}
+
+
+.user-name__text {
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: opacity $easing;
+  @include hover(opacity, .8);
+}
