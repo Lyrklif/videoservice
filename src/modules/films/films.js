@@ -38,7 +38,7 @@ export default class Films {
       this.title[i].innerHTML = title;
       this.desc[i].innerHTML = desc;
       this.img[i].src = imgSrc + img;
-      this.img[i].srcset = imgSrc + img;
+      this.img[i].alt = title;
     }
 
     window.globalFilm.init();

@@ -6,3 +6,10 @@ mixin img(fileName, alt)
   - url2x = url.replace(/(\.\w+$)/, '-2x$1')
 
   img.lazyload(data-src=url data-srcset=`${url2x} 2x` alt!=alt)&attributes(attributes)
+
+
+//- +imgSimple('fileName', 'alt')
+mixin imgSimple(fileName, alt)
+  - url = `images/${fileName}`
+
+  img(src=url, alt=alt)&attributes(attributes)
