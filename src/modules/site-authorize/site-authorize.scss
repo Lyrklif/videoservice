@@ -15,8 +15,6 @@
 }
 
 
-.site-authorize__text-name,
-.site-authorize__label-name,
 .site-authorize__sign-in,
 .site-authorize__sign-out {
   display: none;
@@ -26,15 +24,6 @@
   }
 }
 
-
-.site-authorize__text-name {
-  font-weight: 500;
-  margin-top: 0;
-  margin-bottom: 0;
-  cursor: pointer;
-  transition: opacity $easing;
-  @include hover(opacity, .8);
-}
 
 .site-authorize__sign-out-btn {
   margin-left: 16px;

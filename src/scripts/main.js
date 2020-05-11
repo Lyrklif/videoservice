@@ -14,6 +14,7 @@ import SiteAuthorize from '../modules/site-authorize/site-authorize'; // авт�
 import ModalAuthorize from '../modules/modal-authorize/modal-authorize'; // модалка аворизации
 import Films from '../modules/films/films'; // фильмы
 import BtnSignOut from '../modules/btn-sign-out/btn-sign-out'; // sign-out
+import UserName from '../modules/user-name/user-name'; // user-name
 
 import '@babel/polyfill';
 import cssVars from 'css-vars-ponyfill';
@@ -32,6 +33,7 @@ window.addEventListener('load', () => {
   window.globalModal = new Modal();
   window.globalTabs = new Tabs();
   window.globalFilm = new Film();
+  window.globalUserName = new UserName();
   window.globalSiteAuthorize = new SiteAuthorize();
   new ModalAuthorize();
   new Films();

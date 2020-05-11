@@ -1,150 +1,54 @@
 'use strict';
 
-import { cssClasses, savedData } from '../../scripts/vars.js';
+import { savedData } from '../../scripts/vars.js';
+import hide from '../../functions/hide';
+import show from '../../functions/show';
+
+/*
+ * window.globalSiteAuthorize.authorize();
+ * window.globalSiteAuthorize.exit();
+ */
 
 export default class SiteAuthorize {
   constructor() {
-    this.wrapSignIn = [ ...document.querySelectorAll('.js-sign-in-wrap') ];
-    this.wrapSignOut = [ ...document.querySelectorAll('.js-sign-out-wrap') ];
-    this.texts = [ ...document.querySelectorAll('.js-text-name') ];
-    this.labels = [ ...document.querySelectorAll('.js-label-name') ];
-    this.inputs = [ ...document.querySelectorAll('.js-input-name') ];
+    this.wrapSignIn = [...document.querySelectorAll('.js-sign-in-wrap')];
+    this.wrapSignOut = [...document.querySelectorAll('.js-sign-out-wrap')];
 
-    // авторизоваться если есть сохранённые данные
-    this.autoAuthorization();
-
-    if (this.texts.length) this.simulateClick();
-
-    if (this.texts.length && this.labels.length && this.inputs.length) {
-      this.clickTextNameEvent();
-      this.inputBlurEvent();
+    if (this.wrapSignIn.length && this.wrapSignOut.length) {
+      this.init();
     }
-  } // end constructor
+  }
 
-  // авторизоваться если есть сохранённые данные
-  autoAuthorization() {
+  init() {
     const savedName = localStorage.getItem(savedData.name);
 
+    // авторизоваться если есть сохранённые данные
     if (savedName) {
-      this.writeName(savedName);
+      window.globalUserName.writeName(savedName);
       this.authorize();
-    }
-
-    // иначе записать в input значение из p (стандартное значение)
-    else if (this.texts.length && this.inputs.length) {
-      this.writeDefaultNameInInput();
+    } else {
+      // иначе записать в input значение из стандартное значение
+      window.globalUserName.writeDefaultName();
     }
   }
 
   // авторизовать пользователя
   authorize() {
     for (let i = 0; i < this.wrapSignIn.length; i++) {
-      this.hide(this.wrapSignIn[i]);
-      this.show(this.wrapSignOut[i]);
+      hide(this.wrapSignIn[i]);
+      show(this.wrapSignOut[i]);
     }
 
-    this.writeName(this.inputs[0].value);
+    window.globalUserName.writeName();
   }
 
   // выйти из аккаунта
   exit() {
     for (let i = 0; i < this.wrapSignOut.length; i++) {
-      this.hide(this.wrapSignOut[i]);
-      this.show(this.wrapSignIn[i]);
+      hide(this.wrapSignOut[i]);
+      show(this.wrapSignIn[i]);
     }
 
     localStorage.removeItem(savedData.name);
   }
-
-  // симулировать клик при нажатии на Enter когда p.js-text-name в фокусе
-  simulateClick() {
-    for (let i = 0; i < this.texts.length; i++) {
-      this.texts[i].addEventListener('keydown', e => {
-        if (e.key === 'Enter') {
-          this.texts[i].click();
-        }
-      });
-    }
-  }
-
-  // записать дефолтное значение в input
-  writeDefaultNameInInput() {
-    const name = this.texts[0].textContent;
-
-    for (let i = 0; i < this.inputs.length; i++) {
-      this.inputs[i].value = name;
-    }
-  }
-
-  // записать имя
-  writeName(name) {
-    const savedName = name || localStorage.getItem(savedData.name);
-
-    if (savedName) {
-      const fixedName = this.getFixName(savedName);
-      localStorage.setItem(savedData.name, fixedName);
-
-      for (let i = 0; i < this.texts.length; i++) {
-        this.texts[i].innerHTML = fixedName;
-        this.inputs[i].value = fixedName;
-      }
-    }
-  }
-
-  // при нажатии на имя показать input
-  clickTextNameEvent() {
-    for (let i = 0; i < this.texts.length; i++) {
-      this.texts[i].addEventListener('click', () => {
-        this.hide(this.texts[i]);
-        this.show(this.labels[i]);
-
-        this.inputs[i].focus();
-      });
-    }
-  }
-
-  // при потере фокуса input
-  inputBlurEvent() {
-    for (let i = 0; i < this.inputs.length; i++) {
-      this.inputs[i].addEventListener('blur', () => {
-        this.writeName(this.inputs[i].value);
-        this.showTextName();
-      });
-
-      this.inputs[i].addEventListener('keydown', e => {
-        if (e.key === 'Enter') {
-          this.writeName(this.inputs[i].value);
-          this.showTextName();
-        }
-      });
-    }
-  }
-
-  // показать текст
-  showTextName() {
-    for (let i = 0; i < this.texts.length; i++) {
-      this.hide(this.labels[i]);
-      this.show(this.texts[i]);
-    }
-  }
-
-  // вернуть исправленную строку имени
-  getFixName(value) {
-    let fixedName = value;
-    if (value.length > 12) fixedName = `${value.substr(0, 12)}.`;
-    return fixedName;
-  }
-
-  // скрыть элемент
-  hide(elem) {
-    elem.classList.remove(cssClasses.showElem);
-  }
-
-  // показать элемент
-  show(elem) {
-    elem.classList.add(cssClasses.showElem);
-  }
 }
-
-
-// window.globalSiteAuthorize.exit();
