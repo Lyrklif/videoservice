@@ -34,7 +34,6 @@ export default class Tabs {
     let indexContent;
     let indexTab;
 
-    // если в адресной строке есть текст после #
     if (name) {
       indexContent = this.getIndexFoundedContent(name, index);
       indexTab = this.getIndexFoundedTab(name, index);
